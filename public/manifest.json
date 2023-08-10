@@ -1,0 +1,18 @@
+{
+  "_vendor-552145ea.js": {
+    "file": "assets/vendor-552145ea.js"
+  },
+  "src/js/index.js": {
+    "file": "assets/script-70fa1c5f.js",
+    "imports": [
+      "_vendor-552145ea.js"
+    ],
+    "isEntry": true,
+    "src": "src/js/index.js"
+  },
+  "src/styles/app.scss": {
+    "file": "assets/app-5bfb6feb.css",
+    "isEntry": true,
+    "src": "src/styles/app.scss"
+  }
+}
