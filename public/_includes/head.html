@@ -22,13 +22,13 @@
 	<meta name="application-name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>
 	<meta name="theme-color" content="#fff26e">
 
-	<link rel="shortcut icon" href="{{ 'img/favicon.ico' | relative_url }}" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ './img/favicon.ico' | relative_url }}" type="image/x-icon">
 
 {% if jekyll.environment == "development" %}
 	<link rel="stylesheet" href="{{ site.vitehost | append: "/src/styles/app.scss" }}">
 {% else %}
 	{% if site.data.manifest and site.data.manifest['src/styles/app.scss'] and site.data.manifest['src/styles/app.scss'].file %}
-	<link rel="stylesheet" href="{{ site.data.manifest['src/styles/app.scss'].file | prepend: "./" | relative_url }}">
+	<link rel="stylesheet" href="{{ site.data.manifest['src/styles/app.scss'].file | prepend: './' | relative_url }}">
 	{% endif %}
 {% endif %}
 </head>
