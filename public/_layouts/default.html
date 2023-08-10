@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'ru' }}" class="min-h-screen">
+{%- include head.html -%}
+<body class="relative flex flex-col min-h-screen">
+
+	{%- include header.html -%}
+	{%- include blocks/nav.html -%}
+
+	<main class="flex-grow">
+		{{ content }}
+	</main>
+
+	{%- include footer.html -%}
+	{%- include blocks/modals.html -%}
+
+	{% if jekyll.environment == "development" %}
+		<script type="module" src="{{ site.vitehost | append: "/src/js/index.js" }}"></script>
+	{% else %}
+		{% if site.data.manifest and site.data.manifest['src/js/index.js'] and site.data.manifest['src/js/index.js'].file %}
+			<script type="module" src="{{ site.data.manifest['src/js/index.js'].file | prepend: "./" | relative_url }}"></script>
+		{% endif %}
+	{% endif %}
+
+</body>
+</html>

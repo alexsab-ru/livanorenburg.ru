@@ -1,0 +1,1 @@
+{% assign digits = include.phone | escape | split:'' %}{% for digit in digits %}{% if digit != ' ' and digit != '-' and digit != '(' and digit != ')' %}{{ digit }}{% endif %}{% endfor %}

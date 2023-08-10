@@ -1,0 +1,21 @@
+<div id="breadcrumbs" class="text-xs sm:text-base font-light flex items-center gap-2 px-1 max-w-full">
+	{% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+	<a href="{{ '/' | relative_url }}" class="font-normal transition-opacity hover:opacity-80">Главная</a>
+	{% for crumb in crumbs offset: 1 %}
+	{% if forloop.last %} <span class="font-normal">/</span><span class="truncate">{{ page.breadcrumbs | default: page.title }}</span>
+	{% else %}
+	<span class="font-normal">/</span>
+	<a
+		href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' | replace:'without-plugin/','without-plugins/' }}{% endfor %}"
+		class="font-normal transition-opacity hover:opacity-80 whitespace-nowrap"
+		>
+		{% assign eng = crumb | replace:'-',' ' | remove:'.html' %}
+		{% case eng %}
+			{% when 'remont' %}
+			{% assign ru = 'Сервисный центр' %}
+		{% endcase %}
+		{{ru}}
+	</a>
+	{% endif %}
+	{% endfor %}
+</div>

@@ -1,0 +1,42 @@
+{
+  "name": "service.autoholding-renault.ru",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd public && bundle install",
+    "vite_dev": "cd vite && APP_ENV=development vite dev",
+    "vite_build": "cd vite && APP_ENV=production vite build",
+    "jekyll": "cd public && JEKYLL_ENV=development bundle exec jekyll serve -l -o",
+    "jekyll_build": "cd public && JEKYLL_ENV=production bundle exec jekyll build",
+    "preview": "cd public && JEKYLL_ENV=production bundle exec jekyll serve -l -o",
+    "dev": "concurrently \"cd vite && APP_ENV=development vite dev\" \"cd public && JEKYLL_ENV=development bundle exec jekyll serve -l -o\"",
+    "deploy": "cd vite && APP_ENV=production vite build && cd ../public && mv dist/manifest.json _data/manifest.json && rm -rf assets && mv dist/assets assets",
+    "build": "cd vite && APP_ENV=production vite build && cd ../public && mv dist/manifest.json _data/manifest.json && rm -rf assets && mv dist/assets assets && JEKYLL_ENV=production bundle exec jekyll build",
+    "\n# WINDOWS SCRIPTS:": "",
+    "vite_dev_win": "cd vite && cross-env APP_ENV=development vite dev",
+    "vite_build_win": "cd vite && cross-env APP_ENV=production vite build",
+    "jekyll_win": "cd public && cross-env JEKYLL_ENV=development bundle exec jekyll serve -l -o",
+    "jekyll_build_win": "cd public && cross-env JEKYLL_ENV=production bundle exec jekyll build -l -o",
+    "preview_win": "cd public && cross-env JEKYLL_ENV=production bundle exec jekyll serve -l -o",
+    "dev_win": "concurrently \"cd vite && cross-env APP_ENV=development vite dev\" \"cd public && cross-env JEKYLL_ENV=development bundle exec jekyll serve -l -o\"",
+    "deploy_win": "cd vite && cross-env APP_ENV=production vite build && cd ../public && mv dist/manifest.json _data/manifest.json && rm -rf assets && mv dist/assets assets",
+    "build_win": "cd vite && cross-env APP_ENV=production vite build && cd ../public && mv dist/manifest.json _data/manifest.json &&  rm -rf assets && mv dist/assets assets && cross-env JEKYLL_ENV=production bundle exec jekyll build",
+    "\n# https://alexsab.t.me": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "concurrently": "^8.2.0",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.4.25",
+    "sass": "^1.63.6",
+    "swiper": "^10.0.4",
+    "tailwindcss": "^3.3.2",
+    "vite": "^4.0.4",
+    "vite-plugin-live-reload": "^3.0.1"
+  }
+}
