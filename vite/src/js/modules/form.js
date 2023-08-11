@@ -1,129 +1,173 @@
-import { getCookie } from "./cookie";
-
+const $$ = (el) => {
+	return document.querySelectorAll(el);
+};
+// PHONE MASK
 function maskphone(e) {
-
-	var num = this.value.replace(/^(\+7|8)/g, '').replace(/\D/g, '').split(/(?=.)/),
+	let num = this.value
+			.replace(/^(\+7|8)/g, "")
+			.replace(/\D/g, "")
+			.split(/(?=.)/),
 		i = num.length;
-
-	if (0 <= i) num.unshift('+7');
-	if (1 <= i) num.splice(1, 0, ' ');
-	if (4 <= i) num.splice(5, 0, ' ');
-	if (7 <= i) num.splice(9, 0, '-');
-	if (9 <= i) num.splice(12, 0, '-');
+	if (0 <= i) num.unshift("+7");
+	if (1 <= i) num.splice(1, 0, " ");
+	if (4 <= i) num.splice(5, 0, " ");
+	if (7 <= i) num.splice(9, 0, "-");
+	if (9 <= i) num.splice(12, 0, "-");
 	if (11 <= i) num.splice(15, num.length - 15);
-	this.value = num.join('');
-
-	const parent = this.closest('form');
-	const errorEl = parent.querySelector('.error#phone');
-
-	this.onblur = function(){
-		if(num.length != 15 || [... new Set(num)].length == 1) {
-			parent.classList.add('has-error');
-			errorEl.textContent = 'Некорректный номер телефона';
-			errorEl.classList.remove('hidden');
-			return;
+	this.value = num.join("");
+	this.nextSibling.nextElementSibling.classList.add("hidden");
+}
+$$("input[name=phone]").forEach(function (element) {
+	element.addEventListener("focus", maskphone);
+	element.addEventListener("input", maskphone);
+});
+// AGREE CHECKBOX
+// Проверка на состояние чекбокса, показ/скрытие ошибки
+$$("input[name=agree]").forEach(function (element) {
+	let errorMes = element.parentElement.querySelector(".agree");
+	element.addEventListener("change", (e) => {
+		if (!e.target.checked) {
+			errorMes.classList.remove("hidden");
+		} else {
+			errorMes.classList.add("hidden");
 		}
-	}
-	if(num.length == 15){
-		parent.classList.remove('has-error');
-		errorEl.classList.add('hidden');
+	});
+});
+// TEXTAREA
+const minLengthTextareaField = 10; // минимальное кол-во символов
+// проверка на минимальное кол-во символов и скрытие ошибки
+const checkTextareaLength = (textarea, minLength) => {
+	if (textarea.value.length >= minLength) {
+		textarea.nextSibling.nextElementSibling.classList.add("hidden");
 	}
 };
-
-document.querySelectorAll("input[name=phone]").forEach(function (element) {
-	element.addEventListener('focus', maskphone);
-	element.addEventListener('input', maskphone);
+// CHANGE textarea для всез браузеров
+$$("textarea").forEach(function (textarea) {
+	if (textarea.addEventListener) {
+		textarea.addEventListener(
+			"input",
+			function () {
+				// event handling code for sane browsers
+				checkTextareaLength(textarea, minLengthTextareaField);
+			},
+			false
+		);
+	} else if (textarea.attachEvent) {
+		textarea.attachEvent("onpropertychange", function () {
+			// IE-specific event handling code
+			checkTextareaLength(textarea, minLengthTextareaField);
+		});
+	}
 });
 
-const titleModal = document.querySelector('#response_modal h3');
-const textModal = document.querySelector('#response_modal .content p');
-const successArr = ['Спасибо!', 'Ваша заявка успешно отправлена!'];
-const errorArr = ["Ошибка!", "Перезагрузите страницу и попробуйте снова"];
+// BUTTON
+// Состояние кнопки
+const stateBtn = (btn, value, disable = false) => {
+	btn.value = value;
+	btn.disabled = disable;
+};
 
-// function getCookie(name) {
-// 	var matches = document.cookie.match(new RegExp(
-// 	"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-// 	))
-// 	return matches ? decodeURIComponent(matches[1]) : undefined
-// }
+const showErrorMes = (form, el, text) => {
+	let field = form.querySelector(el);
+	field.innerText = text;
+	field.classList.remove("hidden");
+};
 
-document.querySelectorAll("form").forEach(function(form) {
-	const btn = form.querySelector('button');
+const showMessageModal = (messageModal, icon, message) => {
+	document.querySelectorAll(".modal-overlay").forEach((el) => {
+		el.classList.add("hidden");
+	});
+	messageModal.querySelector("#icon").innerHTML = icon;
+	messageModal.querySelector("p").innerHTML = message;
+	messageModal.classList.remove("hidden");
+};
 
-	form.addEventListener('submit', async function(e) {
-		e.preventDefault();
+// FORMS
+// Отправка всех форм
+$$("form").forEach((form) => {
+	const btn = form.querySelector('input[type="submit"]');
+	form.onsubmit = async (event) => {
+		event.preventDefault();
+		stateBtn(btn, "Отправляем...", true);
 
-		const btnText = btn.textContent;
+		const agree = form.querySelector('[name="agree"]');
+		const phone = form.querySelector('[name="phone"]');
+		const errorIcon =
+			'<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#ed1c24" d="M26,0A26,26,0,1,0,52,26,26,26,0,0,0,26,0Zm9.6,17.5a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2Zm-19.2,0a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2ZM39.65,40.69a.93.93,0,0,1-.45.11,1,1,0,0,1-.89-.55,13.81,13.81,0,0,0-24.62,0,1,1,0,1,1-1.78-.9,15.8,15.8,0,0,1,28.18,0A1,1,0,0,1,39.65,40.69Z"></path></svg>';
+		const successIcon =
+			'<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#279548" d="M26,0A26,26,0,1,0,52,26,26,26,0,0,0,26,0Zm9.6,17.5a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2Zm-19.2,0a2,2,0,1,1-2,2A2,2,0,0,1,16.4,17.5ZM40.09,32.15a15.8,15.8,0,0,1-28.18,0,1,1,0,0,1,1.78-.9,13.81,13.81,0,0,0,24.62,0,1,1,0,1,1,1.78.9Z"></path></svg>';
+		const errorText =
+			'<b class="text-bold block text-2xl mb-4">Упс!</b> Что-то пошло не так. Перезагрузите страницу и попробуйте снова. ';
+		let successText = "";
+		const messageModal = document.getElementById("message-modal");
 
-		var formData = new FormData(form);
-		const params = new URLSearchParams([...new FormData(e.target).entries()]);
-
-		btn.innerHTML = 'Отправляем...';
-		btn.setAttribute('disabled', true);
-
-		if(e.target.classList.contains('has-error')) {
-			console.log(btnText);
-			btn.innerHTML = btnText;
-			btn.removeAttribute('disabled');
-			return false;
+		successText =
+			'<b class="text-bold block text-2xl mb-4">Спасибо!</b> В скором времени мы свяжемся с Вами!';
+		if (!phone.value.length) {
+			showErrorMes(form, ".phone", "Телефон является обязательным полем");
+			stateBtn(btn, "Отправить");
+			return;
+		} else {
+			const phoneRe = new RegExp(/^\+7 [0-9]{3} [0-9]{3}-[0-9]{2}-[0-9]{2}$/);
+			if (!phoneRe.test(phone.value)) {
+				showErrorMes(form, ".phone", "Введен некорректный номер телефона");
+				stateBtn(btn, "Отправить");
+				return;
+			}
 		}
 
-		if(getCookie('fta')) {
-			formData.append("fta", true);
+		// если флажок не установлен - фронт
+		if (!agree.checked) {
+			showErrorMes(form, ".agree", "Чтобы продолжить, установите флажок");
+			stateBtn(btn, "Отправить");
+			return;
 		}
-
-		var url = window.location.href;
-		var replUrl = url.replace('?', '&');
-
-		formData.append("page", window.location.origin + window.location.pathname);
-		window.location.search.slice(1).split("&").forEach(function(pair) {
-			var param = pair.split("=");
-			formData.append(param[0], param[1]);
-		});
-		if(getCookie('__gtm_campaign_url')) {
-			var source = new URL(getCookie('__gtm_campaign_url'));
-			source.search.slice(1).split("&").forEach(function(pair) {
+		let formData = new FormData(form);
+		const params = new URLSearchParams([...new FormData(event.target).entries()]);
+		formData.append(
+			"page_url",
+			window.location.origin + window.location.pathname
+		);
+		window.location.search
+			.slice(1)
+			.split("&")
+			.forEach(function (pair) {
 				var param = pair.split("=");
 				formData.append(param[0], param[1]);
 			});
-		}
-
 		for (const pair of formData) {
 			params.append(pair[0], pair[1]);
 		}
-
-		await fetch('https://alexsab.ru/lead/autoholding-renault/', {
-			method: 'POST',
-			mode: 'cors',
-			cache: 'no-cache',
-			credentials: 'same-origin',
+		// await fetch('https://alexsab.ru/lead/test/', {
+		await fetch("https://alexsab.ru/lead/livan/alpha/", {
+			method: "POST",
+			mode: "cors",
+			cache: "no-cache",
+			credentials: "same-origin",
 			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded',
+				"Content-Type": "application/x-www-form-urlencoded",
 			},
-			body: params
+			body: params,
 		})
-		.then(res => res.json())
-		.then(data => {
-			form.reset();
-			btn.innerHTML = btnText;
-			btn.removeAttribute('disabled');
-			Alpine.store('state').isModalOpen = false;
-			Alpine.store('modalShow').on = 0;
-			titleModal.innerText = successArr[0];
-			textModal.innerText = successArr[1];
-			Alpine.store('state').isResponseModalOpen = true;
-			console.log(data);
-		})
-		.catch(error => {
-			console.error("Ошибка отправки данных формы: " + error);
-			btn.innerHTML = btnText;
-			btn.removeAttribute('disabled');
-			Alpine.store('state').isModalOpen = false;
-			Alpine.store('modalShow').on = 0;
-			titleModal.innerText = errorArr[0];
-			textModal.innerText = errorArr[1];
-			Alpine.store('state').isResponseModalOpen = true;
-		});
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				stateBtn(btn, "Отправить");
+				if (data.answer == "required") {
+					showErrorMes(form, data.field, data.message);
+					return;
+				} else if (data.answer == "error") {
+					showMessageModal(messageModal, errorIcon, errorText + "<br>" + data.error);
+				} else {
+					showMessageModal(messageModal, successIcon, successText);
+				}
+				form.reset();
+			})
+			.catch((error) => {
+				console.error("Ошибка отправки данных формы: " + error);
+				showMessageModal(messageModal, errorIcon, errorText + "<br>" + error);
+				stateBtn(btn, "Отправить");
+			});
 		return false;
-	});
+	};
 });

@@ -1,0 +1,22 @@
+@mixin font($fname, $fstyle, $fweight, $furl) {
+	@font-face {
+		font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		font-display: "swap";
+		src: url($furl) format("woff2");
+	}
+}
+
+// @include font("Roboto", normal, 300, "./fonts/Roboto-Light.woff2");
+// @include font("Roboto", normal, 400, "./fonts/Roboto-Regular.woff2");
+// @include font("Roboto", normal, 500, "./fonts/Roboto-Medium.woff2");
+// @include font("Roboto", normal, 700, "./fonts/Roboto-Bold.woff2");
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+@layer base {
+	body {
+		@apply text-base relative;
+	}
+}

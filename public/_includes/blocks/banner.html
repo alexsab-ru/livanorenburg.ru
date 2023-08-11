@@ -1,0 +1,52 @@
+<section class="banner relative pb-[56.25%] max-[400px]:pb-[70%]">
+    <div class="absolute inset-0">
+        <div class="swiper banner-slider h-full text-white">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide banner-slide" data-swiper-autoplay="4000">
+                    <div class="absolute inset-0 bg-black/50 z-[1]"></div>
+                    <div class="container h-full relative z-[2]">
+                        <div class="h-full flex flex-col justify-center">
+                            <h2 class="text-lg sm:text-3xl md:text-4xl lg:text-5xl uppercase font-bold" data-swiper-parallax="-20%">Новые автомобили по&nbsp;цене заводов изготовителей!</h2>
+                        <p
+                            data-swiper-parallax="-60%"
+                            class="text-xs sm:text-xl md:text-2xl sm:mt-5 mb-4 sm:mb-10"
+                        >
+                            Уже доступны для бронирования в&nbsp;дилерском центре Альфа в&nbsp;Самаре!
+                        </p>
+                        <div data-swiper-parallax="-55%">
+                            <a
+                                class="popup-link btn white btn-o text-xs sm:text-base !py-1 sm:!py-3"
+                                href="#common-modal"
+                                data-title="Узнать подробнее"
+                                data-form_name="Узнать подробнее. Баннер"
+                            >
+                                Узнать подробнее
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                    <img
+                        src="{{ 'img/banner.jpg' | relative_url }}"
+                        class="absolute inset-0 h-full w-full object-cover object-center"
+                        alt="ALT"
+                        loading="lazy"
+                    />
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+            </div>
+
+            <div class="swiper-pagination banner-pagination"></div>
+
+            <div class="autoplay-progress">
+                <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="20"></circle>
+                </svg>
+                <span></span>
+            </div>
+
+            <div class="swiper-button-prev banner-button-prev !hidden md:!flex"></div>
+            <div class="swiper-button-next banner-button-next !hidden md:!flex"></div>
+
+        </div>
+    </div>
+</section>

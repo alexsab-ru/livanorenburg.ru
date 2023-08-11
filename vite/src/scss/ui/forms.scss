@@ -1,0 +1,24 @@
+span[class^="fake-checkbox"] {
+	@apply before:content-[''] 
+	before:absolute 
+	before:left-1/2 
+	before:top-1/2 
+	before:-translate-x-1/2
+	before:-translate-y-1/2
+	before:w-2.5 before:h-2.5
+	before:opacity-0
+	before:transition-opacity;
+}
+.fake-checkbox-black {
+	@apply before:bg-black border-black;
+}
+.fake-checkbox-white {
+	@apply before:bg-white border-white;
+}
+
+input[type="checkbox"]:checked ~ div > .fake-checkbox-black {
+	@apply before:opacity-100;
+}
+input[type="checkbox"]:checked ~ div > .fake-checkbox-white {
+	@apply before:opacity-100;
+}

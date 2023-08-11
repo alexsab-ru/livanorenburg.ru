@@ -29,6 +29,7 @@
   "license": "ISC",
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/compiler-sfc": "^3.2.45",
     "autoprefixer": "^10.4.14",
     "concurrently": "^8.2.0",
     "cross-env": "^7.0.3",
@@ -38,5 +39,8 @@
     "tailwindcss": "^3.3.2",
     "vite": "^4.0.4",
     "vite-plugin-live-reload": "^3.0.1"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.2.96"
   }
 }

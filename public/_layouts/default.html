@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'ru' }}" class="min-h-screen">
 {%- include head.html -%}
-<body class="relative flex flex-col min-h-screen">
+<body>
 
 	{%- include header.html -%}
 	{%- include blocks/nav.html -%}
 
-	<main class="flex-grow">
+	<main>
 		{{ content }}
 	</main>
 
@@ -14,10 +14,10 @@
 	{%- include blocks/modals.html -%}
 
 	{% if jekyll.environment == "development" %}
-		<script type="module" src="{{ site.vitehost | append: "/src/js/index.js" }}"></script>
+		<script type="module" src="{{ site.vitehost | append: "/src/js/app.js" }}"></script>
 	{% else %}
-		{% if site.data.manifest and site.data.manifest['src/js/index.js'] and site.data.manifest['src/js/index.js'].file %}
-		<script type="module" src=".{{ site.data.manifest['src/js/index.js'].file | relative_url }}"></script>
+		{% if site.data.manifest and site.data.manifest['src/js/app.js'] and site.data.manifest['src/js/app.js'].file %}
+		<script type="module" src=".{{ site.data.manifest['src/js/app.js'].file | relative_url }}"></script>
 		{% endif %}
 	{% endif %}
 
