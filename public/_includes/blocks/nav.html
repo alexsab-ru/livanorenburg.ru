@@ -20,11 +20,11 @@
 		{% assign children = site.pages | children_of: my_page | sort: 'order' %}
 			{% if my_page.child != true and my_page.menu %}
 			<li class="flex-grow relative group">
-				<a href="{{ my_page.url }}" class="block max-lg:px-4 lg:text-center py-3 font-semibold hover:bg-gray-200 transition {% if page.url contains my_page.url %} bg-gray-200 {%endif%}">{{ my_page.menu | default: page.title }}</a>
+				<a href="{{ my_page.url | relative_url }}" class="block max-lg:px-4 lg:text-center py-3 font-semibold hover:bg-gray-200 transition {% if page.url contains my_page.url %} bg-gray-200 {%endif%}">{{ my_page.menu | default: page.title }}</a>
 				{% if children %}
 				<ul class="lg:absolute top-full w-full lg:opacity-0 lg:invisible bg-white group-hover:opacity-100 group-hover:visible shadow-2xl">
 					{% for child in children %}
-					<a href="{{child.url}}" class="max-lg:pl-10 pl-5 py-3 block hover:bg-gray-200 transition {% if child.url == page.url %} bg-gray-200 {%endif%}">{{ child.menu }}</a>
+					<a href="{{child.url | relative_url}}" class="max-lg:pl-10 pl-5 py-3 block hover:bg-gray-200 transition {% if child.url == page.url %} bg-gray-200 {%endif%}">{{ child.menu }}</a>
 					{% endfor %}
 				</ul>
 			{% endif %}
