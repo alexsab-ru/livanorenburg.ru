@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "../../../node_modules/@mdi/font/css/materialdesignicons.min.css";
+@import "/assets/libs/swiper/swiper.css";
+@import "/assets/libs/mdi/css/materialdesignicons.css";
 
 @import 'general';
 @import 'ui/slider';
