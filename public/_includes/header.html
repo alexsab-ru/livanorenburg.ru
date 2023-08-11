@@ -1,4 +1,6 @@
-<header class="sticky md:fixed w-full top-0 left-0 bg-white/90 z-30 shadow-2xl">
+<header 
+    class="w-full top-0 left-0 bg-white/90 z-30 shadow-2xl {% if page.url == '/' %} sticky md:fixed {% else %} sticky {% endif %}"
+>
     <div class="container">
         <div class="flex max-[450px]:flex-col items-center max-[450px]:justify-center justify-between max-[450px]:gap-3 py-2 md:py-4">
             <a
@@ -11,7 +13,7 @@
                 <div
                     class="text-xs sm:text-xl lg:text-2xl leading-none uppercase tracking-wider lg:tracking-normal"
                 >
-                    Центр Оренбург
+                    {{ site.logo_name }}
                 </div>
             </a>
             <div class="top_addr hidden xl:block">

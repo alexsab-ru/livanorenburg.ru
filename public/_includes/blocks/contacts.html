@@ -1,10 +1,10 @@
-<section class="bg-gray-100 pt-20">
+<section class="pt-20">
     <div class="container">
         <h2 class="text-xl sm:text-4xl font-medium mb-14">Наши контакты</h2>
     </div>
-    <div class="relative h-auto lg:h-[450px]">
+    <div class="relative h-auto lg:h-[470px]">
         <div
-            class="relative lg:absolute lg:max-w-md w-full lg:top-1/2 lg:-translate-y-1/2 py-8 px-4 sm:px-8 z-10 bg-white map-info"
+            class="relative lg:absolute lg:max-w-md w-full lg:top-1/2 lg:-translate-y-1/2 py-8 px-4 sm:px-8 z-10 bg-white shadow-2xl map-info"
         >
             <div
                 class="flex items-center flex-nowrap flex-col sm:flex-row gap-1 sm:gap-4 mb-6"
@@ -15,7 +15,7 @@
                 <div
                     class="text-xl sm:text-2xl leading-none uppercase tracking-wider sm:tracking-normal"
                 >
-                    Центр Оренбург
+                    {{ site.logo_name }}
                 </div>
             </div>
             <div class="flex flex-nowrap gap-2 sm:gap-4 mb-4">
@@ -40,7 +40,7 @@
                 </svg>
                 <div>
                     <div class="font-medium mb-2 sm:text-lg">
-                        {{ site.address }}
+                        {{ site.postal_code }}, {{ site.address }}
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                     />
                 </svg>
                 <div class="font-medium mb-2 sm:text-lg">
-                    Ежедневно с&nbsp;08:00 до&nbsp;20:00 без перерывов и&nbsp;выходных
+                    {{ site.office_hours }}
                 </div>
             </div>
             <div class="flex flex-nowrap gap-2 sm:gap-4 mb-4">
@@ -97,7 +97,7 @@
         <div
             id="map"
             class="map overflow-hidden bg-cover bg-center static w-full h-[400px] lg:h-full"
-            style="background-image: url({{ 'img/map_bg.jpg' | relative_url }});"
+            style="background-image: url({{ 'img/map_bg.jpg' | relative_url }} )"
         ></div>
     </div>
 </section>

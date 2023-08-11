@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'ru' }}" class="min-h-screen">
 {%- include head.html -%}
-<body>
+<body class="flex flex-col min-h-screen">
 
 	{%- include header.html -%}
 	{%- include blocks/nav.html -%}
 
-	<main>
+	<main class="flex-grow">
 		{{ content }}
 	</main>
 
