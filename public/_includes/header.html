@@ -1,8 +1,8 @@
 <header 
-    class="w-full top-0 left-0 bg-white/90 z-30 shadow-2xl {% if page.url == '/' %} sticky md:fixed {% else %} sticky {% endif %}"
+    class="w-full top-0 left-0 bg-white z-50 transition-all duration-200 ease-out-expo {% if page.url == '/' %} sticky md:fixed {% else %} sticky {% endif %}"
 >
     <div class="container">
-        <div class="flex max-[450px]:flex-col items-center max-[450px]:justify-center justify-between max-[450px]:gap-3 py-2 md:py-4">
+        <div class="flex max-[450px]:flex-col items-center max-[450px]:justify-center justify-between max-[450px]:gap-3 h-[80px]">
             <a
                 href="{{ '/' | relative_url }}"
                 class="flex items-center flex-nowrap justify-center flex-col lg:flex-row gap-1 lg:gap-4"
