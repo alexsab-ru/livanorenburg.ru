@@ -7,8 +7,8 @@ work:
   hours: 
   when: 
 h1: 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://alexsab-ru.github.io/livanorenburg.ru" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/livanorenburg.ru" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 destination: ../_site/
 
