@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "/assets/libs/swiper/swiper.css";
-@import "/assets/libs/mdi/css/materialdesignicons.css";
+@import "/assets/libs/swiper/swiper-bundle.css";
 
 @import 'general';
 @import 'ui/slider';
