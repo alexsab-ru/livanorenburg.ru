@@ -4,12 +4,12 @@
     <div class="container">
         <div class="grid min-[500px]:grid-cols-2 lg:grid-cols-3 gap-5">
             {%- for model in modelList -%}
-                <div class="text-center shadow-2xl py-4 md:py-8 max-md:px-4 transition-shadow duration-300 hover:shadow-lg">
+                <div class="text-center shadow-2xl py-5 px-5 transition-shadow duration-300 hover:shadow-lg">
                     <a href="{{ model.url | relative_url }}" class="block">
                         <img src="{{ model.thumb | relative_url }}" class="max-w-full w-full h-auto" alt="{{ model.title }}">
                     </a>
                     <h3 class="font-medium text-xl md:text-2xl mb-8">{{ model.title }}</h3>
-                    <a href="{{ model.url | relative_url }}" class="btn black text-sm max-[500px]:block inline-block">Подробнее о модели</a>
+                    <a href="{{ model.url | relative_url }}" class="btn black text-sm block">Подробнее о модели</a>
                 </div>
             {%- endfor -%}
         </div>

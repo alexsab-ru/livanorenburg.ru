@@ -26,3 +26,21 @@ document
 				: "none";
 		window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
 	});
+
+const siteNav = document.getElementById("site_nav");
+
+if (siteNav) {
+	document.getElementById("mobile-btn-menu").addEventListener("click", () => {
+		siteNav.classList.remove("translate-x-full");
+	});
+
+	document.getElementById("close-mobile-menu").addEventListener("click", () => {
+		siteNav.classList.add("translate-x-full");
+	});
+
+	document.addEventListener("keydown", (e) => {
+		if (e.key.toLocaleLowerCase() === "escape") {
+			siteNav.classList.add("translate-x-full");
+		}
+	});
+}

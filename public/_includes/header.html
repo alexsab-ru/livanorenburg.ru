@@ -1,39 +1,48 @@
 <header 
-    class="w-full top-0 left-0 bg-white/90 z-50 transition-all duration-200 ease-out-expo {% if page.url == '/' %} sticky md:fixed {% else %} sticky {% endif %}"
+	class="w-full top-0 left-0 bg-white lg:bg-white/90 z-50 transition-all duration-200 ease-out-expo max-lg:shadow-xl {% if page.url == '/' %} sticky md:fixed {% else %} sticky {% endif %}"
 >
-    <div class="container">
-        <div class="flex max-[450px]:flex-col items-center max-[450px]:justify-center justify-between max-[450px]:gap-3 h-[80px]">
-            <a
-                href="{{ '/' | relative_url }}"
-                class="flex items-center flex-nowrap justify-center flex-col lg:flex-row gap-1 lg:gap-4"
-            >
-                <div class="lg:pr-4 lg:border-r border-r-[#628788]">
-                    <img src="{{ 'img/logo.svg' | relative_url }}" class="h-10" alt="Livan" />
-                </div>
-                <div
-                    class="text-xs sm:text-xl lg:text-2xl leading-none uppercase tracking-wider lg:tracking-normal"
-                >
-                    {{ site.logo_name }}
-                </div>
-            </a>
-            <div class="top_addr hidden xl:block">
-                {{ site.address }}
-            </div>
-            <a
-                href="tel:{% include utils/phonef.html phone=site.phone %}"
-                class="top_phone font-medium md:text-lg"
-                >{{ site.phone }}</a
-            >
+	<div class="container">
+		<div class="flex items-center justify-between max-[450px]:gap-3 lg:h-[80px] max-lg:py-2">
+			<a
+				href="{{ '/' | relative_url }}"
+				class="flex items-center flex-nowrap justify-center flex-col lg:flex-row gap-1 lg:gap-4"
+			>
+				<div class="lg:pr-4 lg:border-r border-r-[#628788]">
+					<img src="{{ 'img/logo.svg' | relative_url }}" class="max-[400px]:h-5 h-10" alt="Livan" />
+				</div>
+				<div
+					class="max-[400px]:text-[8px] text-xs sm:text-xl lg:text-2xl leading-none uppercase tracking-wider lg:tracking-normal"
+				>
+					{{ site.logo_name }}
+				</div>
+			</a>
+			<div class="top_addr hidden xl:block">
+				{{ site.address }}
+			</div>
+			<a
+				href="tel:{% include utils/phonef.html phone=site.phone %}"
+				class="max-md:hidden top_phone font-medium md:text-lg"
+				>{{ site.phone }}</a
+			>
 
-            <a
-                class="popup-link btn flex-shrink-0 !px-3 md:!px-14 !py-2 md:!py-3 text-xs md:text-base"
-                href="#common-modal"
-                data-title="Заказать звонок"
-                data-form_name="Заказ звонка. Шапка"
-            >
-                Заказать звонок
-            </a>
+			<a
+				class="popup-link btn flex-shrink-0 !px-3 sm:!px-14 !py-2 sm:!py-3 text-xs md:text-base"
+				href="#common-modal"
+				data-title="Заказать звонок"
+				data-form_name="Заказ звонка. Шапка"
+			>
+				Заказать звонок
+			</a>
 
-        </div>
-    </div>
+			<button 
+				class="w-10 h-10 flex items-center justify-center lg:hidden outline-none text-black mobile-btn"
+				id="mobile-btn-menu"
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mobile-btn">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+				</svg>				  
+			</button>
+
+		</div>
+	</div>
 </header>
