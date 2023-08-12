@@ -1,11 +1,11 @@
 {%- assign default_paths = site.html_pages | sort: 'order' | map: "path" -%}
 
 <nav
-	class="bg-white/90 max-lg:fixed max-lg:max-w-[450px] w-full max-lg:right-0 max-lg:h-screen max-lg:!top-0 top-[80px] transition-transform lg:transition-all duration-300 ease-out-expo z-50 shadow-2xl border-t max-lg:py-12 lg:!translate-x-0 {% if page.url == '/' %} sticky md:fixed {% else %} sticky {% endif %}"
+	class="bg-white/90 max-lg:fixed max-lg:max-w-[450px] w-full max-lg:right-0 max-lg:h-screen max-lg:!top-0 top-[80px] transition-transform lg:transition-all duration-300 ease-out-expo z-50 shadow-2xl border-t max-lg:py-12 translate-x-full lg:!translate-x-0 {% if page.url == '/' %} sticky md:fixed {% else %} fixed lg:sticky {% endif %}"
 	id="site_nav"
 >
 	<button
-		class="absolute top-1 right-2 w-10 h-10 flex items-center justify-center lg:hidden outline-none text-white"
+		class="absolute top-1 right-2 w-10 h-10 flex items-center justify-center lg:hidden outline-none text-black"
 		@click="mobile = false"
 		>
 		<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -20,11 +20,11 @@
 		{% assign children = site.pages | children_of: my_page | sort: 'order' %}
 			{% if my_page.child != true and my_page.menu %}
 			<li class="flex-grow relative group">
-				<a href="{{ my_page.url | relative_url }}" class="block max-lg:px-4 lg:text-center py-3 font-semibold hover:bg-gray-200 transition {% if page.url contains my_page.url %} bg-gray-200 {%endif%}">{{ my_page.menu | default: page.title }}</a>
+				<a href="{{ my_page.url | relative_url }}" class="block max-lg:px-4 lg:text-center py-3 font-semibold hover:bg-accent hover:text-white transition {% if page.url contains my_page.url %} bg-accent/70 text-white {%endif%}">{{ my_page.menu | default: page.title }}</a>
 				{% if children %}
 				<ul class="lg:absolute top-full w-full lg:opacity-0 lg:invisible bg-white group-hover:opacity-100 group-hover:visible shadow-2xl">
 					{% for child in children %}
-					<a href="{{child.url | relative_url}}" class="max-lg:pl-10 pl-5 py-3 block hover:bg-gray-200 transition {% if child.url == page.url %} bg-gray-200 {%endif%}">{{ child.menu }}</a>
+					<a href="{{child.url | relative_url}}" class="max-lg:pl-10 pl-5 py-3 block hover:bg-gray-200 transition {% if child.url == page.url %} bg-gray-100 {%endif%}">{{ child.menu }}</a>
 					{% endfor %}
 				</ul>
 			{% endif %}
