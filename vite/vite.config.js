@@ -37,7 +37,7 @@ export default defineConfig({
   // base: '',
   base: process.env.APP_ENV === 'development'
     ? '/'
-    : '/dist/',
+    : '../',
 
   build: {
     // output dir for production build
