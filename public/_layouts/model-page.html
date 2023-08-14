@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+{%- assign id = page.id -%}
+
+{%- if id == nill or id == '' -%}
+    <p class="text-red-500">Требуется обязательный параметр <b class="font-bold">ID</b></p>
+{%- else -%}
+    {%- assign model = site.data.models[id] -%}
+    {%- include blocks/model/hero.html model = model -%}
+    {%- assign sections = model.sections -%}
+    {%- if sections.size > 0 -%}
+    {%- for section in sections -%}
+        {%- case section['id'] -%}
+            {%- when 'design' -%}
+                {%- include blocks/model/design.html section = section -%}
+            {%- when 'exterior' -%}
+                {%- include blocks/model/exterior.html section = section -%}
+            {%- else -%}
+                DEFAULT
+        {%- endcase -%}
+    {%- endfor -%}
+    {%- endif -%}
+{%- endif -%}
