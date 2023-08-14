@@ -13,7 +13,7 @@
 	{% endif %}
 
 	<meta itemprop="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-	
+
 	<meta property="og:url" content="/" />
 	<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
 	<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
@@ -23,8 +23,6 @@
 	<meta name="theme-color" content="#fff26e">
 
 	<link rel="shortcut icon" href="{{ 'img/favicon-196x196.png' | relative_url }}" type="image/x-icon">
-
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
 
 {% if jekyll.environment == "development" %}
 	<link rel="stylesheet" href="{{ site.vitehost | append: "/src/scss/app.scss" }}">
