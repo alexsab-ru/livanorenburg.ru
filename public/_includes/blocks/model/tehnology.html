@@ -1,0 +1,32 @@
+{%- assign s = include.section -%}
+
+<section class="py-20 font-light" id="{{ s.id }}">
+    <div class="container">
+        {%- if s.name -%}
+            <p class="text-accent text-sm">{{ s.name }}</p>
+        {%- endif -%}
+        <h2 class="text-3xl sm:text-5xl font-normal lg:w-1/2">{{ s.title }}</h2>
+        {%- if s.descr -%}
+            <p class="sm:text-lg mt-2 sm:mt-5 lg:w-1/2">{{ s.descr }}</p>
+        {%- endif -%}
+        {%- assign items = s.items -%}
+        {%- if items.size > 0 -%}
+            <div class="mt-10 lg:mt-20 relative">
+                <div class="swiper interior-slider">
+                    <div class="swiper-wrapper">
+                    {%- for item in items -%}
+                        <div class="swiper-slide">
+                            <a href="{{ item.img | relative_url}}" class="glightbox" data-gallery="gallery-interior" data-glightbox="title: {{ item.title }};description: {{ item.descr }}">
+                                <img src="{{ item.img | relative_url}}" class="aspect-[4/3] w-full" alt="ALT">
+                            </a>
+                            <h4 class="text-lg font-medium mt-4">{{ item.title }}</h4>
+                            <p class="text-sm">{{ item.descr }}</p>
+                        </div>
+                    {%- endfor -%}
+                    </div>
+                </div>
+                <div class="swiper-pagination interior-pagination !-bottom-8"></div>
+            </div>
+        {%- endif -%}
+    </div>
+</section>
