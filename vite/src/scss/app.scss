@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+$mdi-font-path: '@mdi/font/fonts';
+@import '@mdi/font/scss/materialdesignicons.scss';
+
 @import "/assets/libs/swiper/swiper-bundle.css";
 
 @import 'general';
