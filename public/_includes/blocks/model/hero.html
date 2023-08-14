@@ -1,0 +1,19 @@
+{%- assign model = include.model -%}
+
+<section class="relative aspect-[3/1] text-white z-[1]">
+    <img src="{{ model['hero-img'] | relative_url }}" class="absolute inset-0 w-full h-full object-cover -z-[1]" alt="{{ page.title }}">
+    <div class="absolute inset-0 w-full h-full bg-black/50 -z-[1]"></div>
+
+    <div class="container h-full">
+        <div class="flex flex-col justify-between h-full py-10">
+            {%- include breadcrumbs.html -%}
+            <div class="space-y-4">
+                <h1 class="text-6xl uppercase tracking-wider">{{ page.title }}</h1>
+                {%- if model['slogan'] and model['slogan'] != '' -%}
+                    <p class="text-xl font-light">{{ model['slogan'] }}</p>
+                {%- endif -%}
+            </div>
+        </div>
+    </div>
+
+</section>
