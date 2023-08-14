@@ -5,9 +5,9 @@
         {%- if s.name -%}
             <p class="text-accent text-sm">{{ s.name }}</p>
         {%- endif -%}
-        <h2 class="text-5xl font-normal">{{ s.title }}</h2>
+        <h2 class="text-3xl sm:text-5xl font-normal">{{ s.title }}</h2>
         {%- if s.descr -%}
-            <p class="text-lg mt-5 w-1/2">{{ s.descr }}</p>
+            <p class="sm:text-lg mt-2 sm:mt-5 lg:w-1/2">{{ s.descr }}</p>
         {%- endif -%}
         {%- if s.img -%}
             <img src="{{ s.img | relative_url }}" class="max-w-full w-full h-auto mt-10" alt="{{ s.name }}">

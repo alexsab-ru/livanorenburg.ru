@@ -5,6 +5,15 @@
 	}
 }
 
+.interior-pagination{
+	.swiper-pagination-bullet{
+		@apply bg-gray-500 #{!important};
+		&.swiper-pagination-bullet-active {
+			@apply bg-accent #{!important};
+		}
+	}
+}
+
 .swiper-button-next,
 .swiper-button-prev {
 	@apply bg-white text-black h-32 w-12 top-1/2 -translate-y-1/2 opacity-20 transition-opacity duration-500 ease-out hover:opacity-60;

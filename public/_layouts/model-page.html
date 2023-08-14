@@ -17,6 +17,8 @@ layout: default
                 {%- include blocks/model/design.html section = section -%}
             {%- when 'exterior' -%}
                 {%- include blocks/model/exterior.html section = section -%}
+            {%- when 'interior' -%}
+                {%- include blocks/model/interior.html section = section -%}
             {%- else -%}
                 DEFAULT
         {%- endcase -%}
