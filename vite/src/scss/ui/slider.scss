@@ -5,7 +5,7 @@
 	}
 }
 
-.interior-pagination{
+.interior-pagination, .tehnology-pagination{
 	.swiper-pagination-bullet{
 		@apply bg-gray-500 #{!important};
 		&.swiper-pagination-bullet-active {

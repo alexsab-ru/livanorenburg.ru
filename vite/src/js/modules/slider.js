@@ -101,3 +101,30 @@ const interiorSlider = new Swiper('.interior-slider', {
 		}
 	  }
 })
+
+const tehnologySlider = new Swiper('.tehnology-slider', {
+	modules: [Pagination, Parallax],
+	slidesPerView: 3,
+	spaceBetween: 20,
+	pagination: {
+		el: ".tehnology-pagination",
+		clickable: true,
+	},
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+		  slidesPerView: 1,
+		  spaceBetween: 10
+		},
+		// when window width is >= 480px
+		600: {
+		  slidesPerView: 2,
+		  spaceBetween: 10
+		},
+		// when window width is >= 640px
+		768: {
+		  slidesPerView: 3,
+		  spaceBetween: 20
+		}
+	  }
+})
