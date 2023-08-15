@@ -1,6 +1,7 @@
 x3pro:
   hero-img: /img/x3Pro/x3pro-hero.jpg
   slogan: Быть свободным
+  price: 1 699 900
   sections:
     - id: design
       name: Дизайн
@@ -43,6 +44,15 @@ x3pro:
         - title: Конструкция подвески шасси
           descr: Конструкция подвески шасси отличается малым весом, что помогает сократить тормозной путь и повысить безопасность.
           img: /img/x3Pro/tehnology/4.png
+    - id: characteristics
+      name: Характеристики
+      title: Комплектация LIVAN X3PRO
+      pdf: /x3pro.pdf
+      items: 
+        - title: Программа «Старт»
+          sale: 100 000
+        - title: Trade-in / LIVAN Finance
+          sale: 80 000
     - id: waranty
       name: Обслуживание
       title: Гарантия и сервис

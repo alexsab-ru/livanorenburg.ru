@@ -1,0 +1,72 @@
+{%- assign s = include.section -%}
+{%- assign price = include.price -%}
+{%- assign chs = site.data[page.id] -%}
+
+<section class="py-20 font-light" id="{{ s.id }}">
+    <div class="container">
+        <div class="grid grid-cols-2 gap-10">
+            <div>
+            {%- if s.name -%}
+                <p class="text-accent text-sm">{{ s.name }}</p>
+            {%- endif -%}
+                <h2 class="text-3xl sm:text-5xl font-normal lg:w-1/2">{{ s.title }}</h2>
+            {%- if s.descr -%}
+                <p class="sm:text-lg mt-2 sm:mt-5 lg:w-1/2">{{ s.descr }}</p>
+            {%- endif -%}
+            {%- assign items = s.items -%}
+            {%- if items.size > 0 -%}
+                <div class="mt-10 relative">
+                    <div class="mb-6 text-xl font-bold">Выгоды при покупке</div>
+                    <div class="flex flex-col border border-gray-100 divide-y divide-y-gray-100 max-w-md mb-10">
+                        {%- for item in items -%}
+                        <div class="flex items-center justify-between gap-4 p-4">
+                            <label class="flex items-center gap-2 flex-nowrap cursor-pointer">
+                                <input type="checkbox" class="w-4 h-4" checked value="{{ item.sale | replace: ' ', '' }}" disabled>
+                                <span class="block">{{ item.title }}</span>
+                            </label>
+                            <span>{{ item.sale }} ₽</span>
+                        </div>
+                        {%- endfor -%}
+                    </div>
+                    <div class="mb-2 text-sm">Стоимость <span class="uppercase">{{ page.title }}</span></div>
+                    <div class="font-bold text-2xl">от {{ price | replace: ' ', '&nbsp;' }} ₽</div>
+                    <a href="{{ s.pdf }}" class="btn black inline-block mt-10" target="_blank">Скачать прайс-лист</a>
+                </div>
+            {%- endif -%}
+            </div>
+            {%- if chs.size > 0 -%}
+            <div class="border-y border-gray-200 divide-y divide-gray-200">
+                {%- for ch in chs -%}
+                    <div class="spoiler-item relative">
+                        <div class="p-4 flex justify-between items-center cursor-pointer spoiler-link" data-id="{{ forloop.index0 }}">
+                            <div class="text-lg font-bold">{{ ch.section }}</div>
+                            <svg class="w-4 stroke-current text-black mt-1.5 plus" viewBox="0 0 18 18" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" style="display: {% if forloop.index0 == 0 %} none {% else %} block {% endif %}">
+                                <path d="M17 9.00007L9 9.00007M9 9.00007L1 9.00007M9 9.00007L9 1M9 9.00007L9 17" stroke-width="1.5" stroke-linecap="round"></path>
+                            </svg>
+                            <svg class="w-4 h-4 stroke-current text-black mt-1.5 minus" viewBox="0 0 18 2" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" style="display: {% if forloop.index0 != 0 %} none {% else %} block {% endif %}">
+                                <path d="M17 1L1 1" stroke-width="1.5" stroke-linecap="round"></path>
+                            </svg>
+                        </div>
+                        <div class="spoiler-content pb-4" style="display: {% if forloop.index0 != 0 %} none {% else %} block {% endif %}">
+                            <table class="table-fixed w-full text-sm font-light">
+                                <tbody>
+                                    {% for val in ch.values %}
+                                    <tr class="odd:bg-gray-50 even:bg-white">
+                                        {% if val.key and val.value %}
+                                        <td class="py-2 px-4">{{ val.key }}</td>
+                                        <td class="py-2 px-4">{{ val.value }}</td>
+                                        {% else %}
+                                        <td class="py-2 px-4">{{ val }}</td>
+                                        {% endif %}
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                {%- endfor -%}
+            </div>
+            {%- endif -%}
+        </div>
+    </div>
+</section>

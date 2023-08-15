@@ -10,6 +10,9 @@
 		{{ content }}
 	</main>
 
+	{%- if page.url contains "/models/" -%}
+		{%- include blocks/model/slogan.html -%}
+	{%- endif -%}
 	{%- include footer.html -%}
 	{%- include blocks/modals.html -%}
 
