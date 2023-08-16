@@ -5,14 +5,18 @@
 
 	{%- include header.html -%}
 	{%- include blocks/nav.html -%}
+	{%- if page.modelBar == true -%}
+	{%- assign currentModel = site.data.models[page.id] -%}
+		{%- include blocks/model-bar.html model = currentModel -%}
+	{%- endif -%}
 
 	<main class="flex-grow">
 		{{ content }}
+		{%- if page.url contains "/models/" -%}
+			{%- include blocks/model/slogan.html -%}
+		{%- endif -%}
 	</main>
 
-	{%- if page.url contains "/models/" -%}
-		{%- include blocks/model/slogan.html -%}
-	{%- endif -%}
 	{%- include footer.html -%}
 	{%- include blocks/modals.html -%}
 

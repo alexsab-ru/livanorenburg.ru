@@ -1,0 +1,39 @@
+{%- assign model = include.model -%}
+{%- if model -%}
+<nav class="bg-[#26282A] text-white/90 sticky top-[80px] lg:top-[129px] left-0 w-full z-40 transition-all duration-[.4s] ease-out-expo shadow-2xl max-lg:py-3" id="model-bar">
+    <div class="container">
+        <div class="flex items-center justify-between">
+
+            <div class="cursor-pointer flex items-center space-x-2" id="model-menu-btn">
+                <div class="uppercase">{{ page.menu }}</div>
+                <svg class="w-4 stroke-current transform transition ease-in-out rotate-0 lg:hidden" viewBox="0 0 12 6" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.6666 1L5.99992 5L1.33325 1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+
+            {%- assign sections = model.sections -%}
+            {%- if sections.size > 0 -%}
+                <ul class="hidden lg:flex justify-center">
+                    {%- for link in sections -%}
+                        <li><a href="#{{ link.id }}" class="text-sm xl:text-base py-3 px-4 2xl:px-6 block transition-colors duration-300 hover:bg-white/10 scroll-link">{{ link.name }}</a></li>
+                    {%- endfor -%}
+                </ul>
+            {%- endif -%}
+
+
+            <div class="text-right flex-shrink-0">от {% include utils/numf.html number=model.price ts=' ' decimals=0 %} ₽</div>
+
+        </div>
+    </div>
+
+    {%- assign sections = model.sections -%}
+    {%- if sections.size > 0 -%}
+    <ul class="bg-[#26282A] absolute top-full w-full py-5 transition-transform duration-300 ease-out-expo invisible opacity-0 -translate-y-5" id="mobile-models-menu">
+        {%- for link in sections -%}
+            <li><a href="#{{ link.id }}" class="block py-3 px-4 transition-colors duration-300 hover:bg-white/10 scroll-link">{{ link.name }}</a></li>
+        {%- endfor -%}
+    </ul>
+    {%- endif -%}
+
+</nav>
+{%- endif -%}

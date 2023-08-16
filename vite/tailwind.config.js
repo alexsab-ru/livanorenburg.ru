@@ -2,7 +2,8 @@ import defaultTheme from 'tailwindcss/defaultTheme'
 import colors from 'tailwindcss/colors'
 
 export const content = [
-  "../**/*.html"
+  "../**/*.html",
+  './src/js/**/*.js'
 ]
 export const theme = {
   container: {

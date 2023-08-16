@@ -2,9 +2,9 @@
 {%- assign price = include.price -%}
 {%- assign chs = site.data[page.id] -%}
 
-<section class="py-20 font-light" id="{{ s.id }}">
+<section class="py-20 font-light section" id="{{ s.id }}">
     <div class="container">
-        <div class="grid grid-cols-2 gap-10">
+        <div class="grid lg:grid-cols-2 gap-10">
             <div>
             {%- if s.name -%}
                 <p class="text-accent text-sm">{{ s.name }}</p>
@@ -28,8 +28,8 @@
                         </div>
                         {%- endfor -%}
                     </div>
-                    <div class="mb-2 text-sm">Стоимость <span class="uppercase">{{ page.title }}</span></div>
-                    <div class="font-bold text-2xl">от {{ price | replace: ' ', '&nbsp;' }} ₽</div>
+                    <div class="mb-2 text-sm">Стоимость <span class="uppercase">{{ page.menu }}</span></div>
+                    <div class="font-bold text-2xl">от {% include utils/numf.html number=price ts=' ' decimals=0 %} ₽</div>
                     <a href="{{ s.pdf }}" class="btn black inline-block mt-10" target="_blank">Скачать прайс-лист</a>
                 </div>
             {%- endif -%}
