@@ -2,7 +2,7 @@
 <html lang="{{ page.lang | default: site.lang | default: 'ru' }}" class="min-h-screen">
 {%- include head.html -%}
 <body class="flex flex-col min-h-screen">
-
+	{%- include body-scripts.html -%}
 	{%- include header.html -%}
 	{%- include blocks/nav.html -%}
 	{%- if page.modelBar == true -%}

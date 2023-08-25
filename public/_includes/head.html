@@ -30,6 +30,7 @@
 	{% if site.data.manifest and site.data.manifest['src/scss/app.scss'] and site.data.manifest['src/scss/app.scss'].file %}
 	<link rel="stylesheet" href="{{ site.data.manifest['src/scss/app.scss'].file | relative_url }}">
 	{% endif %}
+	{%- include head-scripts.html -%}
 {% endif %}
 </head>
 
