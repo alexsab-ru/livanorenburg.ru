@@ -3,6 +3,7 @@
 {%- include head.html -%}
 <body class="flex flex-col min-h-screen">
 	{%- include body-scripts.html -%}
+
 	{%- include header.html -%}
 	{%- include blocks/nav.html -%}
 	{%- if page.modelBar == true -%}
@@ -28,5 +29,6 @@
 		{% endif %}
 	{% endif %}
 
+	{%- include footer-scripts.html -%}
 </body>
 </html>
