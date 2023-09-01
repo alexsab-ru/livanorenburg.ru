@@ -14,8 +14,6 @@ ogrn: 1235600004232
 
 destination: ../_site/
 
-vitehost: "http://127.0.0.1:5133"
-
 # Build settings
 plugins:
   - jekyll-sitemap
