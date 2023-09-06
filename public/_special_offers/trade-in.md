@@ -1,7 +1,7 @@
 ---
 layout: collect-page
 title: Trade-in
-dateTo: с 31 мая
+dateFrom: с 31 мая
 thumb: /img/offers/trade-in/thumb.jpg
 img: /img/offers/trade-in/image.jpg
 order: 2

@@ -1,7 +1,7 @@
 ---
 layout: collect-page
 title: Программа LIVAN FINANCE
-dateTo: с 31 мая
+dateFrom: с 31 мая
 thumb: /img/offers/livan-finance-program/thumb.jpg
 img: /img/offers/livan-finance-program/image.jpg
 order: 3

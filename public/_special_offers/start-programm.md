@@ -1,7 +1,7 @@
 ---
 layout: collect-page
 title: Программа «Старт»
-dateTo: с 31 мая
+dateFrom: с 31 мая
 thumb: /img/offers/start-programm/thumb.png
 img: /img/offers/start-programm/image.jpg
 order: 1
