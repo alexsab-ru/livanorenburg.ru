@@ -5,3 +5,13 @@ menu: Покупателям
 permalink: /buyers/
 order: 2
 ---
+
+{% assign children = site.pages | children_of: page | sort: 'order' %}
+
+{%- if children.size > 0 -%}
+    <div class="container">
+    {%- for child in children -%}
+        <a href="{{ child.url | relative_url }}" class="text-xl">{{ child.title }}</a><br>
+    {%- endfor -%}
+    </div>
+{%- endif -%}
