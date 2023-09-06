@@ -19,7 +19,7 @@
     "jekyll_win": "for /f \"tokens=2 delims=:\" %i in ('ipconfig ^| findstr \"IPv4 Address\"') do @set IP=%i && cd public && cross-env JEKYLL_ENV=development bundle exec jekyll serve --host %IP% --port 5134 -l -o",
     "jekyll_build_win": "cd public && cross-env JEKYLL_ENV=production bundle exec jekyll build -l -o",
     "preview_win": "for /f \"tokens=2 delims=:\" %i in ('ipconfig ^| findstr \"IPv4 Address\"') do @set IP=%i && cd public && cross-env JEKYLL_ENV=production bundle exec jekyll serve --host %IP% --port 5134 -l -o",
-    "dev_win": "for /f \"tokens=2 delims=:\" %i in ('ipconfig ^| findstr \"IPv4 Address\"') do @set IP=%i && concurrently \"cd vite && cross-env APP_ENV=development vite dev --host %IP% --port 5133\" \"cd public && cross-env JEKYLL_ENV=development bundle exec jekyll serve --host %IP% --port 5134 -l -o --incremental --limit_posts 0\"",
+    "dev_win": "for /f \"tokens=2 delims=:\" %i in ('ipconfig ^| findstr \"IPv4 Address\"') do @set IP=%i && concurrently \"cd vite && cross-env APP_ENV=development vite dev --host %IP% --port 5133\" \"cd public && cross-env JEKYLL_ENV=development bundle exec jekyll serve --host %IP% --port 5134 -l -o --incremental --trace\"",
     "deploy_win": "cd vite && cross-env APP_ENV=production vite build && cd ../public && [ -d _data ] || mkdir _data && mv dist/manifest.json _data/manifest.json && rm -rf assets && mv dist/assets assets",
     "build_win": "cd vite && cross-env APP_ENV=production vite build && cd ../public && [ -d _data ] || mkdir _data && mv dist/manifest.json _data/manifest.json &&  rm -rf assets && mv dist/assets assets && cross-env JEKYLL_ENV=production bundle exec jekyll build",
     "\n# https://alexsab.t.me": ""

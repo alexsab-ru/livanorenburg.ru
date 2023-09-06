@@ -6,7 +6,7 @@ permalink: /models/
 order: 1
 ---
 
-{% assign models=site.pages | children_of: page | sort: order %}
+{% assign models=site.pages | children_of: page | sort: 'order' %}
 
 {%- if models.size > 0 -%}
     {%- include blocks/model-list.html models = models -%}

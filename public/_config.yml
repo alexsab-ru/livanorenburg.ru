@@ -22,6 +22,11 @@ plugins:
 
 page_excerpts: true
 
+collections:
+  special_offers:
+    output: true
+    permalink: /special-offers/:title
+
 exclude:
   - .sass-cache/
   - .jekyll-cache/
