@@ -48,23 +48,23 @@ const checkTextareaLength = (textarea, minLength) => {
 	}
 };
 // CHANGE textarea для всез браузеров
-$$("textarea").forEach(function (textarea) {
-	if (textarea.addEventListener) {
-		textarea.addEventListener(
-			"input",
-			function () {
-				// event handling code for sane browsers
-				checkTextareaLength(textarea, minLengthTextareaField);
-			},
-			false
-		);
-	} else if (textarea.attachEvent) {
-		textarea.attachEvent("onpropertychange", function () {
-			// IE-specific event handling code
-			checkTextareaLength(textarea, minLengthTextareaField);
-		});
-	}
-});
+// $$("textarea").forEach(function (textarea) {
+// 	if (textarea.addEventListener) {
+// 		textarea.addEventListener(
+// 			"input",
+// 			function () {
+// 				// event handling code for sane browsers
+// 				checkTextareaLength(textarea, minLengthTextareaField);
+// 			},
+// 			false
+// 		);
+// 	} else if (textarea.attachEvent) {
+// 		textarea.attachEvent("onpropertychange", function () {
+// 			// IE-specific event handling code
+// 			checkTextareaLength(textarea, minLengthTextareaField);
+// 		});
+// 	}
+// });
 
 // BUTTON
 // Состояние кнопки

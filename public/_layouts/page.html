@@ -7,10 +7,14 @@ layout: default
         {% include breadcrumbs.html %}
 
         {% if page.title and page.title != '' %}
-        <h1 class="text-3xl sm:text-6xl mb-10">{{ page.title }}</h1>
+        <h1 class="text-3xl sm:text-6xl mb-10 {% if page.titleCenter %} text-center {% endif %}">{{ page.title }}</h1>
+        {% endif %}
+        {% if page.subtitle and page.subtitle != '' %}
+        <p class="max-sm:text-sm {% if page.titleCenter %} text-center {% endif %}">{{ page.subtitle }}</p>
         {% endif %}
 
-        {{ content }}
-
+        
     </div>
 </section>
+
+{{ content }}

@@ -1,8 +1,47 @@
 ---
 layout: page
 title: Корпоративным клиентам
+subtitle: Автомобили LIVAN для вашего бизнеса доступны на специальных условиях <br>Каршеринг, такси, автопарк — каждое наше предложение индивидуально.
+titleCenter: true
 menu: Корпоративным клиентам
 permalink: /clients/
 child: true
 order: 3
 ---
+
+<section class="py-10">
+    <div class="container">
+        <h2 class="text-center mb-10 text-2xl sm:text-4xl">Получить предложение</h2>
+
+        <form class="flex flex-col gap-4 max-w-lg mx-auto">
+            <input type="hidden" name="form" value="Получить предложение. Корпоративным клиентам">
+            <div class="w-full">
+                <input type="tel" name="phone" class="border border-black border-opacity-20 transition-all focus:border-opacity-90 px-4 py-2.5 mb-1.5 outline-none w-full font-normal" placeholder="+7 (999) 999-99-99*">
+                <div class="error-message text-xs text-red-500 hidden phone">Веден некорректный номер телефона</div>
+            </div>
+            <div class="w-full">
+                <input type="email" name="email" class="border border-black border-opacity-20 transition-all focus:border-opacity-90 px-4 py-2.5 mb-1.5 outline-none w-full font-normal" placeholder="Ваше Email">
+            </div>
+            <div class="w-full">
+                <input type="text" name="company-name" class="border border-black border-opacity-20 transition-all focus:border-opacity-90 px-4 py-2.5 mb-1.5 outline-none w-full font-normal" placeholder="Название компании">
+            </div>
+            <div class="w-full">
+                <input type="text" name="inn" class="border border-black border-opacity-20 transition-all focus:border-opacity-90 px-4 py-2.5 mb-1.5 outline-none w-full font-normal" placeholder="ИНН">
+            </div>
+            <div class="w-full">
+                <textarea name="message" class="border border-black border-opacity-20 transition-all focus:border-opacity-90 px-4 py-2.5 mb-1.5 outline-none w-full font-normal h-[130px] overflow-y-auto" placeholder="Текст обращения"></textarea>
+            </div>
+            <label class="cursor-pointer flex items-center flex-wrap">
+                <input type="checkbox" name="agree" class="absolute w-0 h-0 opacity-0 invisible">
+                <div class="flex flex-wrap gap-x-2 text-gray-800">
+                    <span class="fake-checkbox-black mt-0.5 w-4 h-4 border border-black inline-block flex-shrink-0 transition-all relative"></span>
+                    <span>Я согласен на</span> <a href="/privacy-policy.pdf" class="text-black underline transition-all hover:no-underline" target="_blank">обработку персональных данных</a>
+                </div>
+                <div class="error-message text-xs text-red-500 mt-1 w-full hidden agree">Чтобы продолжить, установите флажок</div>
+            </label>
+            <input type="checkbox" name="subscribe" class="absolute w-0 h-0 opacity-0 invisible">
+            <input type="submit" class="btn w-full" value="Отправить">
+        </form>
+
+    </div>
+</section>
