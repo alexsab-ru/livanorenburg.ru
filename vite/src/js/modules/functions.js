@@ -38,7 +38,7 @@ if (siteNav) {
 		siteNav.classList.add("translate-x-full");
 	});
 
-	document.addEventListener("keydown", (e) => {
+	document.addEventListener("keydown", function(e) {
 		if (e.key.toLocaleLowerCase() === "escape") {
 			siteNav.classList.add("translate-x-full");
 		}

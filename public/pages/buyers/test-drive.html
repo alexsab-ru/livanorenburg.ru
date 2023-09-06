@@ -1,8 +1,37 @@
 ---
 layout: page
-title: Тест-драйв
+title: Записаться на тест-драйв
 menu: Тест-драйв
 permalink: /test-drive/
 child: true
 order: 2
 ---
+
+<form class="flex flex-col gap-4 max-w-lg" id="rating-form">
+    <input type="hidden" name="form" value="Запись на тест-драйв">
+    <input type="email" tabindex="-1" name="email" class="h-0 opacity-0 absolute -z-[100]" placeholder="mail@example.com">
+    <div>
+        <p class="text-sm mb-1">Модель</p>
+        <select name="model" class="border border-black border-opacity-20 transition-all focus:border-opacity-90 px-3 py-2.5 mb-1.5 outline-none w-full font-normal">
+            <option value="x3pro" selected>X3PRO</option>
+        </select>
+    </div>
+    <div class="w-full">
+        <input type="text" name="name" class="border border-black border-opacity-20 transition-all focus:border-opacity-90 px-4 py-2.5 mb-1.5 outline-none w-full font-normal" placeholder="Ваше имя">
+        <div class="error-message text-xs text-red-500 hidden name"></div>
+    </div>
+    <div class="w-full">
+        <input type="tel" name="phone" class="border border-black border-opacity-20 transition-all focus:border-opacity-90 px-4 py-2.5 mb-1.5 outline-none w-full font-normal" placeholder="+7 (999) 999-99-99*">
+        <div class="error-message text-xs text-red-500 hidden phone">Веден некорректный номер телефона</div>
+    </div>
+    <label class="cursor-pointer flex items-center flex-wrap">
+        <input type="checkbox" name="agree" class="absolute w-0 h-0 opacity-0 invisible">
+        <div class="flex flex-wrap gap-x-2 text-gray-800">
+            <span class="fake-checkbox-black mt-0.5 w-4 h-4 border border-black inline-block flex-shrink-0 transition-all relative"></span>
+            <span>Я согласен на</span> <a href="/privacy-policy.pdf" class="text-black underline transition-all hover:no-underline" target="_blank">обработку персональных данных</a>
+        </div>
+        <div class="error-message text-xs text-red-500 mt-1 w-full hidden agree">Чтобы продолжить, установите флажок</div>
+    </label>
+    <input type="checkbox" name="subscribe" class="absolute w-0 h-0 opacity-0 invisible">
+    <input type="submit" class="btn w-full" value="Отправить">
+</form>

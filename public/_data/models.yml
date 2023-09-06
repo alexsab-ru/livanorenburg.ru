@@ -1,6 +1,7 @@
 x3pro:
   hero-img: /img/x3Pro/x3pro-hero.jpg
   slogan: Быть свободным
+  modelName: X3PRO
   price: 1699900
   sections:
     - id: design

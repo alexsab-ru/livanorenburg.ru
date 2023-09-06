@@ -13,7 +13,7 @@
 
 	<main class="flex-grow">
 		{{ content }}
-		{%- if page.url contains "/models/" -%}
+		{%- if page.url contains "/models/" or page.url contains "/test-drive/" -%}
 			{%- include blocks/model/slogan.html -%}
 		{%- endif -%}
 	</main>
