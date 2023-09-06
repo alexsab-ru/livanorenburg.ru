@@ -2,21 +2,25 @@
 layout: page
 ---
 
-{%- if page.img -%}
-<img src="{{ page.img | relative_url }}" class="max-w-full w-full h-auto mx-auto mb-10" alt="{{ page.title }}">
-{%- endif -%}
+<section class="pb-10">
+    <div class="container">
+        {%- if page.img -%}
+        <img src="{{ page.img | relative_url }}" class="max-w-full w-full h-auto mx-auto mb-10" alt="{{ page.title }}">
+        {%- endif -%}
 
-<div class="space-y-4">
-    {{ content }}
+        <div class="space-y-4">
+            {{ content }}
 
-    <div class="text-center">
-        <a 
-            class="popup-link btn inline-block mt-6" 
-            href="#common-modal" 
-            data-title="Узнать подробнее" 
-            data-form_name="Узнать подробнее. {{ page.title }}">
-            Подробнее
-        </a>
+            <div class="text-center">
+                <a 
+                    class="popup-link btn inline-block mt-6" 
+                    href="#common-modal" 
+                    data-title="Узнать подробнее" 
+                    data-form_name="Узнать подробнее. {{ page.title }}">
+                    Подробнее
+                </a>
+            </div>
+
+        </div>
     </div>
-
-</div>
+</section>
