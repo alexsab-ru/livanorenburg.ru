@@ -2,19 +2,49 @@
 layout: default
 ---
 
-<section class="py-10">
-    <div class="container">
+{%- if page.gridBanner -%}
+<section 
+    class="max-xl:bg-contain xl:bg-[100%] bg-right-top bg-no-repeat lg:pb-24 max-lg:!bg-none" 
+    {%- if page.bannerImg -%}
+    style="background-image: url('{{page.bannerImg | relative_url}}');"
+    {%- endif -%}
+>
+    <div class="container pt-10">
         {% include breadcrumbs.html %}
-
-        {% if page.title and page.title != '' %}
-        <h1 class="text-3xl sm:text-6xl mb-10 {% if page.titleCenter %} text-center {% endif %}">{{ page.title }}</h1>
-        {% endif %}
-        {% if page.subtitle and page.subtitle != '' %}
-        <p class="max-sm:text-sm {% if page.titleCenter %} text-center {% endif %}">{{ page.subtitle }}</p>
-        {% endif %}
-
-        
+    </div>
+    <div class="container grid grid-cols-1 lg:grid-cols-2">
+        <div class="lg:pb-10 max-w-none lg:pr-8">
+            <h1 class="mb-10 font-bold text-2xl sm:text-3xl lg:text-5xl">{{ page.title }}</h1>
+            {% if page.subtitle and page.subtitle != '' %}
+            <p class="mb-10">{{ page.subtitle }}</p>
+            {% endif %}
+            {%- if page.items -%}
+            <div class="flex flex-wrap gap-x-10">
+                {%- for item in page.items -%}
+                <div class="mb-4">
+                    <div class="text-gray-800 text-4xl font-bold leading-none mb-1">{{ item.title }}</div>
+                    <div class="text-sm font-light">{{ item.sub }}</div>
+                </div>
+                {%- endfor -%}
+            </div>
+            {%- endif -%}
+        </div>
     </div>
 </section>
-
+{%- else -%}
+<section class="py-10">
+	<div class="container">
+        {% include breadcrumbs.html %}
+        {% if page.title and page.title != '' %}
+		<h1 class="text-3xl sm:text-6xl sm:mb-10 {% if page.titleCenter %} text-center {% endif %}">{{ page.title }}</h1>
+		{% endif %} 
+        {% if page.subtitle and page.subtitle != '' %}
+		<p class="max-sm:text-sm {% if page.titleCenter %} text-center {% endif %}">
+			{{ page.subtitle }}
+		</p>
+		{% endif %}
+	</div>
+</section>
+{%- endif -%}
 {{ content }}
+
