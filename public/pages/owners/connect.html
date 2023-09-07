@@ -1,0 +1,53 @@
+---
+layout: default
+title: LIVAN Connect
+menu: LIVAN Коннект
+permalink: /connect/
+child: true
+order: 6
+---
+
+<div x-data="{ currentTab: 'importer' }">
+
+    <section class="relative aspect-video md:aspect-[3.5/1] text-white py-8 md:py-14">
+        <div class="absolute inset-0 bg-gradient-to-bl from-black/0 to-black/60 z-[1]"></div>
+        <img
+        x-bind:src="[ currentTab === 'importer' ? '/img/pages/connect-header-1.png' : '/img/pages/connect-header-2.png' ]"
+            class="absolute inset-0 w-full h-full object-cover"
+            alt="{{ page.title }}"
+        />
+        <div class="container h-full flex flex-col justify-between relative z-[2]">
+            {% include breadcrumbs.html %}
+            <div>
+                <h1 class="font-bold text-2xl sm:text-3xl lg:text-5xl text-white mb-6">
+                    {{ page.title }}
+                </h1>
+                <div class="flex p-1 bg-black/70 w-max text-sm md:text-base md:leading-5">
+                    <div class="py-2 px-2 md:px-4 md:w-[205px] text-center cursor-pointer" x-on:click="currentTab = 'importer'" x-bind:class="[ currentTab === 'importer' ? 'bg-white text-black/70' : 'text-gray-50' ]">
+                      Для частных клиентов
+                    </div>
+                    <div class="py-2 px-2 md:px-4 md:w-[205px] text-center cursor-pointer" x-on:click="currentTab = 'business'" x-bind:class="[ currentTab === 'business' ? 'bg-white text-black/70' : 'text-gray-50' ]">
+                      Для бизнеса
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-14" x-show="currentTab === 'importer'">
+        <div class="container">
+            <h2 class="lg:text-5xl font-bold mb-6 lg:max-w-[845px]">Автомобиль на кончиках пальцев LIVAN Connect</h2>
+            <div class="text-base leading-5 mb-7">Умные технологии на службе Вашего комфорта</div>
+            <img src="/img/pages/connect/connect.png" alt="" class="w-full">
+        </div>
+    </section>
+    <section class="py-14 bg-deep text-white" x-show="currentTab === 'business'">
+        <div class="container">
+            <h2 class="lg:text-5xl font-bold mb-10 lg:max-w-[845px]">Система мониторинга автопарка для вашего бизнеса</h2>
+            <!-- SWIPER -->
+            <div class="h-80 flex items-center justify-center border border-white">SWIPER SLIDER</div>
+            <!-- SWIPER -->
+        </div>
+    </section>
+
+</div>
