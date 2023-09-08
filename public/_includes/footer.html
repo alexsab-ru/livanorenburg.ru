@@ -1,18 +1,60 @@
-<footer class="bg-black text-white py-8">
+<footer class="bg-deep text-white py-8">
     <div class="container">
-        <div class="flex justify-center">
-            <a
-                class="disclamer_switch switch text-white underline transition hover:no-underline"
-                href="#"
-                target="_blank"
-                >Подробные условия акций</a
-            >
+
+        <div class="footer-logo">
+            {% if page.url == '/' %}
+            <img src="/img/logo.svg" class="h-20 w-auto invert" alt="Livan Logo">
+            {% else %}
+            <a href="/" class="inline-block"><img src="/img/logo.svg" class="h-20 w-auto invert" alt="Livan Logo"></a>
+            {% endif %}
         </div>
-        <div class="disclamer text-xs" style="display: none;">
-            <p>
-                * Данный сайт не является публичной офертой. Подробные условия уточняйте в
-                отделе продаж.
-            </p>
+
+        <hr class="opacity-20 mt-10">
+        
+        <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-y-8 gap-x-5 pt-10 pb-10">
+            
+            {%- assign default_paths = site.pages | sort: 'order' | map: "path" -%}
+            {%- for path in default_paths -%}
+            {%- assign page = site.pages | where: "path", path | first -%}
+            {%- assign children = site.pages | children_of: page | sort: 'order' -%}
+            {%- if page.child != true and page.menu -%}
+            <div class="">
+                <h3 class="text-xl mb-4">{{ page.menu }}</h3>
+                {%- if children -%}
+                <div class="space-y-2">
+                    {% if page.url == '/buyers/' or page.url == '/owners/' %}
+                    <p><a href="{{ '/special-offers/' | relative_url}}" class="transition-colors hover:text-accent {% if page.url == '/special-offers/' %} text-accent {% endif %}">Спецпредложения</a></p>
+                    {% endif %}
+                    {% for child in children %}
+                    <p><a href="{{child.url | relative_url}}" class="transition-colors hover:text-accent {% if child.url == page.url %} text-accent {% endif %}">{{ child.menu }}</a></p>
+                    {% endfor %}
+                </div>
+                {%- endif -%}
+            </div>
+            {%- endif -%}
+            {%- endfor -%}
+            <div>
+                <h3 class="text-xl mb-3">Контакты</h3>
+                <div class="space-y-4">
+                    <a href="tel:{% include utils/phonef.html phone=site.phone %}" class="text-lg flex items-center flex-nowrap gap-1.5 transition-colors hover:text-accent">
+                        <span class="mdi mdi-cellphone text-xl"></span>
+                        {{ site.phone }}
+                    </a>
+                    <p class="text-lg flex items-center flex-nowrap gap-1.5">
+                        <span class="mdi mdi-map-marker-outline text-2xl"></span>
+                        <span>{{ site.postal_code }}, {{ site.address }}</span>
+                    </p>
+
+
+
+                </div>
+            </div>
+
         </div>
+
+        <hr class="opacity-20 mb-6">
+
+        <small class="text-xs font-light opacity-40">Обращаем ваше внимание на то, что данный интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями ч. 2 ст. 437 Гражданского кодекса Российской Федерации. Для получения подробной информации о стоимости автомобилей, пожалуйста, обращайтесь к менеджерам автосалона.</small>
+
     </div>
 </footer>

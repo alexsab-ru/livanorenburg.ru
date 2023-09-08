@@ -16,17 +16,6 @@ function setLeftPos() {
 
 setLeftPos();
 
-document
-	.querySelector(".disclamer_switch")
-	.addEventListener("click", function (e) {
-		e.preventDefault();
-		document.querySelector(".disclamer").style.display =
-			document.querySelector(".disclamer").style.display === "none"
-				? "block"
-				: "none";
-		window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-	});
-
 const siteNav = document.getElementById("site_nav");
 
 if (siteNav) {
