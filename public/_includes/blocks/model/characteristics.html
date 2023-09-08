@@ -37,17 +37,17 @@
             {%- if chs.size > 0 -%}
             <div class="border-y border-gray-200 divide-y divide-gray-200">
                 {%- for ch in chs -%}
-                    <div class="spoiler-item relative">
-                        <div class="p-4 flex justify-between items-center cursor-pointer spoiler-link" data-id="{{ forloop.index0 }}">
+                    <div class="spoiler-item relative" x-data="{open: {%if forloop.index0 == 0 %} true {%else%} false {%endif%} }">
+                        <div class="p-4 flex justify-between items-center cursor-pointer spoiler-link" data-id="{{ forloop.index0 }}" @click="open = !open">
                             <div class="text-lg font-bold">{{ ch.section }}</div>
-                            <svg class="w-4 stroke-current text-black mt-1.5 plus" viewBox="0 0 18 18" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" style="display: {% if forloop.index0 == 0 %} none {% else %} block {% endif %}">
+                            <svg class="w-4 stroke-current text-black mt-1.5 plus" viewBox="0 0 18 18" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" x-show="!open">
                                 <path d="M17 9.00007L9 9.00007M9 9.00007L1 9.00007M9 9.00007L9 1M9 9.00007L9 17" stroke-width="1.5" stroke-linecap="round"></path>
                             </svg>
-                            <svg class="w-4 h-4 stroke-current text-black mt-1.5 minus" viewBox="0 0 18 2" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" style="display: {% if forloop.index0 != 0 %} none {% else %} block {% endif %}">
+                            <svg class="w-4 h-4 stroke-current text-black mt-1.5 minus" viewBox="0 0 18 2" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" x-show="open">
                                 <path d="M17 1L1 1" stroke-width="1.5" stroke-linecap="round"></path>
                             </svg>
                         </div>
-                        <div class="spoiler-content pb-4" style="display: {% if forloop.index0 != 0 %} none {% else %} block {% endif %}">
+                        <div class="spoiler-content pb-4" x-show="open">
                             <table class="table-fixed w-full text-sm font-light">
                                 <tbody>
                                     {% for val in ch.values %}
