@@ -12,10 +12,9 @@ let autoplay = {
 let videoPrev = null;
 let videoActive = null;
 
-if(progressCircle){
+if (progressCircle) {
 	progressCircle.closest(".autoplay-progress").style.display = "none";
 }
-
 
 const initSlider = () => {
 	bannerSlider = new Swiper(".banner-slider", {
@@ -74,8 +73,7 @@ if (slides.length > 1) {
 
 initSlider();
 
-
-const interiorSlider = new Swiper('.interior-slider', {
+const interiorSlider = new Swiper(".interior-slider", {
 	modules: [Pagination, Parallax],
 	slidesPerView: 3,
 	spaceBetween: 20,
@@ -86,23 +84,23 @@ const interiorSlider = new Swiper('.interior-slider', {
 	breakpoints: {
 		// when window width is >= 320px
 		320: {
-		  slidesPerView: 1,
-		  spaceBetween: 10
+			slidesPerView: 1,
+			spaceBetween: 10,
 		},
 		// when window width is >= 480px
 		600: {
-		  slidesPerView: 2,
-		  spaceBetween: 10
+			slidesPerView: 2,
+			spaceBetween: 10,
 		},
 		// when window width is >= 640px
 		768: {
-		  slidesPerView: 3,
-		  spaceBetween: 20
-		}
-	  }
-})
+			slidesPerView: 3,
+			spaceBetween: 20,
+		},
+	},
+});
 
-const tehnologySlider = new Swiper('.tehnology-slider', {
+const tehnologySlider = new Swiper(".tehnology-slider", {
 	modules: [Pagination, Parallax],
 	slidesPerView: 3,
 	spaceBetween: 20,
@@ -113,18 +111,27 @@ const tehnologySlider = new Swiper('.tehnology-slider', {
 	breakpoints: {
 		// when window width is >= 320px
 		320: {
-		  slidesPerView: 1,
-		  spaceBetween: 10
+			slidesPerView: 1,
+			spaceBetween: 10,
 		},
 		// when window width is >= 480px
 		600: {
-		  slidesPerView: 2,
-		  spaceBetween: 10
+			slidesPerView: 2,
+			spaceBetween: 10,
 		},
 		// when window width is >= 640px
 		768: {
-		  slidesPerView: 3,
-		  spaceBetween: 20
-		}
-	  }
+			slidesPerView: 3,
+			spaceBetween: 20,
+		},
+	},
+});
+
+
+const sliderMonitor = new Swiper('.swiper-monitor', {
+	modules: [Pagination],
+	pagination: {
+		el: ".swiper-pagination-monitor",
+		clickable: true,
+	},
 })

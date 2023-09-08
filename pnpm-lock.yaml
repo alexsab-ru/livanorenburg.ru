@@ -38,7 +38,7 @@ devDependencies:
     specifier: ^1.63.6
     version: 1.64.2
   swiper:
-    specifier: ^10.0.4
+    specifier: ^10.1.0
     version: 10.1.0
   tailwindcss:
     specifier: ^3.3.2

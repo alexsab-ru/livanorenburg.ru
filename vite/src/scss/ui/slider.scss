@@ -61,3 +61,28 @@
 	stroke-dasharray: 125.6;
 	transform: rotate(-90deg);
 }
+
+.swiper-pagination.swiper-pagination-monitor{
+    display: flex;
+	flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+	position: relative;
+}
+
+.swiper-pagination.swiper-pagination-monitor .swiper-pagination-bullet {
+    width: 50px !important;
+    height: 2px !important;
+    background: white !important;
+    opacity: .3 !important;
+	&:before{
+		display: none;
+	}
+}
+
+.swiper-pagination.swiper-pagination-monitor .swiper-pagination-bullet-active{
+	background: white !important;
+    opacity: 1 !important;
+}
