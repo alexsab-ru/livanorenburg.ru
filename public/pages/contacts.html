@@ -1,0 +1,91 @@
+---
+layout: page
+title: Контакты
+menu: Контакты
+order: 4
+permalink: /contacts/
+---
+
+<section class="pb-14">
+    <div class="container">
+        <div class="grid lg:grid-cols-2 gap-y-8">
+            <div class="">
+                <h2 class="font-bold text-xl leading-6 mb-4">Горячая линия LIVAN "Центр Оренбург"</h2>
+                <div class="text-base leading-5 mb-4">По всем вопросам, связанным с покупкой автомобиля, сервисным обслуживанием, действующими акциями и предложениями, вы можете обратиться по телефону:</div>
+                <a href="tel:{% include utils/phonef.html phone=site.phone %}" class="w-max font-bold text-xl leading-6 md:text-[2rem] md:leading-none mb-10 transition duration-200 ease-in-out hover:text-accent flex items-center gap-[10px]"><span class="mdi mdi-cellphone-check"></span> {{ site.phone }}</a>
+                <div class="flex flex-nowrap gap-2 sm:gap-[14px] mb-4">
+                    <span class="mdi mdi-map-marker-radius-outline text-3xl"></span>
+                    <div>
+                        <div class="font-medium mb-2 sm:text-lg">
+                            {{ site.postal_code }}, {{ site.address }}
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-nowrap gap-2 sm:gap-[14px] mb-4">
+                    <span class="mdi mdi-clock-outline text-3xl"></span>
+                    <div class="font-medium mb-2 sm:text-lg">
+                        {{ site.office_hours }}
+                    </div>
+                </div>
+                <div class="flex flex-nowrap gap-2 sm:gap-[14px]">
+                    <span class="mdi mdi-information-slab-circle-outline text-3xl"></span>
+                    <div class="font-medium mb-1 sm:text-md">
+                        <p>{{ site.company }}</p>
+                        <p>ИНН: {{ site.inn }}</p>
+                        <p>ОГРН: {{ site.ogrn }}</p>                        
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="text-[1.75rem] md:text-[32px] leading-none mb-4 font-bold">Обратная связь</div>
+                <div class="text-base leading-5 mb-6 md:mb-10">Вы можете отправить ваше сообщение в LIVAN "Центр Оренбург". <br>Оставьте ваши контакты и уточните тему запроса, и мы свяжемся с вами.</div>
+                <form class="flex flex-col gap-4 max-w-lg">
+                    <input type="hidden" name="form" value="Получить предложение. Корпоративным клиентам">
+                    <div class="w-full">
+                        <input type="name" name="name" class="border border-black border-opacity-20 transition-all focus:border-opacity-90 px-4 py-2.5 mb-1.5 outline-none w-full font-normal" placeholder="Ваше имя">
+                    </div>
+                    <div class="w-full">
+                        <input type="tel" name="phone" class="border border-black border-opacity-20 transition-all focus:border-opacity-90 px-4 py-2.5 mb-1.5 outline-none w-full font-normal" placeholder="+7 (999) 999-99-99*">
+                        <div class="error-message text-xs text-red-500 hidden phone">Веден некорректный номер телефона</div>
+                    </div>
+                    <div class="w-full">
+                        <input type="email" name="email" class="border border-black border-opacity-20 transition-all focus:border-opacity-90 px-4 py-2.5 mb-1.5 outline-none w-full font-normal" placeholder="Ваше Email">
+                    </div>
+                    <div>
+                        <p class="text-sm mb-1">Тип вопроса</p>
+                        <select name="question-type" class="border border-black border-opacity-20 transition-all focus:border-opacity-90 px-3 py-2.5 mb-1.5 outline-none w-full font-normal">
+                            <option selected disabled>Выберите тип вопроса</option>
+                            <option value="Продажи">Продажи</option>
+                            <option value="Сервисное обслуживание">Сервисное обслуживание</option>
+                            <option value="Гарантия на автомобиль">Гарантия на автомобиль</option>
+                            <option value="Качество обслуживания">Качество обслуживания</option>
+                            <option value="PR отдел">PR отдел</option>
+                            <option value="Другое">Другое</option>
+                        </select>
+                    </div>
+                    <div class="w-full">
+                        <textarea name="message" class="border border-black border-opacity-20 transition-all focus:border-opacity-90 px-4 py-2.5 mb-1.5 outline-none w-full font-normal h-[130px] overflow-y-auto" placeholder="Комментарий или вопрос"></textarea>
+                    </div>
+                    <label class="cursor-pointer flex items-center flex-wrap">
+                        <input type="checkbox" name="agree" class="absolute w-0 h-0 opacity-0 invisible">
+                        <div class="flex flex-wrap gap-x-2 text-gray-800">
+                            <span class="fake-checkbox-black mt-0.5 w-4 h-4 border border-black inline-block flex-shrink-0 transition-all relative"></span>
+                            <span>Я согласен на</span> <a href="/privacy-policy.pdf" class="text-black underline transition-all hover:no-underline" target="_blank">обработку персональных данных</a>
+                        </div>
+                        <div class="error-message text-xs text-red-500 mt-1 w-full hidden agree">Чтобы продолжить, установите флажок</div>
+                    </label>
+                    <input type="checkbox" name="subscribe" class="absolute w-0 h-0 opacity-0 invisible">
+                    <input type="submit" class="btn w-full" value="Отправить">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pt-14">
+    <div
+        id="map"
+        class="map overflow-hidden bg-cover bg-center static w-full h-[400px]"
+        style="background-image: url({{ '/img/map_bg.jpg' | relative_url }} )"
+    ></div>
+</section>

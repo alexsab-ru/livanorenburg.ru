@@ -3,7 +3,7 @@ const mapId = "map";
 function initYandexMap() {
 	if (document.getElementById(mapId) != null) {
 		ymaps.ready(function () {
-			var _ball_bg = "./img/map.balloon.png";
+			var _ball_bg = "/img/map.balloon.png";
 			var _ball_Offset = [-21, -58];
 			var _ball_Size = [43, 62];
 			var myMap = new ymaps.Map(
