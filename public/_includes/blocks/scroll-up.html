@@ -1,0 +1,22 @@
+<div
+	x-data="scrollTop"
+    x-cloak
+	class="fixed bottom-10 right-10 rounded-full bg-accent flex items-center justify-center cursor-pointer hover:bg-gray w-14 h-14 z-20 transition-all duration-700 ease-out-expo shadow-2xl opacity-40 hover:opacity-100"
+    :class="{'translate-x-0': scrolled, 'translate-x-24': !scrolled}"
+	x-on:click="onClick"
+>
+	<svg
+		class="stroke-current text-white h-4"
+		viewBox="0 0 14 18"
+		fill="none"
+		stroke="currentColor"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<path
+			d="M7 17L7 1M7 1L13 7M7 1L1 7"
+			stroke-width="1.5"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+		></path>
+	</svg>
+</div>

@@ -1,0 +1,8 @@
+<div x-data="cookieAgreement()">
+    <template x-if="!show">
+        <div class="fixed bottom-4 right-4 rounded-md bg-white p-6 flex flex-col sm:flex-row items-start justify-between space-y-6 sm:space-y-0 sm:space-x-6 w-[540px] max-w-[calc(100%-2rem)] z-50 font-light text-sm shadow-2xl">
+            <div> Мы используем файлы Cookie, чтобы сделать ваше пребывание на сайте более комфортным</div>
+            <div class="rounded-sm cursor-pointer disabled:cursor-not-allowed aria-disabled:cursor-not-allowed text-center bg-black hover:bg-gray text-white disabled:bg-gray/50 aria-disabled:bg-gray/50 py-3 px-6 focus:border-main outline-0 focus:shadow-input" x-on:click="onClick">Хорошо</div>
+        </div>
+    </template>
+</div>
