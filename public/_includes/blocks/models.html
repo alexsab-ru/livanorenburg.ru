@@ -24,7 +24,7 @@
                     {{ model.slogan }}
                 </p>
             </div>
-            <a href="{{ model.id | prepend: '/models/' | relative_url }}" class="text-white mt-10 lg:mt-0 flex items-center gap-1.5 group relative z-10">
+            <a href="{{ model.id | prepend: '/models/' | downcase | relative_url }}" class="text-white mt-10 lg:mt-0 flex items-center gap-1.5 group relative z-10">
                 Подобрать комплектацию
                 <span class="w-4 h-4 bg-accent text-white rounded-full flex items-center justify-center translate-x-0 transition-transform duration-300 ease-in-out group-hover:translate-x-1">
                     <span class="mdi mdi-chevron-right pl-0.5"></span>
