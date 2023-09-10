@@ -7,8 +7,9 @@ layout: default
 {%- if id == nill or id == '' -%}
     <p class="text-red-500">Требуется обязательный параметр <b class="font-bold">ID</b></p>
 {%- else -%}
-    {%- assign model = site.data.models[id] -%}
+    {%- assign model = site.data.models | find: "id", id -%}
     {%- include blocks/model/hero.html model = model -%}
+
     {%- assign sections = model.sections -%}
     {%- if sections.size > 0 -%}
     {%- for section in sections -%}

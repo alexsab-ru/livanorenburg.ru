@@ -4,6 +4,7 @@ title: Контакты
 menu: Контакты
 order: 4
 permalink: /contacts/
+options: ['Продажи', 'Сервисное обслуживание', 'Гарантия на автомобиль', 'Качество обслуживания', 'PR отдел', 'Другое']
 ---
 
 <section class="pb-14">
@@ -55,12 +56,9 @@ permalink: /contacts/
                         <p class="text-sm mb-1">Тип вопроса</p>
                         <select name="question-type" class="border border-black border-opacity-20 transition-all focus:border-opacity-90 px-3 py-2.5 mb-1.5 outline-none w-full font-normal">
                             <option selected disabled>Выберите тип вопроса</option>
-                            <option value="Продажи">Продажи</option>
-                            <option value="Сервисное обслуживание">Сервисное обслуживание</option>
-                            <option value="Гарантия на автомобиль">Гарантия на автомобиль</option>
-                            <option value="Качество обслуживания">Качество обслуживания</option>
-                            <option value="PR отдел">PR отдел</option>
-                            <option value="Другое">Другое</option>
+                            {%- for option in page.options -%}
+                            <option value="{{ option }}">{{ option }}</option>                        
+                            {%- endfor -%}
                         </select>
                     </div>
                     <div class="w-full">

@@ -17,7 +17,11 @@ order: 2
             <div>
                 <p class="text-sm mb-1">Модель</p>
                 <select name="model" class="border border-black border-opacity-20 transition-all focus:border-opacity-90 px-3 py-2.5 mb-1.5 outline-none w-full font-normal">
-                    <option value="x3pro" selected>X3PRO</option>
+                    {%- assign models = site.data.models -%}
+                    <option disabled {% if models.size > 1 %} selected {% endif %}>Выберите модель</option>
+                    {%- for model in models -%}
+                    <option value="{{ model.id }}" {% if models.size == 1 %} selected {% endif %}>{{ model.modelName }}</option>                        
+                    {%- endfor -%}
                 </select>
             </div>
             <div class="w-full">
