@@ -1,0 +1,25 @@
+{% assign model = include.model %}
+{% assign classes = include.classes %}
+{% assign first = model.colors | first %} 
+{% assign firstPathImg = model.id | prepend: '/img/' | append: '/' | append: first.id | append: '.png' %}
+<img
+	src="{{ firstPathImg | relative_url }}"
+	class="w-full h-auto color-img-preview"
+	alt="Livan {{model.modelName}}"
+/>
+<div
+	class="flex flex-wrap justify-center gap-5 relative z-[2] color-links {{classes}}"
+>
+	{%- for color in model.colors -%}
+	<a
+		href="#"
+		class="color-link {% if forloop.index == 1 %}active{% endif %}"
+		title="{{color.name}}"
+		data-color="{{color.id}}"
+	></a>
+	{%- endfor -%}
+	<p class="w-full text-center text-xs color-name">{{ first.name }}</p>
+</div>
+
+
+<!-- -top-4 lg:-top-10 xl:-top-16 -->

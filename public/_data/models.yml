@@ -1,8 +1,18 @@
 - id: x3pro
   hero-img: /img/x3Pro/x3pro-hero.jpg
+  homeBg: /img/x3Pro/bg2.jpg
   slogan: Быть свободным
   modelName: X3PRO
   price: 1699900
+  colors:
+    - id: gold
+      name: Золотой
+    - id: white
+      name: Белый
+    - id: blue
+      name: Голубой
+    - id: red
+      name: Красный 
   sections:
     - id: design
       name: Дизайн

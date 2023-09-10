@@ -1,0 +1,7 @@
+{%- assign title = include.title -%}
+{%- assign value = include.value -%}
+
+<div class="flex flex-col justify-between px-4 first:pl-0 space-y-6">
+    <div class="text-xs sm:text-base">{{title}}:</div>
+    <div><b class="max-[400px]:text-xl text-3xl sm:text-4xl font-bold">{{ value }}</b></div>
+</div>

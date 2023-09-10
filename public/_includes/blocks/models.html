@@ -1,43 +1,13 @@
-<section class="relative pb-20 z-[1] model bg-gray-100" data-dir="x3Pro">
-    <img src="{{ 'img/x3Pro/bg2.jpg' | relative_url }}" class="absolute w-full h-[420px] z-[-1]" alt="ALT">
+{%- assign models = site.data.models -%}
+{%- if models.size > 0 -%}
+{%- for model in models -%}
+<section class="relative pb-20 z-[1] model bg-gray-100" data-dir="{{ model.id }}">
+    <img src="{{ model.homeBg | relative_url }}" class="absolute w-full h-[420px] z-[-1]" alt="ALT">
     <div class="absolute w-full h-[420px] bg-black/20 z-[-1]"></div>
     <div
         class="hidden md:block absolute left-[53%] -translate-x-1/2 top-[25%] lg:top-[20%] xl:top-[22%] 2xl:top-[20%]"
     >
-        <img
-            src="{{ 'img/x3Pro/gold.png' | relative_url }}"
-            class="w-full h-auto color-img-preview"
-            alt="Livan x3Pro"
-        />
-        <div
-            class="flex flex-wrap justify-center gap-5 relative -top-4 lg:-top-10 xl:-top-16 z-[2] color-links"
-        >
-            <a
-                href="#"
-                class="color-link active"
-                title="Золотой"
-                data-color="gold"
-            ></a>
-            <a
-                href="#"
-                class="color-link"
-                title="Белый"
-                data-color="white"
-            ></a>
-            <a
-                href="#"
-                class="color-link"
-                title="Голубой"
-                data-color="blue"
-            ></a>
-            <a
-                href="#"
-                class="color-link"
-                title="Красный"
-                data-color="red"
-            ></a>
-            <p class="w-full text-center text-xs color-name">Золотой</p>
-        </div>
+        {% include blocks/model/colors.html model=model classes="-top-4 lg:-top-10 xl:-top-16" %}
     </div>
 
     <div class="container pt-10">
@@ -47,19 +17,14 @@
                     Livan
                     <b
                         class="font-bold text-black tracking-normal text-5xl sm:text-8xl"
-                        >x3Pro</b
+                        >{{ model.modelName }}</b
                     >
                 </h2>
                 <p class="uppercase text-white text-lg md:text-2xl">
-                    Будь свободным
+                    {{ model.slogan }}
                 </p>
             </div>
-            <a
-                class="popup-link text-white mt-10 lg:mt-0 flex items-center gap-1.5 group relative z-10"
-                href="#common-modal"
-                data-title="Подобрать комплектацию"
-                data-form_name="Подобрать комплектацию. Livan x3Pro"
-            >
+            <a href="{{ model.id | prepend: '/models/' | relative_url }}" class="text-white mt-10 lg:mt-0 flex items-center gap-1.5 group relative z-10">
                 Подобрать комплектацию
                 <span class="w-4 h-4 bg-accent text-white rounded-full flex items-center justify-center translate-x-0 transition-transform duration-300 ease-in-out group-hover:translate-x-1">
                     <span class="mdi mdi-chevron-right pl-0.5"></span>
@@ -71,7 +36,7 @@
                 class="popup-link w-fit inline-flex items-center flex-nowrap gap-1.5 text-white font-medium text-xl"
                 href="#common-modal"
                 data-title="Выгодный трейд-ин"
-                data-form_name="Выгодный трейд-ин. Livan x3Pro"
+                data-form_name="Выгодный трейд-ин. Livan {{model.modelName}}"
             >
                 <span class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center">
                     <span class="mdi mdi-wallet-bifold-outline text-2xl"></span>
@@ -82,7 +47,7 @@
                 class="popup-link credit-link w-fit inline-flex items-center flex-nowrap gap-1.5 text-white font-medium text-xl"
                 href="#common-modal"
                 data-title="Выгодный кредит"
-                data-form_name="Выгодный кредит. Livan x3Pro"
+                data-form_name="Выгодный кредит. Livan {{model.modelName}}"
             >
                 <span class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center">
                     <span class="mdi mdi-gift-outline font-normal text-2xl"></span>
@@ -92,71 +57,27 @@
         </div>
 
         <div class="block md:hidden mb-10">
-            <img
-                src="img/x3Pro/gold.png"
-                class="w-full h-auto color-img-preview"
-                alt="Livan x3Pro"
-            />
-            <div
-                class="flex flex-wrap justify-center gap-5 relative z-[2] color-links"
-            >
-                <a
-                    href="#"
-                    class="color-link active"
-                    title="Золотой"
-                    data-color="gold"
-                ></a>
-                <a
-                    href="#"
-                    class="color-link"
-                    title="Белый"
-                    data-color="white"
-                ></a>
-                <a
-                    href="#"
-                    class="color-link"
-                    title="Голубой"
-                    data-color="blue"
-                ></a>
-                <a
-                    href="#"
-                    class="color-link"
-                    title="Красный"
-                    data-color="red"
-                ></a>
-                <p class="w-full text-center text-xs color-name">Золотой</p>
-            </div>
+            {% include blocks/model/colors.html model=model %}
         </div>
 
         <div
-            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-8 xl:gap-y-0 xl:grid-cols-6 mt-4 md:mt-[250px] xl:mt-[300px] 2xl:mt-[350px] divide-x"
+            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-10 2xl:gap-y-0 2xl:grid-cols-6 mt-4 md:mt-[250px] xl:mt-[380px] divide-x"
         >
-            <div class="px-4 first:pl-0 space-y-6 sm:space-y-8">
-                <div class="text-xs sm:text-base">Колёсная база:</div>
-                <div><b class="text-3xl sm:text-4xl font-bold">2480</b> мм</div>
-            </div>
-            <div class="px-4 space-y-8">
-                <div class="text-xs sm:text-base">Длина:</div>
-                <div><b class="text-3xl sm:text-4xl font-bold">4005</b> мм</div>
-            </div>
-            <div class="px-4 space-y-8">
-                <div class="text-xs sm:text-base">Ширина:</div>
-                <div><b class="text-3xl sm:text-4xl font-bold">1760</b> мм</div>
-            </div>
-            <div class="px-4 space-y-8">
-                <div class="text-xs sm:text-base">Объем двигателя:</div>
-                <div><b class="text-3xl sm:text-4xl font-bold">1.5</b> л.</div>
-            </div>
-            <div class="px-4 space-y-8">
-                <div class="text-xs sm:text-base">Крутящий момент:</div>
-                <div><b class="text-3xl sm:text-4xl font-bold">142</b> н.м.</div>
-            </div>
-            <div class="px-4 last:pr-0 space-y-8">
-                <div class="text-xs sm:text-base">Тип привода:</div>
-                <div class="text-3xl sm:text-4xl">
-                    <b class="text-xl font-bold">Передний</b>
-                </div>
-            </div>
+        {% assign chs = site.data[model.id] %}
+        {% for ch in chs %}
+        {% for val in ch.values %}
+        {%- if val.key contains "Колесная база" 
+        or val.key contains "Длина" 
+        or val.key contains "Ширина" 
+        or val.key contains "Объем двигателя" 
+        or val.key contains "Крутящий момент" 
+        or val.key contains "Привод" 
+        -%}
+            {% include blocks/model/params-item.html title=val.key value=val.value %}
+        {%- endif -%}
+        {% endfor %}
+        {% endfor %}
+            
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-14">
@@ -164,7 +85,7 @@
                 class="popup-link btn black btn-o"
                 href="#common-modal"
                 data-title="Узнать цену"
-                data-form_name="Узнать цену. Livan x3Pro"
+                data-form_name="Узнать цену. Livan {{model.modelName}}"
             >
                 Узнать цену
             </a>
@@ -172,7 +93,7 @@
                 class="popup-link btn !px-0"
                 href="#common-modal"
                 data-title="Рассчитать кредит"
-                data-form_name="Рассчитать кредит. Livan x3Pro"
+                data-form_name="Рассчитать кредит. {{model.modelName}}"
             >
                 Рассчитать кредит
             </a>
@@ -180,7 +101,7 @@
                 class="popup-link btn black !px-0"
                 href="#common-modal"
                 data-title="Записаться на тест-драйв"
-                data-form_name="Запись на тест-драйв. Livan x3Pro"
+                data-form_name="Запись на тест-драйв. {{model.modelName}}"
             >
                 Записаться на тест-драйв
             </a>
@@ -188,10 +109,12 @@
                 class="popup-link btn gray !px-0"
                 href="#common-modal"
                 data-title="Узнать цену по акции"
-                data-form_name="Узнать цену по акции. Livan x3Pro"
+                data-form_name="Узнать цену по акции. {{model.modelName}}"
             >
                 Узнать цену по акции
             </a>
         </div>
     </div>
 </section>
+{%- endfor -%}
+{%- endif -%}
