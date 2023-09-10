@@ -1,6 +1,7 @@
 {%- assign s = include.section -%}
 {%- assign price = include.price -%}
-{%- assign chs = site.data[page.id] -%}
+{%- assign id = page.id | downcase -%}
+{%- assign chs = site.data[id] -%}
 
 <section class="py-20 font-light section" id="{{ s.id }}">
     <div class="container">
