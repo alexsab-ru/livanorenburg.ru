@@ -108,4 +108,4 @@ for existing_file in os.listdir(directory):
     if filepath not in existing_files:
         os.remove(filepath)
 
-
+print(existing_files)

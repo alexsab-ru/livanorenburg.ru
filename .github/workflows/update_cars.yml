@@ -39,6 +39,11 @@ jobs:
     - name: Generate files
       run: python .github/scripts/update_cars.py
 
+    - name: ls
+      run: |
+        ls -al
+        ls -al _cars
+
     - name: Check for changes
       id: check_changes
       run: |
@@ -51,7 +56,7 @@ jobs:
         git config --local user.email "support+actions@github.com"
         git config --local user.name "github-actions-bot"
         git add _cars/*.html
-        git commit -m "Update cars from XML"
+        git commit -m "Update cars from XML" -a || echo "No changes to commit"
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         git push origin main
       env:
