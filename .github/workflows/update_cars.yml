@@ -2,7 +2,7 @@ name: Generate Jekyll Files from XML
 
 on:
   push:
-    paths:
+    branches:
       - cars
 
 jobs:
