@@ -1,0 +1,24 @@
+{%- assign images = include.images -%}
+
+<div class="preview-slider">
+    <div class="preview-list aspect-[4/3]">
+        {%- if images.size > 0 -%}
+        {%- for img in images -%}
+        <a 
+            href="{{img | relative_url}}" 
+            class="glightbox preview-link {% if forloop.index > 5 %}!hidden{% endif %}" 
+            data-gallery="{{car.vin}}"
+        >
+            <div class="preview-img">
+                <img src="{{img | relative_url}}" alt="{{car.mark_id}} {{car.folder_id}}">
+                {% if forloop.index == 5 and images.size > 5 %}
+                <div class="preview-total"> Еще <br> {{ images.size | minus: 5 }} фото </div>                    
+                {% endif %}
+            </div>
+        </a>
+        {%- endfor -%}
+        {%- else -%}
+        <img src="{{'/img/no-foto.jpg' | relative_url}}" alt="No Photo">
+        {%- endif -%}
+    </div>
+</div> 

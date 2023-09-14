@@ -6,10 +6,16 @@ order: 2
 permalink: /cars/
 ---
 
-{% assign cars=site.cars %}
+{% assign cars = site.cars %}
 
 {%- if cars.size > 0 -%}
-    {%- for car in cars -%}
-        <a href="{{ car.url | relative_url }}">{{ car.folder_id }}</a>
-    {%- endfor -%}
+<section class="pb-14">
+    <div class="container">
+        <div class="grid grid-cols-4 gap-5">
+        {%- for car in cars -%}
+            {%- include cars/item.html car=car -%}
+        {%- endfor -%}
+        </div>
+    </div>
+</section>
 {%- endif -%}
