@@ -23,7 +23,7 @@ jobs:
         curl ${{ vars.ENV_XML_URL }} -o livan.xml
 
     - name: Set XML_URL as environment variable
-      run: echo "XML_URL=${{ env.ENV_XML_URL }}" >> $GITHUB_ENV
+      run: echo "XML_URL=${{ vars.ENV_XML_URL }}" >> $GITHUB_ENV
 
     - name: Set up Python
       uses: actions/setup-python@v4
