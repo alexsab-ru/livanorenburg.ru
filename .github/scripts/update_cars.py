@@ -57,6 +57,14 @@ def process_description(desc_text):
 
 
 existing_files = set()  # для сохранения имен созданных или обновленных файлов
+# Словарь соответствия цветов
+color_mapping = {
+    "Белый": "white",
+    "Желтый": "gold",
+    "Красный": "red",
+    "Синий": "blue"
+    # ... добавьте другие цвета по мере необходимости
+}
 
 
 for car in root.find('cars'):
@@ -64,6 +72,11 @@ for car in root.find('cars'):
     permalink = process_permalink(vin)
     vin_hidden = process_vin_hidden(vin)
     filename = f"{directory}/{vin}.html"
+    # Преобразование цвета
+    color = car.find('color').text.strip().capitalize()
+
+    thumb = f"/img/x3Pro/color/{color_mapping.get(color, 'white')}.png"
+
 
     # Forming the YAML frontmatter
     content = "---\n"
@@ -86,6 +99,9 @@ for car in root.find('cars'):
         if child.tag == 'images':
             images = [img.text for img in child.findall('image')]
             content += f"{child.tag}: {images}\n"
+        elif child.tag == 'color':
+            content += f"{child.tag}: {color}\n"
+            content += f"thumb: {thumb}\n"
         elif child.tag == 'description' and child.text:
             description = child.text
             # Flattening description for YAML without using backslashes in f-string
@@ -107,5 +123,3 @@ for existing_file in os.listdir(directory):
     filepath = os.path.join(directory, existing_file)
     if filepath not in existing_files:
         os.remove(filepath)
-
-print(existing_files)

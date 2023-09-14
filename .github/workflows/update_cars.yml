@@ -39,11 +39,6 @@ jobs:
     - name: Generate files
       run: python .github/scripts/update_cars.py
 
-    - name: ls
-      run: |
-        ls -al
-        ls -al public/_cars
-
     - name: Check for changes
       id: check_changes
       run: |
