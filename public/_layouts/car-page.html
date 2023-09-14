@@ -85,8 +85,8 @@ layout: default
                     <div class="font-bold text-3xl">{% include utils/numf.html number=page.price ts=' ' decimals=0 %}&nbsp;₽</div>
                 </div>
                 <div class="flex flex-col min-[500px]:flex-row gap-4 min-[500px]:gap-5">
-                    <a href="#common-modal" class="popup-link btn flex-grow !p-2" data-title="Получить предложение" data-form_name="Получить предложение. {{page.folder_id}} VIN({{page.vin}})">Получить предложение</a>
-                    <a href="#common-modal" class="popup-link btn gray flex-grow !p-2" data-title="Расчитать кредит" data-form_name="Расчитать кредит. {{page.folder_id}} VIN({{page.vin}})">Расчитать кредит</a>
+                    <a href="#common-modal" class="popup-link btn flex-grow !p-2" data-title="Получить предложение" data-form_name="Получить предложение. {{page.color}} {{page.folder_id}} {{page.modification_id}}, {{page.vin}}. {% include utils/numf.html number=page.price ts=' ' decimals=0 %} ₽">Получить предложение</a>
+                    <a href="#common-modal" class="popup-link btn gray flex-grow !p-2" data-title="Расчитать кредит" data-form_name="Расчитать кредит. {{page.color}} {{page.folder_id}} {{page.modification_id}}, {{page.vin}}. {% include utils/numf.html number=page.price ts=' ' decimals=0 %} ₽">Расчитать кредит</a>
                 </div>
             </div>
 
