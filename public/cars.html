@@ -1,0 +1,15 @@
+---
+layout: page
+title: Автомобили в наличии
+menu: Авто в наличии
+order: 2
+permalink: /cars/
+---
+
+{% assign cars=site.cars %}
+
+{%- if cars.size > 0 -%}
+    {%- for car in cars -%}
+        <a href="{{ car.url | relative_url }}">{{ car.folder_id }}</a>
+    {%- endfor -%}
+{%- endif -%}

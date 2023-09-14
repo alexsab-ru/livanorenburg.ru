@@ -26,6 +26,9 @@ collections:
   special_offers:
     output: true
     permalink: /special-offers/:title
+  cars:
+    output: true
+    permalink: /cars/:name
 
 exclude:
   - .sass-cache/
