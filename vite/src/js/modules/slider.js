@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { Navigation, Pagination, Autoplay, Parallax } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, Parallax, Thumbs } from "swiper/modules";
 
 const progressCircle = document.querySelector(".autoplay-progress svg");
 const progressContent = document.querySelector(".autoplay-progress span");
@@ -134,4 +134,33 @@ const sliderMonitor = new Swiper('.swiper-monitor', {
 		el: ".swiper-pagination-monitor",
 		clickable: true,
 	},
+})
+
+const carThumbSlider = new Swiper('.car-thumb-slider', {
+	spaceBetween: 10,
+	slidesPerView: 4,
+	freeMode: true,
+	watchSlidesProgress: true,
+  });
+
+const carImageSlider = new Swiper('.car-image-slider', {
+	modules: [Navigation, Thumbs],
+	spaceBetween: 20,
+	thumbs: {
+		swiper: carThumbSlider
+	},
+	navigation: {
+		nextEl: ".car-image-slider-next",
+		prevEl: ".car-image-slider-prev",
+	},
+	breakpoints: {
+		320: {
+		  slidesPerView: 1.08,
+		  spaceBetween: 5
+		},
+		640: {
+		  slidesPerView: 1,
+		  spaceBetween: 20
+		}
+	}
 })
