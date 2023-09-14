@@ -4,21 +4,29 @@
     <div class="preview-list aspect-[4/3]">
         {%- if images.size > 0 -%}
         {%- for img in images -%}
-        <a 
-            href="{{img | relative_url}}" 
-            class="glightbox preview-link {% if forloop.index > 5 %}!hidden{% endif %}" 
+        <a
+            href="{{img | relative_url}}"
+            class="glightbox preview-link {% if forloop.index > 5 %}!hidden{% endif %}"
             data-gallery="{{car.vin_hidden}}"
+            data-glightbox="description: .btn-desc"
         >
             <div class="preview-img">
                 <img src="{{img | relative_url}}" alt="{{car.mark_id}} {{car.folder_id}}">
                 {% if forloop.index == 5 and images.size > 5 %}
-                <div class="preview-total"> Еще <br> {{ images.size | minus: 5 }} фото </div>                    
+                <div class="preview-total"> Еще <br> {{ images.size | minus: 5 }} фото </div>
                 {% endif %}
             </div>
         </a>
+        <div class="glightbox-desc btn-desc">
+            <div class="px-3 xl:px-4">
+                <a href="{{ car.url | relative_url }}" title="Подробнее" class="btn block !px-3 !py-2 md:text-base sm:text-sm text-xs">Подробнее</a>
+            </div>
+        </div>
         {%- endfor -%}
         {%- else -%}
-        <img src="{{ car.thumb | relative_url}}" class="w-full h-auto object-contain" alt="No Photo">
+        <a href="{{ car.url | relative_url }}" title="Подробнее">
+            <img src="{{ car.thumb | relative_url}}" class="w-full h-auto object-contain" alt="No Photo">
+        </a>
         {%- endif -%}
     </div>
-</div> 
+</div>
