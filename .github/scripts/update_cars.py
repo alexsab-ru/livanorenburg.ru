@@ -1,5 +1,7 @@
 import os
 import shutil
+import requests
+from pathlib import Path
 
 # Parsing XML
 import xml.etree.ElementTree as ET
@@ -26,11 +28,13 @@ else:
     # Parsing the provided XML data
     root = ET.fromstring(xml_content)
 
-# Clear the directory if it exists, otherwise create it
 directory = "_cars"
+dir_path = Path(directory)
+dir_path.mkdir(parents=True, exist_ok=True)
+
+# Clear the directory if it exists, otherwise create it
 # if os.path.exists(directory):
 #     shutil.rmtree(directory)
-# os.makedirs(directory)
 
 def process_vin_hidden(vin):
     return f"{vin[:5]}-{vin[-4:]}"
@@ -51,10 +55,6 @@ def process_description(desc_text):
             processed_lines.append(f"<p>{line}</p>")
     return '\n'.join(processed_lines)
 
-# Clear the directory for fresh start
-# if os.path.exists(directory):
-#     shutil.rmtree(directory)
-# os.makedirs(directory)
 
 existing_files = set()  # для сохранения имен созданных или обновленных файлов
 
