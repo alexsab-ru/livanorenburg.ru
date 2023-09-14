@@ -11,8 +11,9 @@ permalink: /cars/
 {%- if cars.size > 0 -%}
 <section class="pb-14">
     <div class="container">
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 xl:gap-5">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 xl:gap-5 car-list">
         {%- for car in cars -%}
+
             {%- include cars/item.html car=car -%}
         {%- endfor -%}
         </div>
