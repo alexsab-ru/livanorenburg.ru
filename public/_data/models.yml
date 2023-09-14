@@ -12,7 +12,7 @@
     - id: blue
       name: Голубой
     - id: red
-      name: Красный 
+      name: Красный
   sections:
     - id: design
       name: Дизайн
@@ -59,7 +59,7 @@
       name: Характеристики
       title: Комплектация LIVAN X3PRO
       pdf: /x3pro.pdf
-      items: 
+      items:
         - title: Программа «Старт»
           sale: 100 000
         - title: Trade-in / LIVAN Finance
@@ -74,4 +74,3 @@
           descr: после покупки
         - title: 150 000 км
           descr: пробега
-          
