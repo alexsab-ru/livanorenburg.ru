@@ -42,7 +42,7 @@ jobs:
     - name: ls
       run: |
         ls -al
-        ls -al _cars
+        ls -al public/_cars
 
     - name: Check for changes
       id: check_changes
@@ -55,7 +55,7 @@ jobs:
       run: |
         git config --local user.email "support+actions@github.com"
         git config --local user.name "github-actions-bot"
-        git add _cars/*.html
+        git add public/_cars/*.html
         git commit -m "Update cars from XML" -a || echo "No changes to commit"
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         git push origin main

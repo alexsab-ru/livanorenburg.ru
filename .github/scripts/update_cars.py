@@ -28,7 +28,7 @@ else:
     # Parsing the provided XML data
     root = ET.fromstring(xml_content)
 
-directory = "_cars"
+directory = "public/_cars"
 dir_path = Path(directory)
 dir_path.mkdir(parents=True, exist_ok=True)
 
