@@ -1,0 +1,100 @@
+---
+layout: default
+---
+
+<section class="py-10 sm:py-14">
+    <div class="container">
+
+        <div class="text-xs sm:text-sm mb-6 sm:mb-10">
+            <a href="{{ '/cars/' | relative_url }}" class="flex items-center gap-2 text-gray-400 transition-colors hover:text-gray-600 flex-nowrap">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
+                Назад к списку              
+            </a>
+        </div>
+
+        <div class="grid grid-cols-12 gap-y-10 lg:gap-x-14">
+
+            <div class="col-span-12 lg:col-span-6">
+                <div class="block lg:hidden mb-10">
+                    <h1 class="text-4xl font-medium uppercase">{{ page.h1 }}</h1>
+                    <p class="text-gray-400 text-lg font-light">{{ page.complectation_name }}, {{ page.year }}</p>
+                </div>
+            {%- if page.images.size > 0 -%}
+                <div class="swiper car-image-slider aspect-[1/0.7] sm:mb-2.5">
+                    <div class="swiper-wrapper">
+                        {%- for img in page.images -%}
+                        <div class="swiper-slide bg-gray-100">
+                            <img src="{{ img |relative_url }}" class="w-full" alt="{{page.folder_id}}" loading="lazy">
+                            <div class="swiper-lazy-preloader"></div>
+                        </div>
+                        {%- endfor -%}
+                    </div>
+                    <div class="swiper-button-prev car-image-slider-prev hidden sm:flex"></div>
+                    <div class="swiper-button-next car-image-slider-next hidden sm:flex"></div>
+                </div>
+                <div class="hidden sm:block swiper car-thumb-slider">
+                    <div class="swiper-wrapper">
+                        {%- for img in page.images -%}
+                        <div class="swiper-slide aspect-[1/0.7]">
+                            <img src="{{ img |relative_url }}" class="w-full" alt="{{page.folder_id}}" loading="lazy">
+                            <div class="swiper-lazy-preloader"></div>
+                        </div>
+                        {%- endfor -%}
+                    </div>
+                </div>
+            {%- else -%}
+                <img src="{{ page.thumb |relative_url }}" class="w-full" alt="{{page.folder_id}}">
+            {%- endif -%}
+            </div>
+
+            <div class="col-span-12 lg:col-span-6 2xl:col-span-5 text-sm sm:text-base">
+                <div class="hidden lg:block">
+                    <h1 class="text-4xl font-medium uppercase">{{ page.h1 }}</h1>
+                    <p class="text-gray-400 text-lg font-light">{{ page.complectation_name }}, {{ page.year }}</p>
+                </div>
+                <div class="lg:mt-5 divide-y border-b">
+                    <div class="flex justify-between py-3">
+                        <span class="font-light min-[500px]:w-1/2">Двигатель</span>
+                        <span class="font-bold">{{ page.modification_id }}</span>
+                    </div>
+                    <div class="flex justify-between py-3">
+                        <span class="font-light min-[500px]:w-1/2">Пробег</span>
+                        <span class="font-bold">{% include utils/numf.html number=page.run ts=' ' decimals=0 %}&nbsp;км</span>
+                    </div>
+                    <div class="flex justify-between py-3">
+                        <span class="font-light min-[500px]:w-1/2">Кузов</span>
+                        <span class="font-bold">{{ page.body_type }}</span>
+                    </div>
+                    <div class="flex justify-between py-3">
+                        <span class="font-light min-[500px]:w-1/2">Цвет</span>
+                        <span class="font-bold">{{ page.color | capitalize}}</span>
+                    </div>
+                    <div class="flex justify-between py-3">
+                        <span class="font-light min-[500px]:w-1/2">Руль</span>
+                        <span class="font-bold">{{ page.wheel | capitalize }}</span>
+                    </div>
+                    <div class="flex justify-between py-3">
+                        <span class="font-light min-[500px]:w-1/2">VIN</span>
+                        <span class="font-bold">{{ page.vin_hidden }}</span>
+                    </div>
+                </div>
+                <div class="my-8">
+                    <div class="text-gray-400 font-light">Стоимость</div>
+                    <div class="font-bold text-3xl">{% include utils/numf.html number=page.price ts=' ' decimals=0 %}&nbsp;₽</div>
+                </div>
+                <div class="flex flex-col min-[500px]:flex-row gap-4 min-[500px]:gap-5">
+                    <a href="#common-modal" class="popup-link btn flex-grow !p-2" data-title="Получить предложение" data-form_name="Получить предложение. {{page.color}} {{page.folder_id}} {{page.modification_id}}, {{page.vin}}. {% include utils/numf.html number=page.price ts=' ' decimals=0 %} ₽">Получить предложение</a>
+                    <a href="#common-modal" class="popup-link btn gray flex-grow !p-2" data-title="Расчитать кредит" data-form_name="Расчитать кредит. {{page.color}} {{page.folder_id}} {{page.modification_id}}, {{page.vin}}. {% include utils/numf.html number=page.price ts=' ' decimals=0 %} ₽">Расчитать кредит</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-14">{{page.description}}</div>
+
+    </div>
+</section>
+
+{%- include blocks/model/slogan.html -%}

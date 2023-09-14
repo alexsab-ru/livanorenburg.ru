@@ -1,0 +1,15 @@
+{%- assign car = include.car -%}
+
+<div class="car-item flex flex-col justify-between shadow-2xl pb-3 xl:pb-4" data-price="{{car.price}}">
+    {%- include cars/preview-slider.html images = car.images -%}
+    <div class="flex-grow mb-3 md:mb-5 px-3 xl:px-4">
+        <div class="sm:text-lg md:text-xl xl:text-2xl font-medium mt-3">{% include utils/numf.html number=car.price ts=' ' decimals=0 %}&nbsp;₽</div>
+        <h2 class="text-xs sm:text-base md:text-lg xl:text-xl font-normal mt-1 transition-colors hover:text-accent">
+            <a href="{{ car.url |relative_url }}"><b class="font-bold">{{ car.folder_id }}</b> {{ car.modification_id }}</a>
+        </h2>
+        <div class="text-xs sm:text-sm md:text-base font-medium mt-0.5 sm:mt-1 text-gray-400">{{ car.year }}&nbsp;/&nbsp;{% include utils/numf.html number=car.run ts=' ' decimals=0 %}&nbsp;км</div>
+    </div>
+    <div class="px-3 xl:px-4">
+        <a href="{{ car.url | relative_url }}" class="btn block !px-3 !py-2 md:text-base sm:text-sm text-xs">Подробнее</a>        
+    </div>
+</div>

@@ -13,7 +13,7 @@ document.querySelectorAll(".color-link").forEach(function (link) {
 			el.classList.add("active");
 		});
 		parent.querySelectorAll(".color-img-preview").forEach((el) => {
-			el.setAttribute("src", `img/${dir}/${color}.png`);
+			el.setAttribute("src", `img/${dir}/color/${color}.png`);
 		});
 		parent.querySelectorAll(".color-name").forEach((el) => {
 			el.textContent = colorName;
