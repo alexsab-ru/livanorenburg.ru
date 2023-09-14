@@ -28,9 +28,9 @@ else:
 
 # Clear the directory if it exists, otherwise create it
 directory = "_cars"
-if os.path.exists(directory):
-    shutil.rmtree(directory)
-os.makedirs(directory)
+# if os.path.exists(directory):
+#     shutil.rmtree(directory)
+# os.makedirs(directory)
 
 def process_vin_hidden(vin):
     return f"{vin[:5]}-{vin[-4:]}"
@@ -103,8 +103,8 @@ for car in root.find('cars'):
 
     existing_files.add(filename)
 
-for existing_file in os.listdir(CAR_DIR):
-    filepath = os.path.join(CAR_DIR, existing_file)
+for existing_file in os.listdir(directory):
+    filepath = os.path.join(directory, existing_file)
     if filepath not in existing_files:
         os.remove(filepath)
 
