@@ -1,9 +1,11 @@
 name: Generate Jekyll Files from XML
 
 on:
+  schedule:
+    - cron: '0 */2 * * *'  # Запускается каждый час
   push:
     branches:
-      - cars
+      - '**'
 
 jobs:
   build:
@@ -53,6 +55,6 @@ jobs:
         git add public/_cars/*.html
         git commit -m "Update cars from XML" -a || echo "No changes to commit"
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        git push origin cars
+        git push origin $GITHUB_REF_NAME
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
