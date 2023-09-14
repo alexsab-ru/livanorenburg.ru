@@ -2,7 +2,7 @@ import defaultTheme from 'tailwindcss/defaultTheme'
 import colors from 'tailwindcss/colors'
 
 export const content = [
-  "../**/*.html",
+  "../public/**/*.html",
   './src/js/**/*.js'
 ]
 export const theme = {
