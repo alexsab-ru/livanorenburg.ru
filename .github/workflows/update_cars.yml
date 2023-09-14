@@ -14,7 +14,6 @@ jobs:
     # Указываете окружение и его переменные
     environment:
       name: production
-      url: ${{ env.ENV_XML_URL }}
 
     steps:
     - name: Checkout repo
