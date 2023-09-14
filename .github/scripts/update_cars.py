@@ -67,7 +67,7 @@ for car in root.find('cars'):
 
     # Forming the YAML frontmatter
     content = "---\n"
-    content += "layout: page\n"
+    content += "layout: car-page\n"
     content += f"permalink: {permalink}\n"
     content += f"vin_hidden: {vin_hidden}\n"
 
