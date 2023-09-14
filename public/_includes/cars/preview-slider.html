@@ -18,7 +18,7 @@
         </a>
         {%- endfor -%}
         {%- else -%}
-        <img src="{{'/img/404.jpg' | relative_url}}" class="w-full h-auto object-contain" alt="No Photo">
+        <img src="{{ car.thumb | relative_url}}" class="w-full h-auto object-contain" alt="No Photo">
         {%- endif -%}
     </div>
 </div> 

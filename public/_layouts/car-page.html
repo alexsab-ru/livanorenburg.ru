@@ -45,7 +45,7 @@ layout: default
                     </div>
                 </div>
             {%- else -%}
-                <img src="{{ '/img/404.jpg' |relative_url }}" class="w-full" alt="{{page.folder_id}}">
+                <img src="{{ page.thumb |relative_url }}" class="w-full" alt="{{page.folder_id}}">
             {%- endif -%}
             </div>
 
