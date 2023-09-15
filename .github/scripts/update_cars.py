@@ -75,7 +75,7 @@ for car in root.find('cars'):
     # Преобразование цвета
     color = car.find('color').text.strip().capitalize()
 
-    thumb = f"/img/x3Pro/color/{color_mapping.get(color, 'white')}.png"
+    thumb = f"/img/x3Pro/color/{color_mapping.get(color, '404')}.png"
 
 
     # Forming the YAML frontmatter
@@ -103,18 +103,17 @@ for car in root.find('cars'):
             content += f"{child.tag}: {color}\n"
             content += f"thumb: {thumb}\n"
         elif child.tag == 'extras' and child.text:
-            # content += f"{child.tag}: \"{child.text.replace('"', '\"')}\"\n"
+            extras = child.text
+            flat_extras = extras.replace('\n', '<br>\n')
             content += f"{child.tag}: |\n"
-            for line in child.text.split("\n"):
+            for line in flat_extras.split("\n"):
                 content += f"  {line}\n"
         elif child.tag == 'description' and child.text:
-            content += f"{child.tag}: |\n"
-            for line in child.text.split("\n"):
-                content += f"  {line}\n"
-            # Flattening description for YAML without using backslashes in f-string
             description = child.text
-            # flat_description = description.replace('\n', '<br>')
-            # content += "{}: \"{}\"\n".format(child.tag, flat_description)
+            flat_description = description.replace('\n', '<br>\n')
+            content += f"{child.tag}: |\n"
+            for line in flat_description.split("\n"):
+                content += f"  {line}\n"
         else:
             if child.text:  # Only add if there's content
                 content += f"{child.tag}: {child.text}\n"
