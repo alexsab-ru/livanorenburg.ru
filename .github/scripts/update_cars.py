@@ -103,14 +103,18 @@ for car in root.find('cars'):
             content += f"{child.tag}: {color}\n"
             content += f"thumb: {thumb}\n"
         elif child.tag == 'extras' and child.text:
-            content += f"{child.tag}: \"{child.text}\"\n"
+            # content += f"{child.tag}: \"{child.text.replace('"', '\"')}\"\n"
+            content += f"{child.tag}: |\n"
+            for line in child.text.split("\n"):
+                content += f"  {line}\n"
         elif child.tag == 'description' and child.text:
-            # content += f"{child.tag}: >-\n"
-            # for line in child.text.split("\n"):
-            #     content += f"  {line}<br>\n"
+            content += f"{child.tag}: |\n"
+            for line in child.text.split("\n"):
+                content += f"  {line}\n"
             # Flattening description for YAML without using backslashes in f-string
-            flat_description = child.text.replace('\n', '<br>')
-            content += "{}: \"{}\"\n".format(child.tag, flat_description)
+            description = child.text
+            # flat_description = description.replace('\n', '<br>')
+            # content += "{}: \"{}\"\n".format(child.tag, flat_description)
         else:
             if child.text:  # Only add if there's content
                 content += f"{child.tag}: {child.text}\n"
