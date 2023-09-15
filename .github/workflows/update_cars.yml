@@ -4,8 +4,9 @@ on:
   schedule:
     - cron: '0 */2 * * *'  # Запускается каждый час
   push:
-    branches:
-      - '**'
+    paths:
+      - '.github/workflows/update_cars.yml'
+      - '.github/scripts/update_cars.py'
   workflow_dispatch:
 
 jobs:
