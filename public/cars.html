@@ -9,9 +9,47 @@ permalink: /cars/
 {% assign cars = site.cars %}
 
 {%- if cars.size > 0 -%}
-<section class="pb-14">
+<section class="pb-14" x-data="sorting">
     <div class="container">
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 xl:gap-5 car-list">
+        
+        <p class="mb-6">{{cars.size}} автомобилей в наличии</p>
+
+        <hr>
+        
+        <div class="flex items-center gap-4 my-5 text-xs sm:text-base">
+            <span>Сортировать по:</span>
+            <div 
+                class="relative min-w-[160px] sm:min-w-[250px] w-auto" 
+                @click.outside="open = false"
+            >
+                <span 
+                class="border py-1.5 sm:py-2 px-3 sm:px-4 cursor-pointer flex items-center justify-between gap-5 flex-nowrap outline-none" 
+                tabindex="-1" 
+                @click="open = !open" 
+                @keydown.escape="open = false">
+                <span x-text="value"></span>
+                <span class="mdi mdi-chevron-down text-2xl transition-transform duration-300 origin-center"></span></span>
+                <div 
+                    class="absolute top-full left-0 min-w-fit w-full border bg-white shadow-xl z-10 max-h-[165px] overflow-y-auto transition-all duration-300 custom-scroll"
+                    :class="open ? 'visible opacity-100 translate-y-0' : 'invisible opacity-0 -translate-y-2'"
+                    x-cloak
+                >
+                    <template x-for="option in options" :key="option.id">
+                        <a 
+                            href="#" 
+                            class="block py-2 px-4 whitespace-nowrap transition-colors duration-300 hover:bg-gray-200"
+                            :class="{'bg-gray-200': option.id === current}"
+                            @click.prevent="sortBy(option.id)"
+                            x-text="option.title"
+                        ></a>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 xl:gap-5 car-list mt-10">
         {%- for car in cars -%}
             {%- include cars/item.html car=car -%}
         {%- endfor -%}
