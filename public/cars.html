@@ -7,17 +7,14 @@ permalink: /cars/
 ---
 
 {% assign cars = site.cars %}
-{% capture cars_size %}
-{% include utils/sum.html objects_array=site.cars property_name="total" %}
-{% endcapture %}
-{% assign cars_size = cars_size | plus: 0 %}
 
+{% assign total = cars | count_total: 'total' %}
 
-{%- if cars_size > 0 -%}
+{%- if cars.size > 0 -%}
 <section class="pb-14" x-data="sorting">
     <div class="container">
-
-        <p class="mb-6">{{ cars_size }} {% include utils/declOfNum.html number=cars_size titles="автомобиль|автомобиля|автомобилей" %} в наличии</p>
+        
+        <p class="mb-6">{{total}} {% include utils/declOfNum.html number=total titles="автомобиль|автомобиля|автомобилей" %} в наличии</p>
 
         <hr>
         

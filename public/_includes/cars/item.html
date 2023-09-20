@@ -7,8 +7,8 @@
         <h2 class="text-xs sm:text-base md:text-lg xl:text-xl font-normal mt-1 transition-colors hover:text-accent">
             <a href="{{ car.url |relative_url }}"><b class="font-bold">{{ car.folder_id }}</b> {{ car.modification_id }}</a>
         </h2>
-        <div class="text-xs sm:text-sm md:text-base font-medium mt-0.5 sm:mt-1 text-gray-400">{{ car.year }}&nbsp;/&nbsp;{% include utils/numf.html number=car.run ts=' ' decimals=0 %}&nbsp;км</div>
-        <div class="text-xs sm:text-sm md:text-base font-medium mt-0.5 sm:mt-1 text-gray-400">{{ car.total }} {% include utils/declOfNum.html number=car.total titles="автомобиль|автомобиля|автомобилей" %}</div>
+        <div class="text-xs sm:text-sm md:text-base mt-0.5 sm:mt-1 text-gray-400">{{ car.year }}&nbsp;/&nbsp;{% include utils/numf.html number=car.run ts=' ' decimals=0 %}&nbsp;км</div>
+        <div class="text-xs sm:text-sm md:text-base mt-0.5 sm:mt-1 text-gray-900">{{ car.total }} {% include utils/declOfNum.html number=car.total titles="автомобиль|автомобиля|автомобилей" %}</div>
     </div>
     <div class="px-3 xl:px-4">
         <a href="{{ car.url | relative_url }}" class="btn block !px-3 !py-2 md:text-base sm:text-sm text-xs">Подробнее</a>        
