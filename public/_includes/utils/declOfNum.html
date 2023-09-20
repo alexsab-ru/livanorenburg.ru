@@ -1,0 +1,17 @@
+{% assign number = include.number | default: 1 %}
+{% assign titles = include.titles | split: '|' %}
+{% assign cases = "2,0,1,1,1,2" | split: ',' %}
+{% assign idx = 2 %}
+
+{% assign mod_number = number | modulo: 10 %}
+{% if mod_number > 5 %}
+    {% assign idx_value = 5 %}
+{% else %}
+    {% assign idx_value = mod_number %}
+{% endif %}
+
+{% if number % 100 <= 4 or number % 100 >= 20 %}
+    {% assign idx = cases[idx_value] | plus: 0 %}
+{% endif %}
+
+{{ titles[idx] }}
