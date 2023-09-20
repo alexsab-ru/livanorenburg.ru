@@ -36,7 +36,7 @@ layout: default
                     <div class="swiper-wrapper">
                         {%- for img in page.images -%}
                         <div class="swiper-slide aspect-[1/0.7] relative">
-                            <img src="{{ img |relative_url }}" class="absolute w-full h-full object-cover object-center" alt="{{page.folder_id}}" loading="lazy">
+                            <img src="{{ img |relative_url }}" class="absolute w-full h-full" alt="{{page.folder_id}}" loading="lazy">
                             <div class="swiper-lazy-preloader"></div>
                         </div>
                         {%- endfor -%}
