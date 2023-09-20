@@ -52,7 +52,7 @@ def create_file(car, filename):
     # Forming the YAML frontmatter
     content = "---\n"
     content += "layout: car-page\n"
-    content += "count: 1\n"
+    content += "total: 1\n"
     content += f"permalink: {permalink}\n"
     content += f"vin_hidden: {vin_hidden}\n"
 
@@ -99,7 +99,7 @@ def create_file(car, filename):
     existing_files.add(filename)
 
 def update_yaml(car, filename):
-    """Increment the 'count' value in the YAML block of an HTML file."""
+    """Increment the 'total' value in the YAML block of an HTML file."""
 
     with open(filename, "r", encoding="utf-8") as f:
         content = f.read()
@@ -116,11 +116,11 @@ def update_yaml(car, filename):
     yaml_block = parts[1].strip()
     data = yaml.safe_load(yaml_block)
 
-    # Increment the 'count' value
-    if 'count' in data:
-        data['count'] += 1
+    # Increment the 'total' value
+    if 'total' in data:
+        data['total'] += 1
     else:
-        raise KeyError("'count' key not found in the YAML block.")
+        raise KeyError("'total' key not found in the YAML block.")
 
     if 'run' in data:
         data['run'] = min(data['run'], int(car.find('run').text))
