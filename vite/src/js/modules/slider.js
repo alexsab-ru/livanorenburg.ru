@@ -158,11 +158,13 @@ const carImageSlider = new Swiper('.car-image-slider', {
 	breakpoints: {
 		320: {
 		  slidesPerView: 1.08,
-		  spaceBetween: 5
+		  spaceBetween: 5,
+		  centeredSlides: false,
 		},
 		640: {
 		  slidesPerView: 1,
-		  spaceBetween: 20
+		  spaceBetween: 20,
+		  centeredSlides: true,
 		}
 	}
 })
