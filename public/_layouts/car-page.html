@@ -11,20 +11,21 @@ layout: default
 
             <div class="col-span-12 lg:col-span-6">
                 <div class="block lg:hidden mb-10">
-                    <h1 class="text-4xl font-medium uppercase">{{ page.h1 }}</h1>
+                    <h1 class="max-[350px]:text-xl text-2xl sm:text-4xl font-medium uppercase">{{ page.h1 }}</h1>
                     <p class="text-gray-400 text-lg font-light">
                         {%- if page.complectation_name and page.complectation_name != ''-%}
                         {{ page.complectation_name }}, 
                         {%- endif -%}
                         {{ page.year }}
                     </p>
+                    <p class="mt-2">{{ page.total }} {% include utils/declOfNum.html number=page.total titles="автомобиль|автомобиля|автомобилей" %} в наличии</p>
                 </div>
             {%- if page.images.size > 0 -%}
                 <div class="swiper car-image-slider aspect-[1/0.7] sm:mb-2.5">
                     <div class="swiper-wrapper">
                         {%- for img in page.images -%}
                         <div class="swiper-slide bg-gray-100">
-                            <img src="https://alexsab.ru/getimg/?i={{ img |relative_url }}" class="w-full" alt="{{page.folder_id}}" loading="lazy">
+                            <img src="https://alexsab.ru/getimg/?i={{ img |relative_url }}" class="w-full h-full object-cover" alt="{{page.folder_id}}" loading="lazy">
                             <div class="swiper-lazy-preloader"></div>
                         </div>
                         {%- endfor -%}
@@ -35,8 +36,8 @@ layout: default
                 <div class="hidden sm:block swiper car-thumb-slider">
                     <div class="swiper-wrapper">
                         {%- for img in page.images -%}
-                        <div class="swiper-slide aspect-[1/0.7]">
-                            <img src="https://alexsab.ru/getimg/?i={{ img |relative_url }}" class="w-full" alt="{{page.folder_id}}" loading="lazy">
+                        <div class="swiper-slide aspect-[1/0.7] relative">
+                            <img src="https://alexsab.ru/getimg/?i={{ img |relative_url }}" class="absolute w-full h-full" alt="{{page.folder_id}}" loading="lazy">
                             <div class="swiper-lazy-preloader"></div>
                         </div>
                         {%- endfor -%}
@@ -56,6 +57,7 @@ layout: default
                         {%- endif -%}
                         {{ page.year }}
                     </p>
+                    <p class="mt-2 text-lg">{{ page.total }} {% include utils/declOfNum.html number=page.total titles="автомобиль|автомобиля|автомобилей" %} в наличии</p>
                 </div>
                 <div class="lg:mt-5 divide-y border-b">
                     <div class="flex justify-between py-3">

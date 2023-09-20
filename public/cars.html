@@ -8,11 +8,13 @@ permalink: /cars/
 
 {% assign cars = site.cars %}
 
+{% assign total = cars | count_total: 'total' %}
+
 {%- if cars.size > 0 -%}
 <section class="pb-14" x-data="sorting">
     <div class="container">
         
-        <p class="mb-6">{{cars.size}} автомобилей в наличии</p>
+        <p class="mb-6">{{total}} {% include utils/declOfNum.html number=total titles="автомобиль|автомобиля|автомобилей" %} в наличии</p>
 
         <hr>
         

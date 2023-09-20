@@ -1,0 +1,10 @@
+{% assign objects_array = include.objects_array %}
+{% assign property_name = include.property_name %}
+{% assign sum = 0 %}
+
+{% for obj in objects_array %}
+    {% assign value_to_add = obj[property_name] | plus: 0 %}
+    {% assign sum = sum | plus: value_to_add %}
+{% endfor %}
+
+{{ sum }}

@@ -87,17 +87,19 @@
     opacity: 1 !important;
 }
 
-.swiper-slide.swiper-slide-visible{
-	position: relative;
-	&::after{
-		content: '';
-		position: absolute;
-		inset: 0;
-		background-color: #000;
-		opacity: 0.5;
-		transition: opacity .3s;
-	}
-	&.swiper-slide-thumb-active::after{
-		opacity: 0;
+.swiper.car-thumb-slider{
+	.swiper-slide{
+		position: relative;
+		&::after{
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-color: #000;
+			opacity: 0.6;
+			transition: opacity .3s;
+		}
+		&.swiper-slide-active::after{
+			opacity: 0;
+		}
 	}
 }
