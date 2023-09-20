@@ -46,7 +46,7 @@ jobs:
     - name: Check for changes
       id: check_changes
       run: |
-        git diff --exit-code || echo "changes=true" >> $GITHUB_ENV
+        git diff --exit-code || (echo "changes=true" >> $GITHUB_ENV && echo "changes=true" >> $GITHUB_OUTPUT)
       continue-on-error: true
 
     - name: Commit files
@@ -60,3 +60,6 @@ jobs:
         git push origin $GITHUB_REF_NAME
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    outputs:
+      changes: ${{ steps.check_changes.outputs.changes }}

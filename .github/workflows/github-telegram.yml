@@ -18,6 +18,10 @@ on:
         description: 'Additional text passed from the caller workflow'
         required: false
         type: string
+      commits:
+        description: 'Commits information from the caller workflow'
+        required: false
+        type: string
     secrets:
       TELEGRAM_TO:
         description: 'Telegram ID passed from the caller workflow'
@@ -96,7 +100,7 @@ jobs:
           disable_web_page_preview: true
           format: html
           message: |
-            <b>[${{ github.event.repository.name }}:${{ github.ref_name }}]</b> <b><a href="https://github.com/${{ github.repository }}/compare/${{ steps.with_commits.outputs.before }}">${{ steps.with_commits.outputs.lines_count }}</a></b> by <b><a href="https://github.com/${{ github.actor }}">${{ github.actor }}</a></b>
+            <b>[${{ github.event.repository.name }}:${{ github.ref }}]</b> <b><a href="https://github.com/${{ github.repository }}/compare/${{ steps.with_commits.outputs.before }}">${{ steps.with_commits.outputs.lines_count }}</a></b> by <b><a href="https://github.com/${{ github.actor }}">${{ github.actor }}</a></b>
             ${{ steps.set_outputs.outputs.additional_text }}
             ${{ steps.with_commits.outputs.full_list }}
 
@@ -119,7 +123,7 @@ jobs:
           disable_web_page_preview: true
           format: markdown
           message: |
-            *[${{ github.event.repository.name }}:${{ github.ref_name }}]* by *${{ github.actor }}*:
+            *[${{ github.event.repository.name }}:${{ github.ref }}]* by *${{ github.actor }}*:
 
             added branch [${{ github.event.ref }}](https://github.com/${{ github.repository }}/tree/${{ github.event.ref }}) from [${{ github.event.master_branch }}](https://github.com/${{ github.repository }}/tree/${{ github.event.master_branch }})
 
@@ -141,14 +145,14 @@ jobs:
           disable_web_page_preview: true
           format: markdown
           message: |
-            *[${{ github.event.repository.name }}:${{ github.ref_name }}]* by *${{ github.actor }}*:
+            *[${{ github.event.repository.name }}:${{ github.ref }}]* by *${{ github.actor }}*:
 
             pull request from [${{ github.event.pull_request.head.ref }}](https://github.com/${{ github.repository }}/tree/${{ github.event.head.ref }}) to [${{ github.event.pull_request.base.ref }}](https://github.com/${{ github.repository }}/tree/${{ github.event.base.ref }}) with comment:
             ${{ github.event.pull_request.body }}
 
   delete:
 
-    if: ${{ github.event.master_branch == null && github.event.commits == null && github.event.pull_request == null }}
+    if: ${{ github.event.master_branch == null && github.event.commits == null && github.event.pull_request == null && inputs.additional-text == null }}
 
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -164,9 +168,56 @@ jobs:
           disable_web_page_preview: true
           format: markdown
           message: |
-            *[${{ github.event.repository.name }}:${{ github.ref_name }}]* by *${{ github.actor }}*:
+            *[${{ github.event.repository.name }}:${{ github.ref }}]* by *${{ github.actor }}*:
 
             branch '`${{ github.event.ref }}`' is deleted
+
+  get_last_commit:
+    if: ${{ inputs.commits != null }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update repository
+        run: git pull
+
+      - name: Get last commit information
+        id: get_commits
+        run: |
+          COMMIT_MESSAGE=$(git log -1 --pretty=format:"%s")
+          COMMIT_AUTHOR=$(git log -1 --pretty=format:"%an")
+          COMMIT_HASH=$(git rev-parse HEAD)
+          echo "message=$COMMIT_MESSAGE" >> $GITHUB_OUTPUT
+          echo "author=$COMMIT_AUTHOR" >> $GITHUB_OUTPUT
+          echo "hash=$COMMIT_HASH" >> $GITHUB_OUTPUT
+
+      - name: Set outputs
+        id: set_outputs
+        # The part of this solution to focus on is that we’re substituting the %, \n, and \r characters
+        run: |
+          additional_text="${{ inputs.additional-text || '' }}"
+          if [ "$additional_text" != "" ]; then
+            echo "additional_text<<EOF" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo $additional_text >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Send message to Telegram
+        if: ${{ steps.get_commits.outputs.hash != '' }}
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          disable_web_page_preview: true
+          format: html
+          message: |
+            <b>[${{ github.event.repository.name }}:${{ github.ref }}]</b> <b><a href="https://github.com/${{ github.repository }}/commit/${{ steps.get_commits.outputs.hash }}">Last commit</a></b> by <b>${{ steps.get_commits.outputs.author }}</b>
+            ${{ steps.set_outputs.outputs.additional_text }}
+            ${{ steps.get_commits.outputs.message }}
+
 
   # log-github-event-goodies:
   #   name: "LOG Everything on GitHub Event"
