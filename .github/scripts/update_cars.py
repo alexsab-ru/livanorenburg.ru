@@ -3,8 +3,6 @@ import re
 import yaml
 import shutil
 import requests
-from pathlib import Path
-from bs4 import BeautifulSoup
 
 # Parsing XML
 import xml.etree.ElementTree as ET
