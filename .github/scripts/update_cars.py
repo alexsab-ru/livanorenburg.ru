@@ -1,40 +1,24 @@
 import os
+import re
+import yaml
 import shutil
 import requests
 from pathlib import Path
+from bs4 import BeautifulSoup
 
 # Parsing XML
 import xml.etree.ElementTree as ET
 
-filename = 'livan.xml'
 
-if os.path.exists(filename):
-    tree = ET.parse(filename)
-    root = tree.getroot()
-else:
-    XML_URL = os.environ['XML_URL']
+def process_unique_id(unique_id):
+    # Удаление специальных символов
+    processed_id = re.sub(r'[.,()"\']', '', unique_id)
 
-    response = requests.get(XML_URL)
-    response.raise_for_status()  # Если возникла ошибка, будет выброшено исключение
-    content = response.content
+    # Удаление пробелов и приведение к нижнему регистру
+    processed_id = processed_id.replace(" ", "").lower()
 
-    # Убрать BOM, если он присутствует
-    if content.startswith(b'\xef\xbb\xbf'):
-        content = content[3:]
+    return processed_id
 
-    # Декодируем содержимое из байтов в строку
-    xml_content = content.decode('utf-8')
-
-    # Parsing the provided XML data
-    root = ET.fromstring(xml_content)
-
-directory = "public/_cars"
-dir_path = Path(directory)
-dir_path.mkdir(parents=True, exist_ok=True)
-
-# Clear the directory if it exists, otherwise create it
-# if os.path.exists(directory):
-#     shutil.rmtree(directory)
 
 def process_vin_hidden(vin):
     return f"{vin[:5]}-{vin[-4:]}"
@@ -55,23 +39,10 @@ def process_description(desc_text):
             processed_lines.append(f"<p>{line}</p>")
     return '\n'.join(processed_lines)
 
-
-existing_files = set()  # для сохранения имен созданных или обновленных файлов
-# Словарь соответствия цветов
-color_mapping = {
-    "Белый": "white",
-    "Желтый": "gold",
-    "Красный": "red",
-    "Синий": "blue"
-    # ... добавьте другие цвета по мере необходимости
-}
-
-
-for car in root.find('cars'):
+def create_file(car, filename):
     vin = car.find('vin').text
     permalink = process_permalink(vin)
     vin_hidden = process_vin_hidden(vin)
-    filename = f"{directory}/{vin}.html"
     # Преобразование цвета
     color = car.find('color').text.strip().capitalize()
 
@@ -81,6 +52,7 @@ for car in root.find('cars'):
     # Forming the YAML frontmatter
     content = "---\n"
     content += "layout: car-page\n"
+    content += "count: 1\n"
     content += f"permalink: {permalink}\n"
     content += f"vin_hidden: {vin_hidden}\n"
 
@@ -125,6 +97,98 @@ for car in root.find('cars'):
         f.write(content)
 
     existing_files.add(filename)
+
+def update_yaml(car, filename):
+    """Increment the 'count' value in the YAML block of an HTML file."""
+
+    with open(filename, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    # Split the content by the YAML delimiter
+    yaml_delimiter = "---\n"
+    parts = content.split(yaml_delimiter)
+
+    # If there's no valid YAML block, raise an exception
+    if len(parts) < 3:
+        raise ValueError("No valid YAML block found in the provided file.")
+
+    # Parse the YAML block
+    yaml_block = parts[1].strip()
+    data = yaml.safe_load(yaml_block)
+
+    # Increment the 'count' value
+    if 'count' in data:
+        data['count'] += 1
+    else:
+        raise KeyError("'count' key not found in the YAML block.")
+
+    if 'run' in data:
+        data['run'] = min(data['run'], int(car.find('run').text))
+    else:
+        raise KeyError("'run' key not found in the YAML block.")
+
+    # Convert the data back to a YAML string
+    updated_yaml_block = yaml.safe_dump(data, default_flow_style=False, allow_unicode=True)
+
+    # Reassemble the content with the updated YAML block
+    updated_content = yaml_delimiter.join([parts[0], updated_yaml_block, yaml_delimiter.join(parts[2:])])
+
+    # Save the updated content to the output file
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(updated_content)
+
+    return filename
+
+
+filename = 'livan.xml'
+
+if os.path.exists(filename):
+    tree = ET.parse(filename)
+    root = tree.getroot()
+else:
+    XML_URL = os.environ['XML_URL']
+
+    response = requests.get(XML_URL)
+    response.raise_for_status()  # Если возникла ошибка, будет выброшено исключение
+    content = response.content
+
+    # Убрать BOM, если он присутствует
+    if content.startswith(b'\xef\xbb\xbf'):
+        content = content[3:]
+
+    # Декодируем содержимое из байтов в строку
+    xml_content = content.decode('utf-8')
+
+    # Parsing the provided XML data
+    root = ET.fromstring(xml_content)
+
+
+directory = "public/_cars"
+if os.path.exists(directory):
+    shutil.rmtree(directory)
+os.makedirs(directory)
+
+existing_files = set()  # для сохранения имен созданных или обновленных файлов
+# Словарь соответствия цветов
+color_mapping = {
+    "Белый": "white",
+    "Желтый": "gold",
+    "Красный": "red",
+    "Синий": "blue"
+    # ... добавьте другие цвета по мере необходимости
+}
+
+
+for car in root.find('cars'):
+    unique_id = f"{car.find('mark_id').text} {car.find('folder_id').text} {car.find('modification_id').text} {car.find('complectation_name').text} {car.find('color').text} {car.find('price').text} {car.find('year').text}"
+    unique_id = f"{process_unique_id(unique_id)}.html"
+    file_path = os.path.join(directory, unique_id)
+
+    if os.path.exists(file_path):
+        update_yaml(car, file_path)
+    else:
+        create_file(car, file_path)
+
 
 for existing_file in os.listdir(directory):
     filepath = os.path.join(directory, existing_file)
