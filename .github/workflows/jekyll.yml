@@ -41,8 +41,8 @@ jobs:
 
       - name: Check for new commits
         run: |
-          # Получите количество коммитов за последние X минут/часов
-          COUNT=$(git log --since="2 hours ago" --pretty=oneline | wc -l)
+          # Получите количество коммитов за последние 10 минут
+          COUNT=$(git log --since="10 minutes ago" --pretty=oneline | wc -l)
           if [ "$COUNT" -eq "0" ]; then
             echo "No new commits. Exiting workflow."
             exit 1
