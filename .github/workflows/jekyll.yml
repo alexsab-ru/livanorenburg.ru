@@ -7,6 +7,10 @@
 name: Deploy Jekyll site to Pages
 
 on:
+  workflow_run:
+    workflows: ["Generate Jekyll Files from XML"]  # Замените на имя вашего рабочего процесса update_cars
+    types:
+      - completed
   # Runs on pushes targeting the default branch
   push:
     branches: ["master", "main"]
