@@ -45,7 +45,7 @@ jobs:
           COUNT=$(git log --since="10 minutes ago" --pretty=oneline | wc -l)
           if [ "$COUNT" -eq "0" ]; then
             echo "No new commits. Exiting workflow."
-            exit 1
+            exit 0
           fi
 
       - name: Setup Ruby
