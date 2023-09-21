@@ -100,7 +100,7 @@ jobs:
           disable_web_page_preview: true
           format: html
           message: |
-            <b>[${{ github.event.repository.name }}:${{ github.ref }}]</b> <b><a href="https://github.com/${{ github.repository }}/compare/${{ steps.with_commits.outputs.before }}">${{ steps.with_commits.outputs.lines_count }}</a></b> by <b><a href="https://github.com/${{ github.actor }}">${{ github.actor }}</a></b>
+            <b>[${{ github.event.repository.name }}:${{ github.ref_name }}]</b> <b><a href="https://github.com/${{ github.repository }}/compare/${{ steps.with_commits.outputs.before }}">${{ steps.with_commits.outputs.lines_count }}</a></b> by <b><a href="https://github.com/${{ github.actor }}">${{ github.actor }}</a></b>
             ${{ steps.set_outputs.outputs.additional_text }}
             ${{ steps.with_commits.outputs.full_list }}
 
@@ -123,7 +123,7 @@ jobs:
           disable_web_page_preview: true
           format: markdown
           message: |
-            *[${{ github.event.repository.name }}:${{ github.ref }}]* by *${{ github.actor }}*:
+            *[${{ github.event.repository.name }}:${{ github.ref_name }}]* by *${{ github.actor }}*:
 
             added branch [${{ github.event.ref }}](https://github.com/${{ github.repository }}/tree/${{ github.event.ref }}) from [${{ github.event.master_branch }}](https://github.com/${{ github.repository }}/tree/${{ github.event.master_branch }})
 
@@ -145,7 +145,7 @@ jobs:
           disable_web_page_preview: true
           format: markdown
           message: |
-            *[${{ github.event.repository.name }}:${{ github.ref }}]* by *${{ github.actor }}*:
+            *[${{ github.event.repository.name }}:${{ github.ref_name }}]* by *${{ github.actor }}*:
 
             pull request from [${{ github.event.pull_request.head.ref }}](https://github.com/${{ github.repository }}/tree/${{ github.event.head.ref }}) to [${{ github.event.pull_request.base.ref }}](https://github.com/${{ github.repository }}/tree/${{ github.event.base.ref }}) with comment:
             ${{ github.event.pull_request.body }}
@@ -168,7 +168,7 @@ jobs:
           disable_web_page_preview: true
           format: markdown
           message: |
-            *[${{ github.event.repository.name }}:${{ github.ref }}]* by *${{ github.actor }}*:
+            *[${{ github.event.repository.name }}:${{ github.ref_name }}]* by *${{ github.actor }}*:
 
             branch '`${{ github.event.ref }}`' is deleted
 
@@ -214,7 +214,7 @@ jobs:
           disable_web_page_preview: true
           format: html
           message: |
-            <b>[${{ github.event.repository.name }}:${{ github.ref }}]</b> <b><a href="https://github.com/${{ github.repository }}/commit/${{ steps.get_commits.outputs.hash }}">Last commit</a></b> by <b>${{ steps.get_commits.outputs.author }}</b>
+            <b>[${{ github.event.repository.name }}:${{ github.ref_name }}]</b> <b><a href="https://github.com/${{ github.repository }}/commit/${{ steps.get_commits.outputs.hash }}">Last commit</a></b> by <b>${{ steps.get_commits.outputs.author }}</b>
             ${{ steps.set_outputs.outputs.additional_text }}
             ${{ steps.get_commits.outputs.message }}
 
