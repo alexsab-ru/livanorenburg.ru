@@ -48,10 +48,11 @@ jobs:
             echo "No new commits. Exiting workflow."
             echo "changes=false" >> $GITHUB_ENV
             exit 0
+          else
+            echo "changes=true" >> $GITHUB_ENV
           fi
 
       - name: Setup Ruby
-        if: env.changes == 'true'
         uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
         with:
           ruby-version: '3.1' # Not needed with a .ruby-version file
@@ -59,13 +60,13 @@ jobs:
           cache-version: 0 # Increment this number if you need to re-download cached gems
 
       - name: Setup Pages
-        if: env.changes == 'true'
         id: pages
+        if: env.changes == 'true'
         uses: actions/configure-pages@v3
 
       - name: Build with Jekyll
-        if: env.changes == 'true'
         # Outputs to the './_site' directory by default
+        if: env.changes == 'true'
         run: |
           npm install -g pnpm
           pnpm install --no-frozen-lockfile
