@@ -10,6 +10,8 @@ if($modelBar){
 	$modelBar.style.top = ww > 1024 ? (hideHeaderPos + hideNavPos) + "px" : hideHeaderPos + "px";
 }
 
+$nav.style.top = hideHeaderPos + "px";
+
 window.addEventListener("resize", () => {
 	hideHeaderPos = $header.clientHeight;
 	ww = window.innerWidth;
