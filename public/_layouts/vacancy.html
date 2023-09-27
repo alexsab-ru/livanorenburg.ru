@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<section class="pt-10 pb-14 content">
+	<div class="container">
+		{% include breadcrumbs.html %}
+		{% if page.title and page.title != '' %}
+		<h1 class="text-2xl sm:text-6xl">{{ page.title }}</h1>
+		{% endif %}
+		{% if page.zp %}
+		<p class="font-bold text-xl sm:text-3xl mt-4 mb-10">
+			{% if page.from %}
+			от 
+			{% endif %}
+			{% include utils/numf.html number=page.zp ts=' ' decimals=0 %} ₽
+		</p>
+		{% else %}
+		<p class="font-bold text-gray-700 sm:text-lg mt-4 mb-10">при собеседовании</p>
+		{% endif %}
+		{{ content }}
+		<div class="mt-14">
+			<a 
+				href="#common-modal" 
+				class="popup-link btn btn-o"
+				data-title="{{ page.title }}" 
+                data-form_name="Отклик на вакансию. <b>{{ page.title }}</b>"
+			>Откликнуться на вакансию</a>
+		</div>
+	</div>
+</section>

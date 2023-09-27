@@ -28,3 +28,19 @@
 pre {
     white-space: pre-wrap;
 }
+
+.content{
+	@apply text-xs sm:text-base;
+	h3{
+		@apply text-lg sm:text-xl font-medium mb-4 mt-5;
+	}
+	ul{
+		@apply mb-5 space-y-2;
+	}
+	p{
+		@apply mb-4;
+	}
+	a:not(.btn, .whitespace-nowrap){
+		@apply underline text-accent transition-all duration-300 hover:no-underline;
+	}
+}
