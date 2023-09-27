@@ -9,6 +9,18 @@ document.addEventListener("alpine:init", () => {
 			this.$root.remove();
 		},
 	}));
+	Alpine.data("reklama", () => ({
+		init(){
+			localStorage.getItem("reklama") ? Alpine.store('reklama').on = false : true;
+			console.log(Alpine.store('reklama'));
+		},
+		show: localStorage.getItem("reklama") || false,
+		onClick() {
+			localStorage.setItem("reklama", true);
+			Alpine.store('reklama').on = false;
+			this.$root.remove();
+		},
+	}));
 	Alpine.data("scrollTop", (t) => ({
 		scrolled: !1,
 		init() {
@@ -84,6 +96,9 @@ document.addEventListener("alpine:init", () => {
             // this.sortBy(this.current)
 		},
 	}));
+	Alpine.store('reklama', {
+		on: true,
+	})
 });
 
 Alpine.start();

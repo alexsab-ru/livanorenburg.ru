@@ -17,7 +17,7 @@
             {%- for path in default_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
             {%- assign children = site.pages | children_of: my_page | sort: 'order' -%}
-            {%- if my_page.child != true and my_page.menu and my_page.url != '/contacts/' and my_page.url != '/cars/' -%}
+            {%- if my_page.child != true and my_page.menu and my_page.url != '/contacts/' and my_page.url != '/cars/' and my_page.url != '/vacancies/' -%}
             <div class="">
                 <h3 class="text-xl mb-4">{{ my_page.menu }}</h3>
                 {%- if children -%}

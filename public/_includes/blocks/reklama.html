@@ -1,0 +1,8 @@
+<div x-data="reklama()">
+	<template x-if="!show">
+		<div class="bg-accent text-white py-3 px-14 text-center fixed bottom-0 w-full z-40 max-[400px]:text-xs text-sm lg:text-lg">
+			Открыта вакансия <a href="/vacancies/manager-po-prodazham-avto" class="underline">Менеджер по продажам автомобилей</a> в LIVAN ЦЕНТР Оренбург!
+			<div class="absolute h-full w-8 top-0 right-2 flex items-center justify-center cursor-pointer opacity-80 hover:opacity-100" x-on:click="onClick">&times;</div>
+		</div>		
+	</template>
+</div>

@@ -30,6 +30,9 @@ collections:
   cars:
     output: true
     permalink: /cars/:name
+  vacancies:
+    output: true
+    permalink: /vacancies/:name
 
 exclude:
   - .sass-cache/
