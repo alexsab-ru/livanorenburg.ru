@@ -1,12 +1,9 @@
+import { getCookie } from "./cookie";
+
 const $$ = (el) => {
 	return document.querySelectorAll(el);
 };
-function dl(event, t = {}) {
-	void 0 !== window.dataLayer && window.dataLayer.push({
-		event: event,
-		...t
-	})
-}
+
 // PHONE MASK
 function maskphone(e) {
 	let num = this.value
@@ -23,10 +20,13 @@ function maskphone(e) {
 	this.value = num.join("");
 	this.nextSibling.nextElementSibling.classList.add("hidden");
 }
+
 $$("input[name=phone]").forEach(function (element) {
 	element.addEventListener("focus", maskphone);
 	element.addEventListener("input", maskphone);
 });
+
+
 // AGREE CHECKBOX
 // Проверка на состояние чекбокса, показ/скрытие ошибки
 $$("input[name=agree]").forEach(function (element) {
@@ -39,6 +39,8 @@ $$("input[name=agree]").forEach(function (element) {
 		}
 	});
 });
+
+
 // TEXTAREA
 const minLengthTextareaField = 10; // минимальное кол-во символов
 // проверка на минимальное кол-во символов и скрытие ошибки
@@ -47,6 +49,8 @@ const checkTextareaLength = (textarea, minLength) => {
 		textarea.nextSibling.nextElementSibling.classList.add("hidden");
 	}
 };
+
+
 // CHANGE textarea для всез браузеров
 // $$("textarea").forEach(function (textarea) {
 // 	if (textarea.addEventListener) {
@@ -65,6 +69,7 @@ const checkTextareaLength = (textarea, minLength) => {
 // 		});
 // 	}
 // });
+
 
 // BUTTON
 // Состояние кнопки
@@ -88,6 +93,7 @@ const showMessageModal = (messageModal, icon, message) => {
 	messageModal.classList.remove("hidden");
 };
 
+
 // FORMS
 // Отправка всех форм
 $$("form").forEach((form) => {
@@ -104,11 +110,9 @@ $$("form").forEach((form) => {
 			'<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#279548" d="M26,0A26,26,0,1,0,52,26,26,26,0,0,0,26,0Zm9.6,17.5a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2Zm-19.2,0a2,2,0,1,1-2,2A2,2,0,0,1,16.4,17.5ZM40.09,32.15a15.8,15.8,0,0,1-28.18,0,1,1,0,0,1,1.78-.9,13.81,13.81,0,0,0,24.62,0,1,1,0,1,1,1.78.9Z"></path></svg>';
 		const errorText =
 			'<b class="text-bold block text-2xl mb-4">Упс!</b> Что-то пошло не так. Перезагрузите страницу и попробуйте снова. ';
-		let successText = "";
+		let successText = '<b class="text-bold block text-2xl mb-4">Спасибо!</b> В скором времени мы свяжемся с Вами!';
 		const messageModal = document.getElementById("message-modal");
 
-		successText =
-			'<b class="text-bold block text-2xl mb-4">Спасибо!</b> В скором времени мы свяжемся с Вами!';
 		if (!phone.value.length) {
 			showErrorMes(form, ".phone", "Телефон является обязательным полем");
 			stateBtn(btn, "Отправить");
@@ -129,7 +133,16 @@ $$("form").forEach((form) => {
 			return;
 		}
 		let formData = new FormData(form);
-		const params = new URLSearchParams([...new FormData(event.target).entries()]);
+		if(getCookie('fta')) {
+			formData.append("fta", true);
+		}
+		if(getCookie('__gtm_campaign_url')) {
+			var source = new URL(getCookie('__gtm_campaign_url'));
+			source.search.slice(1).split("&").forEach(function(pair) {
+				var param = pair.split("=");
+				formData.append(param[0], param[1]);
+			});
+		}
 		formData.append(
 			"page_url",
 			window.location.origin + window.location.pathname
@@ -139,18 +152,15 @@ $$("form").forEach((form) => {
 			.split("&")
 			.forEach(function (pair) {
 				var param = pair.split("=");
-				formData.append(param[0], param[1]);
+				if(formData.get(param[0])){
+					formData.set(param[0], decodeURIComponent(param[1]));
+				} else {
+					formData.append(param[0], decodeURIComponent(param[1]));
+				}
 			});
-		for (const pair of formData) {
-			params.append(pair[0], pair[1]);
-		}
-
-		let formDataObj = {"EventProperties":{}};
-		formData.forEach((value, key) => (formDataObj["EventProperties"][key] = value));
-		formDataObj['EventCategory'] = 'Lead';
-		formDataObj["EventProperties"]['formID'] = form.id;
-		formDataObj['sourceName'] = 'page';
-
+		const params = new URLSearchParams([...formData]);
+		var formDataObj = window.WebsiteAnalytics.getFormDataObject(formData, form.id);
+		// await fetch('https://alexsab.ru/lead/test/', {
 		await fetch("https://alexsab.ru/lead/livan/orenburg/", {
 			method: "POST",
 			mode: "cors",
@@ -166,17 +176,20 @@ $$("form").forEach((form) => {
 				console.log(data);
 				stateBtn(btn, "Отправить");
 				if (data.answer == "required") {
+					window.WebsiteAnalytics.dataLayer("form-required");
 					showErrorMes(form, data.field, data.message);
 					return;
 				} else if (data.answer == "error") {
+					window.WebsiteAnalytics.dataLayer("form-error");
 					showMessageModal(messageModal, errorIcon, errorText + "<br>" + data.error);
 				} else {
-					dl("form_success", formDataObj)
+					window.WebsiteAnalytics.dataLayer("form-success", formDataObj);
 					showMessageModal(messageModal, successIcon, successText);
 				}
 				form.reset();
 			})
 			.catch((error) => {
+				window.WebsiteAnalytics.dataLayer("form-error");
 				console.error("Ошибка отправки данных формы: " + error);
 				showMessageModal(messageModal, errorIcon, errorText + "<br>" + error);
 				stateBtn(btn, "Отправить");

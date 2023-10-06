@@ -36,6 +36,7 @@ document.querySelectorAll(".modal-overlay").forEach((el) => {
 });
 
 function closeModal(modal) {
+	window.WebsiteAnalytics.dataLayer("form-error");
 	const form = modal.querySelector("form");
 	if (form) {
 		form.reset();
