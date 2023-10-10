@@ -10,7 +10,9 @@ import './modules/alpine';
 
 import GLightbox from 'glightbox';
 
-const lightbox = GLightbox();
+const lightbox = GLightbox({
+    moreLength: 0
+});
 
 // var elements = document.querySelectorAll('.car-item');
 // var elementsArray = Array.from(elements);
