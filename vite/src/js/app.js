@@ -11,24 +11,6 @@ import './modules/alpine';
 import GLightbox from 'glightbox';
 
 const lightbox = GLightbox({
-    moreLength: 0
+    moreLength: 0,
+    descPosition: window.innerWidth <= 769 ? 'top' : 'bottom'
 });
-
-// var elements = document.querySelectorAll('.car-item');
-// var elementsArray = Array.from(elements);
-
-// elementsArray.sort(function(a, b) {
-//   var priceA = parseFloat(a.getAttribute('data-price'));
-//   var priceB = parseFloat(b.getAttribute('data-price'));
-//   return priceA - priceB; //увелечение
-//   return priceB - priceA; //уменьшение
-// });
-
-// var parent = elements[0].parentNode;
-// while (parent.firstChild) {
-//   parent.removeChild(parent.firstChild);
-// }
-
-// elementsArray.forEach(function(element) {
-//   parent.appendChild(element);
-// });

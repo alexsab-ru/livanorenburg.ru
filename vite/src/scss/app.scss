@@ -14,3 +14,15 @@ $mdi-font-path: '@mdi/font/fonts';
 @import 'ui/buttons';
 @import 'ui/forms';
 @import 'ui/glightbox.min.css';
+
+.glightbox-container .ginner-container.desc-top .gslide-description{
+    order: 0 !important;
+    position: relative !important;
+    flex: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: inherit !important;
+}
+
+.ginner-container.desc-top .gslide-image{
+    order: 1 !important;
+}
