@@ -12,7 +12,6 @@ document.addEventListener("alpine:init", () => {
 	Alpine.data("reklama", () => ({
 		init(){
 			localStorage.getItem("reklama") ? Alpine.store('reklama').on = false : true;
-			console.log(Alpine.store('reklama'));
 		},
 		show: localStorage.getItem("reklama") || false,
 		onClick() {
