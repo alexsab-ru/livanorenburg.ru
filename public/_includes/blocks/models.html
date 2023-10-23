@@ -2,7 +2,7 @@
 {%- if models.size > 0 -%}
 {%- for model in models -%}
 <section class="relative pb-20 z-[1] model bg-gray-100" data-dir="{{ model.id }}">
-    <img src="{{ model.homeBg | relative_url }}" class="absolute w-full h-[420px] z-[-1]" alt="ALT">
+    <img src="{{ model.homeBg | relative_url }}" class="absolute w-full h-[420px] z-[-1]" alt="{{ model.modelName }}">
     <div class="absolute w-full h-[420px] bg-black/20 z-[-1]"></div>
     <div
         class="hidden md:block absolute left-[53%] -translate-x-1/2 top-[25%] lg:top-[20%] xl:top-[22%] 2xl:top-[20%]"

@@ -17,7 +17,7 @@
                     {%- for item in items -%}
                         <div class="swiper-slide">
                             <a href="{{ item.img | relative_url}}" class="glightbox" data-gallery="gallery-interior" data-glightbox="description: {{ item.descr }}">
-                                <img src="{{ item.img | relative_url}}" class="aspect-[4/3] w-full" alt="ALT">
+                                <img src="{{ item.img | relative_url}}" class="aspect-[4/3] w-full" alt="{{ item.descr }}">
                             </a>
                             <p class="text-sm mt-4">{{ item.descr }}</p>
                         </div>
