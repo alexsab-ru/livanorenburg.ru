@@ -2,8 +2,33 @@
 layout: default
 ---
 
-{% include blocks/banner.html %}
-{% include blocks/models.html %}
-{% include blocks/callback.html %}
-{% include blocks/services.html %}
-{% include blocks/contacts.html %}
+{% include blocks/banner.html %} {% include blocks/models.html %} {% include
+blocks/callback.html %} {% include blocks/services.html %} {% include
+blocks/contacts.html %}
+
+<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"legalName": "Livan Центр Оренбург",
+		"name": "Livan Центр Оренбург",
+        "alternateName": "ООО «Азимут»",
+        "description": "Новые автомобили Livan по цене заводов изготовителей в дилерском центре Livan Центр в Оренбурге!",
+		"url": "https://livanorenburg.ru/",
+		"logo": "https://livanorenburg.ru/img/logo.svg",
+        "image": "https://livanorenburg.ru/img/banner.jpg",
+		"contactPoint": {
+			"@type": "ContactPoint",
+			"telephone": "8 (3532) 40-41-41",
+			"contactType": "technical support"
+		},
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "Загородное шоссе, 13/2",
+			"addressLocality": "Оренбург",
+			"addressRegion": "Оренбургская область",
+			"postalCode": "460055",
+			"addressCountry": "Россия"
+		}
+	}
+</script>
