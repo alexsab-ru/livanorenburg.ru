@@ -20,7 +20,9 @@
                                 <img src="{{ item.img | relative_url}}" class="aspect-[2/1.2] object-cover w-full" alt="{{ item.title }}">
                             </a>
                             <h4 class="text-lg font-medium mt-4">{{ item.title }}</h4>
+                            {%- if item.descr -%}
                             <p class="text-sm">{{ item.descr }}</p>
+                            {%- endif -%}
                         </div>
                     {%- endfor -%}
                     </div>
