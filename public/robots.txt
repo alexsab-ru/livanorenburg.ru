@@ -1,9 +1,8 @@
 ---
-layout: null
-sitemap: false
+layout: none
 ---
 
 User-agent: *
 Allow: /
 
-Sitemap: {{ 'sitemap.xml' | absolute_url }}
+Sitemap: {{ site.url }}/sitemap.xml
