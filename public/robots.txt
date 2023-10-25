@@ -5,4 +5,4 @@ layout: none
 User-agent: *
 Allow: /
 
-Sitemap: https://livanorenburg.ru/sitemap.xml
+Sitemap: {{ site.url }}/sitemap.xml
