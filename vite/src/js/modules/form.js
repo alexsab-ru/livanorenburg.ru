@@ -1,25 +1,10 @@
 import { getCookie } from "./cookie";
 
-const $$ = (el) => {
+import { maskphone, noValidPhone } from './maskphone';
+
+function $$(el) {
 	return document.querySelectorAll(el);
 };
-
-// PHONE MASK
-function maskphone(e) {
-	let num = this.value
-			.replace(/^(\+7|8)/g, "")
-			.replace(/\D/g, "")
-			.split(/(?=.)/),
-		i = num.length;
-	if (0 <= i) num.unshift("+7");
-	if (1 <= i) num.splice(1, 0, " ");
-	if (4 <= i) num.splice(5, 0, " ");
-	if (7 <= i) num.splice(9, 0, "-");
-	if (9 <= i) num.splice(12, 0, "-");
-	if (11 <= i) num.splice(15, num.length - 15);
-	this.value = num.join("");
-	this.nextSibling.nextElementSibling.classList.add("hidden");
-}
 
 $$("input[name=phone]").forEach(function (element) {
 	element.addEventListener("focus", maskphone);
@@ -119,7 +104,7 @@ $$("form").forEach((form) => {
 			return;
 		} else {
 			const phoneRe = new RegExp(/^\+7 [0-9]{3} [0-9]{3}-[0-9]{2}-[0-9]{2}$/);
-			if (!phoneRe.test(phone.value)) {
+			if (!phoneRe.test(phone.value) || noValidPhone(phone.value)) {
 				showErrorMes(form, ".phone", "Введен некорректный номер телефона");
 				stateBtn(btn, "Отправить");
 				return;
