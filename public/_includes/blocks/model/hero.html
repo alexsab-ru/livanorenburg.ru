@@ -8,7 +8,7 @@
         <div class="flex flex-col justify-between h-full py-10">
             {%- include breadcrumbs.html -%}
             <div class="space-y-4">
-                <h1 class="text-4xl sm:text-6xl uppercase tracking-wider">{{ page.title }}</h1>
+                <h1 class="text-4xl sm:text-6xl uppercase tracking-wider">{% if page.h1 %}{{ page.h1 }}{% else %}{{ page.title }}{% endif %}</h1>
                 {%- if model['slogan'] and model['slogan'] != '' -%}
                     <p class="text-xl font-light">{{ model['slogan'] }}</p>
                 {%- endif -%}

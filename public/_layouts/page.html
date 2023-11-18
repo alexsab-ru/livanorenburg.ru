@@ -14,7 +14,7 @@ layout: default
 	</div>
 	<div class="container grid grid-cols-1 lg:grid-cols-2">
 		<div class="lg:pb-10 max-w-none lg:pr-8">
-			<h1 class="mb-10 font-bold text-2xl sm:text-3xl lg:text-5xl">{{ page.title }}</h1>
+			<h1 class="mb-10 font-bold text-2xl sm:text-3xl lg:text-5xl">{% if page.h1 %}{{ page.h1 }}{% else %}{{ page.title }}{% endif %}</h1>
 			{% if page.subtitle and page.subtitle != '' %}
 			<p class="mb-10">{{ page.subtitle }}</p>
 			{% endif %}
@@ -36,7 +36,7 @@ layout: default
 	<div class="container">
 		{% include breadcrumbs.html %}
 		{% if page.title and page.title != '' %}
-		<h1 class="text-3xl sm:text-6xl sm:mb-10 {% if page.titleCenter %} text-center {% endif %}">{{ page.title }}</h1>
+		<h1 class="text-3xl sm:text-6xl sm:mb-10 {% if page.titleCenter %} text-center {% endif %}">{% if page.h1 %}{{ page.h1 }}{% else %}{{ page.title }}{% endif %}</h1>
 		{% endif %} 
 		{% if page.subtitle and page.subtitle != '' %}
 		<p class="max-sm:text-sm {% if page.titleCenter %} text-center {% endif %}">

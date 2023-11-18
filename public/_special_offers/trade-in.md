@@ -1,6 +1,7 @@
 ---
 layout: collect-page
 title: Trade-in
+description: "Trade-in в Livan Центр Оренбург: обменяйте ваш старый автомобиль на новый Ливэн на выгодных условиях"
 dateFrom: с 31 мая
 thumb: /img/offers/trade-in/thumb.jpg
 img: /img/offers/trade-in/image.jpg

@@ -1,6 +1,7 @@
 ---
 layout: collect-page
 title: Программа «Старт»
+description: "Воспользуйтесь программой «Старт» от Livan Центр Оренбург для покупки вашего первого автомобиля Ливэн. Условия программы, преимущества и подробности здесь."
 dateFrom: с 31 мая
 thumb: /img/offers/start-programm/thumb.png
 img: /img/offers/start-programm/image.jpg

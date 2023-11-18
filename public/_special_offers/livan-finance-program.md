@@ -1,6 +1,7 @@
 ---
 layout: collect-page
 title: Программа LIVAN FINANCE
+description: "Программа LIVAN FINANCE в Livan Центр Оренбург: выгодное финансирование при покупке автомобилей Ливэн. Подробнее о льготных условиях кредитования и лизинга."
 dateFrom: с 31 мая
 thumb: /img/offers/livan-finance-program/thumb.jpg
 img: /img/offers/livan-finance-program/image.jpg
