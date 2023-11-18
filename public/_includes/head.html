@@ -22,6 +22,8 @@
 	<meta name="application-name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>
 	<meta name="theme-color" content="#fff26e">
 
+	<link rel="canonical" href="{% if page.url =='/' %}{{site.url}}{% else %}{{page.url | absolute_url}}{% endif %}">
+
 	<link rel="shortcut icon" href="{{ 'img/favicon-196x196.png' | relative_url }}" type="image/x-icon">
 
 	<meta name="yandex-verification" content="f5158ea101bd2727" />
