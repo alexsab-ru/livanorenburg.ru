@@ -25,7 +25,7 @@ layout: default
                     <div class="swiper-wrapper">
                         {%- for img in page.images -%}
                         <div class="swiper-slide bg-gray-100">
-                            <img src="https://alexsab.ru/getimg/?i={{ img |relative_url }}" class="w-full h-full object-cover" alt="{{page.folder_id}}" loading="lazy">
+                            <img src="{{ img |relative_url }}" class="w-full h-full object-cover" alt="{{page.folder_id}}" loading="lazy">
                             <div class="swiper-lazy-preloader"></div>
                         </div>
                         {%- endfor -%}
@@ -37,7 +37,7 @@ layout: default
                     <div class="swiper-wrapper">
                         {%- for img in page.images -%}
                         <div class="swiper-slide aspect-[1/0.7] relative">
-                            <img src="https://alexsab.ru/getimg/?i={{ img |relative_url }}" class="absolute w-full h-full" alt="{{page.folder_id}}" loading="lazy">
+                            <img src="{{ img |relative_url }}" class="absolute w-full h-full" alt="{{page.folder_id}}" loading="lazy">
                             <div class="swiper-lazy-preloader"></div>
                         </div>
                         {%- endfor -%}
