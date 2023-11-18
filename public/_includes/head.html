@@ -28,12 +28,6 @@
 	<!-- { % seo % } -->
 	<meta name="google-site-verification" content="PWyLkTINlkKK0TM2UwhdpKqMKMUi01Do9b3EHNONhbI" />
 
-	{%- case page.url -%}
-		{%- when '/' -%}
-			{%- include schemas/home.html -%}
-		{%- else -%}
-	{%- endcase -%}
-
 {% if jekyll.environment == "development" %}
 	<link rel="stylesheet" href="http://{{ site.host }}:{{ site.port | minus: 1 }}/src/scss/app.scss">
 {% else %}
