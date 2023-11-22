@@ -10,10 +10,10 @@ window.WebsiteAnalytics = (function() {
 	}
 
 	function getFormDataObject(formData, form_id) {
-		let obj = {"EventProperties":{}};
-		formData.forEach((value, key) => (obj["EventProperties"][key] = value));
-		obj['EventCategory'] = 'Lead';
-		obj["EventProperties"]['formID'] = form_id;
+		let obj = {"eventProperties":{}};
+		formData.forEach((value, key) => (obj["eventProperties"][key] = value));
+		obj['eventCategory'] = 'Lead';
+		obj["eventProperties"]['formID'] = form_id;
 		obj['sourceName'] = 'page';
 		return obj;
 	}
@@ -140,15 +140,15 @@ window.WebsiteAnalytics = (function() {
 })();
 
 /*
-window.WebsiteAnalytics..ymGoal("phone-click");
-window.WebsiteAnalytics..ymGoal("phone-copy");
-window.WebsiteAnalytics..ymGoal("phone-contextmenu");
-window.WebsiteAnalytics..ymGoal("email-click");
-window.WebsiteAnalytics..ymGoal("email-copy");
-window.WebsiteAnalytics..ymGoal("email-contextmenu");
-window.WebsiteAnalytics..ymGoal("form-open");
-window.WebsiteAnalytics..ymGoal("form-submit");
-window.WebsiteAnalytics..ymGoal("video-click");
+window.WebsiteAnalytics.ymGoal("phone-click");
+window.WebsiteAnalytics.ymGoal("phone-copy");
+window.WebsiteAnalytics.ymGoal("phone-contextmenu");
+window.WebsiteAnalytics.ymGoal("email-click");
+window.WebsiteAnalytics.ymGoal("email-copy");
+window.WebsiteAnalytics.ymGoal("email-contextmenu");
+window.WebsiteAnalytics.ymGoal("form-open");
+window.WebsiteAnalytics.ymGoal("form-submit");
+window.WebsiteAnalytics.ymGoal("video-click");
 */
 
 /*
