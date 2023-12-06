@@ -43,4 +43,7 @@ pre {
 	a:not(.btn, .whitespace-nowrap){
 		@apply underline text-accent transition-all duration-300 hover:no-underline;
 	}
+	blockquote{
+		@apply text-gray-500 text-xs;
+	}
 }
