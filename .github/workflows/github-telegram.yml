@@ -18,10 +18,6 @@ on:
         description: 'Additional text passed from the caller workflow'
         required: false
         type: string
-      commits:
-        description: 'Commits information from the caller workflow'
-        required: false
-        type: string
     secrets:
       TELEGRAM_TO:
         description: 'Telegram ID passed from the caller workflow'
@@ -54,9 +50,9 @@ jobs:
         id: with_commits
         run: |
           if [ "${{ github.event.before }}" == "0000000000000000000000000000000000000000" ]; then
-            git fetch origin master
-            git checkout master
-            mapfile -t COMMITS_ARRAY < <(git log --pretty=format:"'<code>%h</code>' - %an, %ar : %s" master..${{ github.sha }})
+            git fetch origin HEAD
+            git checkout HEAD
+            mapfile -t COMMITS_ARRAY < <(git log --pretty=format:"'<code>%h</code>' - %an, %ar : %s" HEAD..${{ github.sha }})
             echo "before=${{ github.sha }}" >> $GITHUB_OUTPUT
           else
             mapfile -t COMMITS_ARRAY < <(git log --pretty=format:"'<code>%h</code>' - %an, %ar : %s" ${{ github.event.before }}..${{ github.sha }})
@@ -173,7 +169,7 @@ jobs:
             branch '`${{ github.event.ref }}`' is deleted
 
   get_last_commit:
-    if: ${{ inputs.commits != null }}
+    if: ${{ inputs.additional-text != null }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
