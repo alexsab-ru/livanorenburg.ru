@@ -44,7 +44,7 @@ def create_file(car, filename, unique_id):
     # Преобразование цвета
     color = car.find('color').text.strip().capitalize()
 
-    thumb = f"/img/x3Pro/color/{color_mapping.get(color, '404')}.png"
+    thumb = f"/img/x3Pro/color/{color_mapping.get(color, '../../404.jpg?')}.png"
 
 
     # Forming the YAML frontmatter
@@ -174,7 +174,8 @@ color_mapping = {
     "Белый": "white",
     "Желтый": "gold",
     "Красный": "red",
-    "Синий": "blue"
+    "Синий": "blue",
+    "Серый": "gray",
     # ... добавьте другие цвета по мере необходимости
 }
 
