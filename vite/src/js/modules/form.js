@@ -11,7 +11,6 @@ $$("input[name=phone]").forEach(function (element) {
 	element.addEventListener("input", maskphone);
 });
 
-
 // AGREE CHECKBOX
 // Проверка на состояние чекбокса, показ/скрытие ошибки
 $$("input[name=agree]").forEach(function (element) {
@@ -25,7 +24,6 @@ $$("input[name=agree]").forEach(function (element) {
 	});
 });
 
-
 // TEXTAREA
 const minLengthTextareaField = 10; // минимальное кол-во символов
 // проверка на минимальное кол-во символов и скрытие ошибки
@@ -34,7 +32,6 @@ const checkTextareaLength = (textarea, minLength) => {
 		textarea.nextSibling.nextElementSibling.classList.add("hidden");
 	}
 };
-
 
 // CHANGE textarea для всез браузеров
 // $$("textarea").forEach(function (textarea) {
@@ -54,7 +51,6 @@ const checkTextareaLength = (textarea, minLength) => {
 // 		});
 // 	}
 // });
-
 
 // BUTTON
 // Состояние кнопки
@@ -78,7 +74,6 @@ const showMessageModal = (messageModal, icon, message) => {
 	messageModal.classList.remove("hidden");
 };
 
-
 // FORMS
 // Отправка всех форм
 $$("form").forEach((form) => {
@@ -95,7 +90,8 @@ $$("form").forEach((form) => {
 			'<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#279548" d="M26,0A26,26,0,1,0,52,26,26,26,0,0,0,26,0Zm9.6,17.5a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2Zm-19.2,0a2,2,0,1,1-2,2A2,2,0,0,1,16.4,17.5ZM40.09,32.15a15.8,15.8,0,0,1-28.18,0,1,1,0,0,1,1.78-.9,13.81,13.81,0,0,0,24.62,0,1,1,0,1,1,1.78.9Z"></path></svg>';
 		const errorText =
 			'<b class="text-bold block text-2xl mb-4">Упс!</b> Что-то пошло не так. Перезагрузите страницу и попробуйте снова. ';
-		let successText = '<b class="text-bold block text-2xl mb-4">Спасибо!</b> В скором времени мы свяжемся с Вами!';
+		let successText =
+			'<b class="text-bold block text-2xl mb-4">Спасибо!</b> В скором времени мы свяжемся с Вами!';
 		const messageModal = document.getElementById("message-modal");
 
 		if (!phone.value.length) {
@@ -118,15 +114,18 @@ $$("form").forEach((form) => {
 			return;
 		}
 		let formData = new FormData(form);
-		if(getCookie('fta')) {
+		if (getCookie("fta")) {
 			formData.append("fta", true);
 		}
-		if(getCookie('__gtm_campaign_url')) {
-			var source = new URL(getCookie('__gtm_campaign_url'));
-			source.search.slice(1).split("&").forEach(function(pair) {
-				var param = pair.split("=");
-				formData.append(param[0], param[1]);
-			});
+		if (getCookie("__gtm_campaign_url")) {
+			var source = new URL(getCookie("__gtm_campaign_url"));
+			source.search
+				.slice(1)
+				.split("&")
+				.forEach(function (pair) {
+					var param = pair.split("=");
+					formData.append(param[0], param[1]);
+				});
 		}
 		formData.append(
 			"page_url",
@@ -137,14 +136,17 @@ $$("form").forEach((form) => {
 			.split("&")
 			.forEach(function (pair) {
 				var param = pair.split("=");
-				if(formData.get(param[0])){
+				if (formData.get(param[0])) {
 					formData.set(param[0], decodeURIComponent(param[1]));
 				} else {
 					formData.append(param[0], decodeURIComponent(param[1]));
 				}
 			});
 		const params = new URLSearchParams([...formData]);
-		var formDataObj = window.WebsiteAnalytics.getFormDataObject(formData, form.id);
+		var formDataObj = window.WebsiteAnalytics.getFormDataObject(
+			formData,
+			form.id
+		);
 		// await fetch('https://alexsab.ru/lead/test/', {
 		await fetch("https://alexsab.ru/lead/livan/orenburg/", {
 			method: "POST",
