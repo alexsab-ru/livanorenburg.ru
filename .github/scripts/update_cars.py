@@ -95,6 +95,7 @@ def create_file(car, filename):
     with open(filename, 'w') as f:
         f.write(content)
 
+    print(filename);
     existing_files.add(filename)
 
 def update_yaml(car, filename):
