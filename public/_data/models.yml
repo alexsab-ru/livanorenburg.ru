@@ -10,9 +10,11 @@
     - id: white
       name: Белый
     - id: blue
-      name: Голубой
+      name: Голубой металлик
     - id: red
       name: Красный
+    - id: gray
+      name: Серый металлик
   sections:
     - id: design
       name: Дизайн
@@ -83,6 +85,10 @@
   colors:
     - id: gray
       name: Серый металлик
+    - id: white
+      name: Белый
+    - id: blue
+      name: Синий металлик
   sections:
     - id: design
       name: Дизайн
@@ -169,7 +175,11 @@
   price: 2429900
   colors:
     - id: white
-      name: Белый металлик
+      name: Белый
+    - id: gray
+      name: Серый металлик
+    - id: blue
+      name: Голубой
   sections:
     - id: design
       name: Дизайн
