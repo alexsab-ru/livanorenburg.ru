@@ -8,12 +8,12 @@ import requests
 import xml.etree.ElementTree as ET
 
 
-def process_unique_id(unique_id):
+def process_unique_id(unique_id, replace = "-"):
     # Удаление специальных символов
     processed_id = re.sub(r'[.,()"\']', '', unique_id)
 
     # Удаление пробелов и приведение к нижнему регистру
-    processed_id = processed_id.replace(" ", "").lower()
+    processed_id = processed_id.replace(" ", replace).lower()
 
     return processed_id
 
@@ -37,9 +37,9 @@ def process_description(desc_text):
             processed_lines.append(f"<p>{line}</p>")
     return '\n'.join(processed_lines)
 
-def create_file(car, filename):
+def create_file(car, filename, unique_id):
     vin = car.find('vin').text
-    permalink = process_permalink(vin)
+    permalink = unique_id
     vin_hidden = process_vin_hidden(vin)
     # Преобразование цвета
     color = car.find('color').text.strip().capitalize()
@@ -181,13 +181,14 @@ color_mapping = {
 
 for car in root.find('cars'):
     unique_id = f"{car.find('mark_id').text} {car.find('folder_id').text} {car.find('modification_id').text} {car.find('complectation_name').text} {car.find('color').text} {car.find('price').text} {car.find('year').text}"
-    unique_id = f"{process_unique_id(unique_id)}.html"
-    file_path = os.path.join(directory, unique_id)
+    unique_id = f"{process_unique_id(unique_id)}"
+    file_name = f"{unique_id}.html"
+    file_path = os.path.join(directory, file_name)
 
     if os.path.exists(file_path):
         update_yaml(car, file_path)
     else:
-        create_file(car, file_path)
+        create_file(car, file_path, unique_id)
 
 
 for existing_file in os.listdir(directory):
