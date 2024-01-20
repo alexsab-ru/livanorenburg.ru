@@ -6,6 +6,14 @@ document.querySelectorAll(".popup-link").forEach(
 			if (id === "#" || !id) return;
 			const targetModal = document.getElementById(id.replace("#", ""));
 			if (!targetModal) return;
+
+			targetModal.querySelector('form').removeAttribute('data-file');
+
+			const file = link.dataset.file;
+			if(file && file !== ''){
+				targetModal.querySelector('form').setAttribute('data-file', file);
+			}
+
 			targetModal.classList.remove("hidden");
 
 			const captionEl = targetModal.querySelector(".caption");

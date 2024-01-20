@@ -82,6 +82,8 @@ $$("form").forEach((form) => {
 		event.preventDefault();
 		stateBtn(btn, "Отправляем...", true);
 
+		const file = form.dataset.file;
+
 		const agree = form.querySelector('[name="agree"]');
 		const phone = form.querySelector('[name="phone"]');
 		const errorIcon =
@@ -172,6 +174,9 @@ $$("form").forEach((form) => {
 				} else {
 					window.WebsiteAnalytics.dataLayer("form-success", formDataObj);
 					showMessageModal(messageModal, successIcon, successText);
+					if(file && file != ''){
+						window.open(file, true);
+					}
 				}
 				form.reset();
 			})
