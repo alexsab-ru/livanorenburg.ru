@@ -12,6 +12,13 @@ document.querySelectorAll(".popup-link").forEach(
 			if (captionEl) {
 				captionEl.innerText = link.dataset.title;
 			}
+
+			const descrEl = targetModal.querySelector(".descr");
+			const descr = link.dataset.descr || 'Оставьте свои данные и мы свяжемся с Вами в ближайшее время!';
+			if (descrEl) {
+				descrEl.innerText = descr;
+			}
+
 			const formName = link.dataset.form_name;
 			const formInput = targetModal.querySelector('input[name="form"]');
 			if (formName && formInput) {

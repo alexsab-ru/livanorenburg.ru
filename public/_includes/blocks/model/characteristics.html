@@ -31,7 +31,14 @@
                     </div>
                     <div class="mb-2 text-sm">Стоимость <span class="uppercase">{{ page.menu }}</span></div>
                     <div class="font-bold text-2xl">от {% include utils/numf.html number=price ts=' ' decimals=0 %} ₽</div>
-                    <a href="{{ s.pdf }}" class="btn black inline-block mt-10" target="_blank">Скачать прайс-лист</a>
+                    <a 
+                        href="#common-modal" 
+                        class="popup-link btn black inline-block mt-10" 
+                        data-title="Скачать прайс-лист {{ id | upcase }}"
+                        data-descr="Оставьте свои данные, чтобы скачать прайс-лист"
+                        data-form_name="Скачать прайс-лист"
+                        data-file="{{ s.pdf }}"
+                    >Скачать прайс-лист</a>
                 </div>
             {%- endif -%}
             </div>
