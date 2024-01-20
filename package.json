@@ -11,6 +11,7 @@
     "jekyll_build": "cd public && JEKYLL_ENV=production bundle exec jekyll build",
     "preview": "cd public && JEKYLL_ENV=production bundle exec jekyll serve --host $(ipconfig getifaddr en0) --port 5134 -l -o",
     "dev": "concurrently \"cd vite && APP_ENV=development vite dev --host --port 5133\" \"cd public && JEKYLL_ENV=development bundle exec jekyll serve --host $(ipconfig getifaddr en0) --port 5134 -l -o\"",
+    "dev_wsl": "concurrently \"cd vite && APP_ENV=development vite dev --host --port 5133\" \"cd public && JEKYLL_ENV=development bundle exec jekyll serve --host $(hostname -I) --port 5134 -l -o\"",
     "deploy": "cd vite && APP_ENV=production vite build && cd ../public && [ -d _data ] || mkdir _data && mv dist/manifest.json _data/manifest.json && rm -rf assets && mv dist/assets assets",
     "build": "cd vite && APP_ENV=production vite build && cd ../public && [ -d _data ] || mkdir _data && mv dist/manifest.json _data/manifest.json && rm -rf assets && mv dist/assets assets && JEKYLL_ENV=production bundle exec jekyll build",
     "\n# WINDOWS SCRIPTS:": "",
