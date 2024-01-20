@@ -43,6 +43,7 @@ node_modules/
 docs/
 dist/
 jspm_packages/
+public/vendor
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
