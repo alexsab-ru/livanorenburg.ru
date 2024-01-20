@@ -28,7 +28,7 @@ if (siteNav) {
 	});
 
 	document.addEventListener("keydown", function(e) {
-		if (e.key.toLocaleLowerCase() === "escape") {
+		if (e.key && e.key.toLocaleLowerCase() === "escape") {
 			siteNav.classList.add("translate-x-full");
 		}
 	});
