@@ -43,7 +43,7 @@ def create_file(car, filename, unique_id):
     vin_hidden = process_vin_hidden(vin)
     # Преобразование цвета
     color = car.find('color').text.strip().capitalize()
-    model = car.find('folder_id').text.strip().capitalize()
+    model = car.find('folder_id').text.strip()
 
     thumb = f"/img/{model_mapping.get(model, '404.jpg?')}/color/{color_mapping.get(color, '../../404.jpg?')}.webp"
 
