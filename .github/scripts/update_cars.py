@@ -43,8 +43,9 @@ def create_file(car, filename, unique_id):
     vin_hidden = process_vin_hidden(vin)
     # Преобразование цвета
     color = car.find('color').text.strip().capitalize()
+    model = car.find('folder_id').text.strip().capitalize()
 
-    thumb = f"/img/x3Pro/color/{color_mapping.get(color, '../../404.jpg?')}.webp"
+    thumb = f"/img/{model_mapping.get(model, '404.jpg?')}/color/{color_mapping.get(color, '../../404.jpg?')}.webp"
 
 
     # Forming the YAML frontmatter
@@ -170,6 +171,11 @@ os.makedirs(directory)
 
 existing_files = set()  # для сохранения имен созданных или обновленных файлов
 # Словарь соответствия цветов
+model_mapping = {
+    "X3 Pro": "x3pro",
+    "X6 Pro": "x6pro",
+    "S6 Pro": "s6pro",
+}
 color_mapping = {
     "Белый": "white",
     "Желтый": "gold",

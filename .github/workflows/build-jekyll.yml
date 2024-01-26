@@ -12,7 +12,7 @@ jobs:
     steps:
       # Reference a branch
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -28,7 +28,7 @@ jobs:
           pnpm run build
 
       # Use GitHub Actions' cache to cache dependencies on servers
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
