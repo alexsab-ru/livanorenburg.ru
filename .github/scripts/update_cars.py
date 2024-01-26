@@ -172,7 +172,7 @@ os.makedirs(directory)
 existing_files = set()  # для сохранения имен созданных или обновленных файлов
 # Словарь соответствия цветов
 model_mapping = {
-    "X3 Pro": "x3pro",
+    "X3 Pro": "x3Pro",
     "X6 Pro": "x6pro",
     "S6 Pro": "s6pro",
 }
