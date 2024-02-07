@@ -3,6 +3,35 @@
         <div class="absolute inset-0">
             <div class="swiper banner-slider h-full text-white">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide banner-slide lg:pt-[15%]" data-swiper-autoplay="5000">
+                        <div class="absolute inset-0 bg-black/50 z-[1]"></div>
+                        <div class="container h-full relative z-[2] md:pt-20">
+                            <div class="h-full flex flex-col max-lg:justify-center">
+                                <div class="text-lg sm:text-2xl md:text-3xl xl:text-5xl uppercase font-bold" data-swiper-parallax="-20%">Выбери свой подарок для своего нового LIVAN!</div>
+                            <p
+                                data-swiper-parallax="-60%"
+                                class="text-xs sm:text-xl md:text-2xl lg:text-3xl sm:mt-5 mb-4 sm:mb-10"
+                            >
+                                Только от&nbsp;LIVAN ЦЕНТР ОРЕНБУРГ
+                            </p>
+                            <div data-swiper-parallax="-50%">
+                                <a
+                                    class="btn white btn-o text-xs sm:text-base !py-1 sm:!py-3"
+                                    href="/special-offers/vyberi-svoj-podarok"
+                                >
+                                    Узнать подробнее
+                                </a>
+                            </div>
+                            </div>
+                        </div>
+                        <img
+                            src="{{ 'img/offers/vyberi-svoj-podarok/livan-gifts-1920x1080-notxt.webp' | relative_url }}"
+                            class="absolute inset-0 h-full w-full object-cover object-center"
+                            alt="Выбери свой подарок"
+                            loading="lazy"
+                        />
+                        <div class="swiper-lazy-preloader"></div>
+                    </div>
                     <a 
                         class="swiper-slide banner-slide lg:pt-[15%]" data-swiper-autoplay="5000"
                         href="/special-offers/5-let-to-bez-zabot"
