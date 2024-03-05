@@ -6,7 +6,7 @@ dateFrom: с 17 ноября
 thumb: /img/offers/livan-finance-program/thumb.jpg
 img: /img/offers/livan-finance-program/image.jpg
 show: true
-order: 4
+order: 1
 ---
 
 Программа LIVAN FINANCE

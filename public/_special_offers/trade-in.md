@@ -6,7 +6,7 @@ dateFrom: с 19 января
 thumb: /img/offers/trade-in/thumb.jpg
 img: /img/offers/trade-in/image.jpg
 show: true
-order: 2
+order: 3
 ---
 
 Воспользуйтесь услугой Trade-in и обменяйте свой автомобиль с пробегом на новый автомобиль LIVAN с дополнительной скидкой у официальных дилеров LIVAN.

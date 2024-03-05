@@ -6,7 +6,7 @@ dateFrom: с 26 февраля
 thumb: /img/offers/egemacyachniy-plateg/thumb.webp
 img: /img/offers/egemacyachniy-plateg/image.webp
 show: true
-order: 3
+order: 2
 ---
 
 ## **LIVAN X3PRO на выгодных условиях!**
