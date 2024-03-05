@@ -3,8 +3,8 @@ layout: collect-page
 title: Новогоднее предложение!
 description: "Специальное новогоднее предложение в честь Китайского Нового Года в Livan Центр Оренбург"
 dateFrom: с 19 января
-thumb: /img/offers/fevralskaya-vygoda/thumb.webp
-img: /img/offers/fevralskaya-vygoda/image.webp
+thumb: /img/offers/novogodnee-predlozhenie/thumb.webp
+img: /img/offers/novogodnee-predlozhenie/image.webp
 show: true
 order: 4
 ---
