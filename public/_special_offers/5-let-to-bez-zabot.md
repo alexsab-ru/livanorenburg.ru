@@ -5,6 +5,7 @@ description: "Только до 23 декабря 2023 года каждый п�
 dateFrom: до 23 декабря 2023г.
 thumb: /img/offers/5-let-to-bez-zabot/thumb.png
 img: /img/offers/5-let-to-bez-zabot/image.png
+show: false
 order: 5
 ---
 

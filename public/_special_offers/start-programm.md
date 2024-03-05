@@ -5,6 +5,7 @@ description: "Воспользуйтесь программой «Старт» �
 dateFrom: с 31 мая
 thumb: /img/offers/start-programm/thumb.png
 img: /img/offers/start-programm/image.jpg
+show: false
 order: 1
 ---
 
