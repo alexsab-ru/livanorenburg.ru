@@ -14,15 +14,17 @@ order: 2
 <section class="pb-10">
     <div class="container">
         <div class="grid md:grid-cols-2 gap-5">
-{%- for offer in offers -%}
-    <a href="{{ offer.url | relative_url }}" class="relative aspect-video group overflow-hidden">
-        <img src="{{ offer.thumb | relative_url }}" alt="{{ offer.title }}" class="absolute w-full h-full inset-0 object-cover object-center transition-transform duration-500 ease-out-expo group-hover:scale-110">
-        <div class="absolute w-full bottom-0 bg-black/70 px-4 py-3 lg:py-5 text-white/80">
-            <h3 class="lg:text-2xl sm:mb-2">{{ offer.title }}</h3>
-            <p class="text-xs sm:text-sm">{{ offer.dateFrom }}</p>
-        </div>
-    </a>
-{%- endfor -%}
+    {%- for offer in offers -%}
+        {%- if offer.show -%}
+            <a href="{{ offer.url | relative_url }}" class="relative aspect-video group overflow-hidden">
+                <img src="{{ offer.thumb | relative_url }}" alt="{{ offer.title }}" class="absolute w-full h-full inset-0 object-cover object-center transition-transform duration-500 ease-out-expo group-hover:scale-110">
+                <div class="absolute w-full bottom-0 bg-black/70 px-4 py-3 lg:py-5 text-white/80">
+                    <h3 class="lg:text-2xl sm:mb-2">{{ offer.title }}</h3>
+                    <p class="text-xs sm:text-sm">{{ offer.dateFrom }}</p>
+                </div>
+            </a>
+        {%- endif -%}
+    {%- endfor -%}
         </div>
     </div>
 </section>
