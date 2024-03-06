@@ -3,8 +3,8 @@ layout: collect-page
 title: Ежемесячный платеж всего 9&nbsp;750 рублей в&nbsp;месяц
 description: "Кредит на приобретение нового автомобиля LIVAN X3PRO стоимостью 1 809 900 рублей в Livan Центр Оренбург: платеж всего 9 750 рублей в месяц"
 dateFrom: с 26 февраля
-thumb: /img/offers/egemacyachniy-plateg/thumb.webp
-img: /img/offers/egemacyachniy-plateg/image.webp
+thumb: /img/offers/ezhemesyachnyj-platezh/thumb.webp
+img: /img/offers/ezhemesyachnyj-platezh/image.webp
 show: true
 order: 2
 ---
