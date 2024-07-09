@@ -3,7 +3,7 @@
   homeBg: /img/x3Pro/bg2.jpg
   slogan: Быть свободным
   modelName: X3PRO
-  price: 1699900
+  price: 1499900
   colors:
     - id: gold
       name: Золотой
@@ -81,7 +81,7 @@
   homeBg: /img/x6pro/bg.jpg
   slogan: Дайте старт новому
   modelName: X6PRO
-  price: 2479900
+  price: 2050000
   colors:
     - id: gray
       name: Серый металлик
@@ -172,7 +172,7 @@
   homeBg: /img/s6pro/bg.jpg
   slogan: Драйв в Вашем стиле
   modelName: S6PRO
-  price: 2429900
+  price: 1959900
   colors:
     - id: white
       name: Белый
