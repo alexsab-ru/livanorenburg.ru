@@ -2,7 +2,7 @@ name: Generate Jekyll Files from XML
 
 on:
   schedule:
-    - cron: '0 */2 * * *'  # Запускается каждый час
+    - cron: '0 */4 * * *'  # Запускается каждые 4 часа
   push:
     paths:
       - '.github/workflows/update_cars.yml'
