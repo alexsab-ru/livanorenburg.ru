@@ -23,8 +23,9 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Download XML
+      if: ${{ vars.ENV_XML_URL }}
       run: |
-        curl ${{ vars.ENV_XML_URL }} -o livan.xml
+        curl '${{ vars.ENV_XML_URL }}' -o cars.xml
 
     - name: Set XML_URL as environment variable
       run: echo "XML_URL=${{ vars.ENV_XML_URL }}" >> $GITHUB_ENV
