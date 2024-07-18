@@ -45,6 +45,12 @@ jobs:
     - name: Generate files
       run: |
         python .github/scripts/update_cars.py
+      env:
+        REPO_NAME: ${{ github.event.repository.name }}
+        XML_URL: ${{ vars.ENV_XML_URL }}
+
+    - name: ls files
+      run: |
         ls -al public/_cars
 
     - name: Check for changes
