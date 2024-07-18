@@ -46,6 +46,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests
         pip install pyyaml
+        pip install Pillow
 
     - name: Generate cars.xml from csv
       if: ${{ vars.ENV_CSV_URL }}
