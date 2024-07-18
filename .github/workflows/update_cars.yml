@@ -97,3 +97,14 @@ jobs:
       changes: ${{ steps.check_changes.outputs.changes }}
       script_output: ${{ steps.set_output.outputs.script_output }}
 
+
+  notify_telegram:
+    needs: build
+    if: ${{ needs.build.outputs.script_output != '' }}
+    uses: ./.github/workflows/github-telegram.yml
+    with:
+      additional-text: |
+        ${{ needs.build.outputs.script_output }}
+    secrets:
+      TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
+      TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
