@@ -1,6 +1,6 @@
 - id: x3Pro
-  hero-img: /img/x3Pro/x3pro-hero.jpg
-  homeBg: /img/x3Pro/bg2.jpg
+  hero-img: /img/models/x3pro/x3pro-hero.jpg
+  homeBg: /img/models/x3pro/bg2.jpg
   slogan: Быть свободным
   modelName: X3PRO
   price: 1499900
@@ -20,43 +20,43 @@
       name: Дизайн
       title: Отвергая стереотипы
       descr: Дизайн привлекает внимание множеством элементов. В нем сочетается стиль, современность, яркая внешность, которая притягивает взгляды. В нем есть всё для комфортной поездки.
-      img: /img/x3Pro/design.jpg
+      img: /img/models/x3pro/design.jpg
     - id: exterior
       name: Экстерьер
       title: Вдохновляясь многогранными возможностями мира
       items:
         - title: Хромированная решетка радиатора
           descr: Хромированные полосы отделки по периметру решетки проходят через фары, расширяясь в обе стороны, как крылья, летящие и мощные.
-          img: /img/x3Pro/x3pro-front.jpg
+          img: /img/models/x3pro/x3pro-front.jpg
         - title: Стремительная боковая линия
           descr: Продуманный дизайн боковой линии делает силуэт жестким и плавным, демонстрируя яркий внешний вид, а также позволяет эффективно контролировать шум.
-          img: /img/x3Pro/x3pro-side.png
+          img: /img/models/x3pro/x3pro-side.png
     - id: interior
       name: Интерьер
       title: Преодолевая ограничения и ломая стереотипы
       items:
         - descr: Мультифункциональное рулевое колесо с управлением развлекательным центром и телефоном
-          img: /img/x3Pro/interior/1.jpg
+          img: /img/models/x3pro/interior/1.jpg
         - descr: Кожаная обивка сидений с перфорацией. Отделка салона в темных тонах.
-          img: /img/x3Pro/interior/2.jpg
+          img: /img/models/x3pro/interior/2.jpg
         - descr: Задняя спинка, складывающаяся 60/40
-          img: /img/x3Pro/interior/3.jpg
+          img: /img/models/x3pro/interior/3.jpg
     - id: tehnology
       name: Технологии
       title: Практичность и привлекательность
       items:
         - title: Галогеновые фары с линзованной оптикой
           descr: Благодаря особенностям конструкции линзы и регулировке по высоте, световой пучок лучше сфокусирован на большую поверхность дороги. Свет направляется туда, где это необходимо, и меньше рассеивается по сторонам.
-          img: /img/x3Pro/tehnology/1.jpg
+          img: /img/models/x3pro/tehnology/1.jpg
         - title: Камера заднего вида
           descr: Динамическая разметка для повышенной уверенности водителя при движении задним ходом.
-          img: /img/x3Pro/tehnology/2.png
+          img: /img/models/x3pro/tehnology/2.png
         - title: Конструкция кузова и интерьера
           descr: Оптимизированная конструкция кузова и интерьера позволили уменьшить вес автомобиля и сократить расход топлива.
-          img: /img/x3Pro/tehnology/3.png
+          img: /img/models/x3pro/tehnology/3.png
         - title: Конструкция подвески шасси
           descr: Конструкция подвески шасси отличается малым весом, что помогает сократить тормозной путь и повысить безопасность.
-          img: /img/x3Pro/tehnology/4.png
+          img: /img/models/x3pro/tehnology/4.png
     - id: characteristics
       name: Характеристики
       title: Комплектация LIVAN X3PRO
@@ -70,15 +70,15 @@
       name: Обслуживание
       title: Гарантия и сервис
       descr: Гарантия качества на автомобиль и оригинальные запасные части марки LIVAN предоставляемая производителем в течение гарантийного срока, 5 лет после покупки или в течение 150 000 км пробега, в зависимости от того, что наступит раньше.
-      img: /img/x3Pro/waranty/x3pro-service.jpg
+      img: /img/models/x3pro/waranty/x3pro-service.jpg
       items:
         - title: 5 лет
           descr: после покупки
         - title: 150 000 км
           descr: пробега
 - id: x6pro
-  hero-img: /img/x6pro/x6pro-hero.jpg
-  homeBg: /img/x6pro/bg.jpg
+  hero-img: /img/models/x6pro/x6pro-hero.jpg
+  homeBg: /img/models/x6pro/bg.jpg
   slogan: Дайте старт новому
   modelName: X6PRO
   price: 2050000
@@ -94,62 +94,62 @@
       name: Дизайн
       title: Почувствуйте уверенность
       descr: Современный дизайн, оснащение, технологии, функциональность, все это есть в LIVAN X6PRO. Вы будете удивлены, насколько комфортно и безопасно Вы будете чувствовать себя на любой дороге. <br>Почувствуйте уверенность в каждом мгновении, в каждом повороте. Насладитесь движением по своей дороге.
-      img: /img/x6pro/design.jpg
+      img: /img/models/x6pro/design.jpg
     - id: exterior
       name: Экстерьер
       title: Вдохновляясь многогранными возможностями мира
       items:
         - title: Спортивная решетка и фары
           descr: В новом дизайне решетки радиатора в форме «крыла бабочки» для горизонтальных линий используется технология параметрических процессов горячего тиснения, что создаёт объёмный визуальный эффект. В решетку интегрирован логотип LIVAN и дизайн передних LED фар
-          img: /img/x6pro/exterior/1.jpg
+          img: /img/models/x6pro/exterior/1.jpg
         - title: Единая линия задней оптики
           descr: Вдохновением для создания формы послужили метеоры, проносящиеся с невероятной скоростью и сияющие в ночном небе, создающие динамичную атмосферу
-          img: /img/x6pro/exterior/2.jpg
+          img: /img/models/x6pro/exterior/2.jpg
         - title: Уникальный дизайн колесных дисков 18 радиуса
           descr: Шины с низким сопротивлением качению снижают шум и расход топлива, повышают комфорт
-          img: /img/x6pro/exterior/3.jpg
+          img: /img/models/x6pro/exterior/3.jpg
     - id: interior
       name: Интерьер
       title: Комфортный и изысканный интерьер
       items:
         - descr: Роскошь цвета и спортивные сиденья
-          img: /img/x6pro/interior/1.jpg
+          img: /img/models/x6pro/interior/1.jpg
         - descr: Лазерная гравировка
-          img: /img/x6pro/interior/2.jpg
+          img: /img/models/x6pro/interior/2.jpg
         - descr: D-образное рулевое колесо
-          img: /img/x6pro/interior/3.jpg
+          img: /img/models/x6pro/interior/3.jpg
         - descr: Простор второго ряда сидений
-          img: /img/x6pro/interior/4.jpg
+          img: /img/models/x6pro/interior/4.jpg
         - descr: Складывающийся второй ряд, багажник 359 – 1200 л
-          img: /img/x6pro/interior/5.jpg
+          img: /img/models/x6pro/interior/5.jpg
     - id: tehnology
       name: Технологии
       title: Технологии
       items:
         - title: Сверхмощный 1.5TD двигатель с турбонаддувом
           descr: • Максимальная мощность 174 л.с. <br>• Максимальный крутящий момент 290 Нм <br>• Расход топлива на 100 км 6.5 л
-          img: /img/x6pro/tehnology/1.jpg
+          img: /img/models/x6pro/tehnology/1.jpg
         - title: 7-ми ступенчатая трансмиссия с муфтой сцепления мокрого типа
           descr: Топливная трансмиссия нового поколения специально разработанная для езды по городу с двумя «мокрыми» сцеплениями, что обеспечивает эффективность, плавность переключения передач и высокую точность.
-          img: /img/x6pro/tehnology/2.jpg
+          img: /img/models/x6pro/tehnology/2.jpg
         - title: Передняя независимая подвеска МакФерсон + Задняя многорычажная независимая подвеска
           descr: Профессиональные подвески, подходящие под любое путешествие <br>Задняя подвеска многорычажная независимая подвеска позволяет эффективно фильтровать вибрацию, вызванную дорожным покрытием, и обеспечивать пассажирам комфорт.
-          img: /img/x6pro/tehnology/3.jpg
+          img: /img/models/x6pro/tehnology/3.jpg
     - id: safety
       name: Безопасность
       title: Безопасность
       items:
         - title: Высокопрочный безопасный каркас кузова
           descr: • 55% высокопрочной стали кузова <br>• жёсткость кузова на кручение 15000 Нм/град <br>• Более 5000 сварных соединений кузова
-          img: /img/x6pro/safety/1.jpg
+          img: /img/models/x6pro/safety/1.jpg
         - title: Всесторонняя защита
           descr: "Шесть подушек безопасности: фронтальные и боковые для переднего ряда, а также шторки безопасности по всей длине салона."
-          img: /img/x6pro/safety/2.jpg
+          img: /img/models/x6pro/safety/2.jpg
         - title: Уверенность в каждом движении
           descr: В базовое оснащение LIVAN X6PRO входит девять систем активной безопасности включая передовые системы курсовой устойчивости, удержания автомобиля при подъеме, предотвращения опрокидывания, контроля давления в шинах и другие.
-          img: /img/x6pro/safety/3.jpg
+          img: /img/models/x6pro/safety/3.jpg
         - title: Задние датчики парковки и камера заднего вида с экраном высокой четкости и динамическими направляющими
-          img: /img/x6pro/safety/4.jpg
+          img: /img/models/x6pro/safety/4.jpg
     - id: characteristics
       name: Характеристики
       title: Комплектация LIVAN X6PRO
@@ -161,15 +161,15 @@
       name: Обслуживание
       title: Гарантия и сервис
       descr: Гарантия качества на автомобиль и оригинальные запасные части марки LIVAN предоставляемая производителем в течение гарантийного срока, 5 лет после покупки или в течение 150 000 км пробега, в зависимости от того, что наступит раньше.
-      img: /img/x3Pro/waranty/x3pro-service.jpg
+      img: /img/models/x3pro/waranty/x3pro-service.jpg
       items:
         - title: 5 лет
           descr: после покупки
         - title: 150 000 км
           descr: пробега
 - id: s6pro
-  hero-img: /img/s6pro/s6pro-hero.jpg
-  homeBg: /img/s6pro/bg.jpg
+  hero-img: /img/models/s6pro/s6pro-hero.jpg
+  homeBg: /img/models/s6pro/bg.jpg
   slogan: Драйв в Вашем стиле
   modelName: S6PRO
   price: 1959900
@@ -185,17 +185,17 @@
       name: Дизайн
       title: Яркий седан в спортивном стиле
       descr: Стремительный и комфортный. Динамичный и отзывчивый. Все это новый седан LIVAN S6PRO. <br>Просторный салон со спортивными сиденьями, контрастная отделка интерьера, функциональность мультимедийной системы – комфорт и динамика соединились в одном автомобиле.
-      img: /img/s6pro/design.jpg
+      img: /img/models/s6pro/design.jpg
     - id: exterior
       name: Экстерьер
       title: Экстерьер
       items:
         - title: Яркий и динамичный
           descr: Острый капот с единой линией подсветки, яркие дневные ходовые огни и натянутые струны решетки радиатора соединяются в стремительном облике седана LIVAN S6PRO
-          img: /img/s6pro/exterior/1.jpg
+          img: /img/models/s6pro/exterior/1.jpg
         - title: Стремительные и ниспадающие линии в дизайне кузова
           descr: Весь облик автомобиля наполнен энергией, мгновенным скоростным разгоном и ощущением стремительности
-          img: /img/s6pro/exterior/2.jpg
+          img: /img/models/s6pro/exterior/2.jpg
         - title: Обтекаемая форма кузова
           descr: Широкий задний бампер в спортивном стиле и единая линия задних фар завершают динамичный образ
     - id: interior
@@ -203,43 +203,43 @@
       title: Простор и изысканность интерьера
       items:
         - descr: Контрастная отделка салона, комфортные сиденья в спортивном стиле, приборная панель с двумя экранами диагональю  12,3 дюйма, гоночный селектор переключения передач  -  технологичный и изысканный интерьер нового седана LIVAN S6PRO позволит насладится динамикой движения в комфорте
-          img: /img/s6pro/interior/1.jpg
+          img: /img/models/s6pro/interior/1.jpg
         - descr: Лазерная гравировка в отделке приборной панели и два интегрированных сверхчувствительных экрана диагональю 12,3 дюйма создают комфортное пространство для водителя
-          img: /img/s6pro/interior/2.jpg
+          img: /img/models/s6pro/interior/2.jpg
         - descr: Образ спортивного седана дополнен D-образным рулевым колесом и гоночным рычагом переключения передач
-          img: /img/s6pro/interior/3.jpg
+          img: /img/models/s6pro/interior/3.jpg
         - descr: Пассажирам на втором ряду будем комфортно и удобно при поездке на любые расстояния
-          img: /img/s6pro/interior/4.jpg
+          img: /img/models/s6pro/interior/4.jpg
     - id: tehnology
       name: Технологии
       title: Технологии
       items:
         - title: Сверхмощный 1.5TD двигатель с турбонаддувом
           descr: • разгон до 100 км/ч за 8,8 секунды <br>• Максимальная мощность 174 л.с. <br>• Максимальный крутящий момент 290 Нм <br>• Расход топлива на 100 км 6.5 л
-          img: /img/s6pro/tehnology/1.jpg
+          img: /img/models/s6pro/tehnology/1.jpg
         - title: 7-ми ступенчатая трансмиссия с муфтой сцепления мокрого типа
           descr: Топливная трансмиссия нового поколения специально разработанная для езды по городу с двумя «мокрыми» сцеплениями, что обеспечивает эффективность, плавность переключения передач и высокую точность.
-          img: /img/s6pro/tehnology/2.jpg
+          img: /img/models/s6pro/tehnology/2.jpg
         - title: Передняя независимая подвеска МакФерсон + задняя полузависимая торсионная балка
           descr: Колесная база 2702 мм и плавность хода автомобиля обеспечат комфорт водителя и пассажиров
-          img: /img/s6pro/tehnology/3.jpg
+          img: /img/models/s6pro/tehnology/3.jpg
         - title: Бесключевой доступ+ запуск двигателя одним нажатием
-          img: /img/s6pro/tehnology/4.jpg        
+          img: /img/models/s6pro/tehnology/4.jpg        
         - title: Бесконтактное открытие багажника
-          img: /img/s6pro/tehnology/5.jpg
+          img: /img/models/s6pro/tehnology/5.jpg
     - id: safety
       name: Безопасность
       title: Безопасность
       items:
         - title: Всесторонняя защита
           descr: "Шесть подушек безопасности: фронтальные и боковые для переднего ряда, а также шторки безопасности по всей длине салона."
-          img: /img/s6pro/safety/1.jpg
+          img: /img/models/s6pro/safety/1.jpg
         - title: Камера кругового обзора
           descr: Динамические направляющие линии заднего хода автомобиля, высокое разрешение экрана и 3 датчика парковки обеспечивают двойной контроль при движении задним ходом
-          img: /img/s6pro/safety/2.jpg
+          img: /img/models/s6pro/safety/2.jpg
         - title: Уверенность в каждом движении
           descr: В базовое оснащение LIVAN X6PRO входит девять систем активной безопасности включая передовые системы курсовой устойчивости, удержания автомобиля при подъеме, предотвращения опрокидывания, контроля давления в шинах и другие.
-          img: /img/s6pro/safety/3.jpg
+          img: /img/models/s6pro/safety/3.jpg
     - id: characteristics
       name: Характеристики
       title: Комплектация LIVAN S6PRO
@@ -251,7 +251,7 @@
       name: Обслуживание
       title: Гарантия и сервис
       descr: Гарантия качества на автомобиль и оригинальные запасные части марки LIVAN предоставляемая производителем в течение гарантийного срока, 5 лет после покупки или в течение 150 000 км пробега, в зависимости от того, что наступит раньше.
-      img: /img/x3Pro/waranty/x3pro-service.jpg
+      img: /img/models/x3pro/waranty/x3pro-service.jpg
       items:
         - title: 5 лет
           descr: после покупки
