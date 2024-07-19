@@ -25,7 +25,7 @@ layout: default
             {%- when 'safety' -%}
                 {%- include blocks/model/safety.html section = section -%}
             {%- when 'characteristics' -%}
-                {%- include blocks/model/characteristics.html section = section price = model.price -%}
+                {%- include blocks/model/characteristics.html section = section price = model.priceWithDiscount -%}
             {%- when 'waranty' -%}
                 {%- include blocks/model/waranty.html section = section -%}
             {%- else -%}
