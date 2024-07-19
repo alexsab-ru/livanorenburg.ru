@@ -21,8 +21,8 @@ function initYandexMap() {
 			var myPlacemark1 = new ymaps.Placemark(
 				[51.844369,55.155427],
 				{
-					balloonContent: "г. Оренбург, Загородное шоссе 13/2",
-					hintContent: "г. Оренбург, Загородное шоссе 13/2",
+					balloonContent: "г. Оренбург, Загородное шоссе 13а",
+					hintContent: "г. Оренбург, Загородное шоссе 13а",
 				},
 				{
 					iconLayout: "default#image",
