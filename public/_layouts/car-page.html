@@ -60,30 +60,42 @@ layout: default
                     <p class="mt-2 text-lg">{{ page.total }} {% include utils/declOfNum.html number=page.total titles="автомобиль|автомобиля|автомобилей" %} в наличии</p>
                 </div>
                 <div class="lg:mt-5 divide-y border-b">
+                    {%- if page.modification_id and page.modification_id != '' -%}
                     <div class="flex justify-between py-3">
                         <span class="font-light min-[500px]:w-1/2">Двигатель</span>
                         <span class="font-bold">{{ page.modification_id }}</span>
                     </div>
+                    {%- endif -%}
+                    {%- if page.run and page.run != '' -%}
                     <div class="flex justify-between py-3">
                         <span class="font-light min-[500px]:w-1/2">Пробег</span>
                         <span class="font-bold">{% include utils/numf.html number=page.run ts=' ' decimals=0 %}&nbsp;км</span>
                     </div>
+                    {%- endif -%}
+                    {%- if page.body_type and page.body_type != '' -%}
                     <div class="flex justify-between py-3">
                         <span class="font-light min-[500px]:w-1/2">Кузов</span>
                         <span class="font-bold">{{ page.body_type }}</span>
                     </div>
+                    {%- endif -%}
+                    {%- if page.color and page.color != '' -%}
                     <div class="flex justify-between py-3">
                         <span class="font-light min-[500px]:w-1/2">Цвет</span>
                         <span class="font-bold">{{ page.color | capitalize}}</span>
                     </div>
+                    {%- endif -%}
+                    {%- if page.wheel and page.wheel != '' -%}
                     <div class="flex justify-between py-3">
                         <span class="font-light min-[500px]:w-1/2">Руль</span>
                         <span class="font-bold">{{ page.wheel | capitalize }}</span>
                     </div>
+                    {%- endif -%}
+                    {%- if page.vin_hidden and page.vin_hidden != '' -%}
                     <div class="flex justify-between py-3">
                         <span class="font-light min-[500px]:w-1/2">VIN</span>
                         <span class="font-bold">{{ page.vin_hidden }}</span>
                     </div>
+                    {%- endif -%}
                     {%- if page.credit_discount and page.credit_discount != '' and page.credit_discount != 0 -%}
                     <div class="flex justify-between py-3">
                         <span class="font-light min-[500px]:w-1/2">Выгода за кредит</span>
