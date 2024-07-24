@@ -84,6 +84,36 @@ layout: default
                         <span class="font-light min-[500px]:w-1/2">VIN</span>
                         <span class="font-bold">{{ page.vin_hidden }}</span>
                     </div>
+                    {%- if page.credit_discount and page.credit_discount != '' and page.credit_discount != 0 -%}
+                    <div class="flex justify-between py-3">
+                        <span class="font-light min-[500px]:w-1/2">Выгода за кредит</span>
+                        <span class="font-bold">до&nbsp;{% include utils/numf.html number=page.credit_discount ts=' ' decimals=0 %}&nbsp;₽</span>
+                    </div>
+                    {%- endif -%}
+                    {%- if page.insurance_discount and page.insurance_discount != '' and page.insurance_discount != 0 -%}
+                    <div class="flex justify-between py-3">
+                        <span class="font-light min-[500px]:w-1/2">Выгода за страховку</span>
+                        <span class="font-bold">до&nbsp;{% include utils/numf.html number=page.insurance_discount ts=' ' decimals=0 %}&nbsp;₽</span>
+                    </div>
+                    {%- endif -%}
+                    {%- if page.tradein_discount and page.tradein_discount != '' and page.tradein_discount != 0 -%}
+                    <div class="flex justify-between py-3">
+                        <span class="font-light min-[500px]:w-1/2">Выгода за Трейд-ин</span>
+                        <span class="font-bold">до&nbsp;{% include utils/numf.html number=page.tradein_discount ts=' ' decimals=0 %}&nbsp;₽</span>
+                    </div>
+                    {%- endif -%}
+                    {%- if page.optional_discount and page.optional_discount != '' and page.optional_discount != 0 -%}
+                    <div class="flex justify-between py-3">
+                        <span class="font-light min-[500px]:w-1/2">Скидка дилера</span>
+                        <span class="font-bold">до&nbsp;{% include utils/numf.html number=page.optional_discount ts=' ' decimals=0 %}&nbsp;₽</span>
+                    </div>
+                    {%- endif -%}
+                    {%- if page.max_discount and page.max_discount != '' and page.max_discount != 0 -%}
+                    <div class="flex justify-between py-3">
+                        <span class="font-light min-[500px]:w-1/2">Максимальная выгода</span>
+                        <span class="font-bold">до&nbsp;{% include utils/numf.html number=page.max_discount ts=' ' decimals=0 %}&nbsp;₽</span>
+                    </div>
+                    {%- endif -%}
                 </div>
                 <div class="my-8">
                     <div class="text-gray-400 font-light">Стоимость</div>
