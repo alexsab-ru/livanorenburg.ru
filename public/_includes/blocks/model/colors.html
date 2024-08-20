@@ -1,7 +1,7 @@
 {% assign model = include.model %}
 {% assign classes = include.classes %}
 {% assign first = model.colors | first %}
-{% assign firstPathImg = model.id | prepend: '/img/' | append: '/color/' | append: first.id | append: '.webp' %}
+{% assign firstPathImg = model.id | prepend: '/img/' | append: '/colors/' | append: first.id | append: '.webp' %}
 <img
 	src="{{ firstPathImg | relative_url }}"
 	class="w-full h-auto color-img-preview"
