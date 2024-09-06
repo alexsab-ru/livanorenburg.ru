@@ -7,7 +7,7 @@
     <div
         class="hidden md:block absolute left-[53%] -translate-x-1/2 top-[25%] lg:top-[20%] xl:top-[22%] 2xl:top-[20%]"
     >
-        {% include blocks/model/colors.html model=model classes="-top-4 lg:-top-10 xl:-top-16" %}
+        {% include blocks/model/colors.html model=model classes="-top-4 lg:-top-10 xl:-top-12" %}
     </div>
 
     <div class="container pt-10">
@@ -61,7 +61,7 @@
         </div>
 
         <div
-            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-10 2xl:gap-y-0 2xl:grid-cols-6 mt-4 md:mt-[250px] xl:mt-[380px] divide-x"
+            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-10 2xl:gap-y-0 2xl:grid-cols-6 mt-0 md:mt-[380px] divide-x"
         >
         {%- assign id = model.id | downcase -%}
         {% assign chs = site.data[id]  %}
