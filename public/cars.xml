@@ -2,76 +2,6 @@
 <data>
 	<cars>
 		<car>
-			<unique_id>8a1232ad-377b-11ee-b9c5-001e6784d1cd</unique_id>
-			<mark_id>LIVAN</mark_id>
-			<folder_id>X3 Pro</folder_id>
-			<modification_id>1.5 CVT (103 л.с.)</modification_id>
-			<complectation_name>Luxury</complectation_name>
-			<body_type>Внедорожник 5 дв.</body_type>
-			<wheel>левый</wheel>
-			<color>красный</color>
-			<metallic>нет</metallic>
-			<availability>в наличии</availability>
-			<custom>растаможен</custom>
-			<run>2790</run>
-			<year>2023</year>
-			<price>1570000</price>
-			<credit_discount>100000</credit_discount>
-			<insurance_discount>0</insurance_discount>
-			<tradein_discount>120000</tradein_discount>
-			<optional_discount>0</optional_discount>
-			<max_discount>220000</max_discount>
-			<currency>RUR</currency>
-			<vin>LLV2C3B2XP0202015</vin>
-			<description>* Пoдрoбные услoвия пpедостaвлeния выгoд и уcлoвий кpeдитования в отдeлe продаж. Bыгоды прeдocтавляютcя при покупке автомобиля в кредит, trade-in. Количество автoмoбилeй огpаниченo. Иcпoльзовaниe выгод нe является уcловиeм приобpeтения автoмoбиля.
-
-Цена за автомобиль указaна с учeтом выгод пo oбмену aвтомoбиля и кредиту. Все подробности уточняйте в отделе продаж. Также специальные условия за наличный расчет. Рассрочка предоставляется ПАО "Совкомбанк Страхование"
-
- Для Вашего удобства:
- Автомобили в наличии. Большой склад
- Онлайн-демонстрация автомобиля
- Выгодный обмен любого Вашего автомобиля на представленный в LIVAN Центр Оренбург по программе Trade-In;
-Услуга срочного выкупа. Сертифицированные эксперты бесплатно оценят и выкупят Ваш автомобиль не менее чем за 95% от стоимости автомобиля;
- Возможность поставить Ваш автомобиль на комиссию и продать покупателю в кредит и за короткий срок. Деньги через кассу в день сделки;
-
- Выгодные программы по кредитованию и страхованию:
- Дополнительная выгода при покупке в кредит и по программе Trade-In;
-Рассрочка до 5 лет;
- Дистанционная подача заявки на кредитование/страхование и оформление в день сделки;
- 10 банков-партнеров для быстрого получения кредита. ;
-Оформление за час по двум документам (паспорт, в/у);
- Отсутствует комиссия за оформление сделок;
- Без справок и поручителей;
- Персональный менеджер
-
-Если у Вас есть предложение, которое кажется оптимальным, позвоните нам, и мы постараемся его улучшить.
-
- Будем рады Вас видеть в нашем автосалоне “ LIVAN Центр Оренбург ”
- место осмотра: г. Оренбург, Загородное шоссе 13а
- Работаем ежедневно с понедельника по пятницу с 09:00 до 19:00, суббота, воскресенье с 10:00 до 17:00
-☎️ Есть вопрос? Задайте его по телефону !</description>
-			<images>
-				<image>https://photo.toyotasever.ru/LLV2C3B2XP0202015/578afbf082ed3d7b64e483ac85e260ed.jpg</image>
-				<image>https://photo.toyotasever.ru/LLV2C3B2XP0202015/d25273a15343001972f1738e2180b20b.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV2C3B2XP0202015/cda49e82a15542fbc85bd5cb6656bf84.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV2C3B2XP0202015/3d9577eee870177bac860a56f267cb24.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV2C3B2XP0202015/6d45eda46b4d3a6e6e2431b9a42d7632.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV2C3B2XP0202015/184b4f46da841499821ba515260a46fa.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV2C3B2XP0202015/03bb3fc9c74d35bc302394168cf6f4a0.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV2C3B2XP0202015/bb700cd395467f8af4a6b1ee4f47c7ca.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV2C3B2XP0202015/35ae9dd84103b0b55bb4128350594b1d.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV2C3B2XP0202015/90fba4dd7d71973850ef8030a2ca2eb2.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV2C3B2XP0202015/abb7aba6825e868f3086642a6667976d.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV2C3B2XP0202015/21fcbdfd8038848e17ebd9d0e231f9e7.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV2C3B2XP0202015/1f4d0711043c07a92dcd21fcbf8b4983.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV2C3B2XP0202015/11350bb77b319faee3a208c7d4d12c9b.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV2C3B2XP0202015/43eda2f604401e2c305a4e3c395f2d59.jpeg</image>
-			</images>
-			<multiposting>
-				<classifieds>autoru,avito</classifieds>
-			</multiposting>
-		<priceWithDiscount>1350000</priceWithDiscount><sale_price>1350000</sale_price><url>https://livanorenburg.ru/cars/livan-x3-pro-15-cvt-103-лс-luxury-красный-2023/</url></car>
-		<car>
 			<unique_id>8d09eb97-8d22-11ee-820a-001e6784d1cd</unique_id>
 			<mark_id>LIVAN</mark_id>
 			<folder_id>X6 Pro</folder_id>
@@ -89,8 +19,8 @@
 			<credit_discount>0</credit_discount>
 			<insurance_discount>0</insurance_discount>
 			<tradein_discount>145000</tradein_discount>
-			<optional_discount>395900</optional_discount>
-			<max_discount>540900</max_discount>
+			<optional_discount>495900</optional_discount>
+			<max_discount>640900</max_discount>
 			<currency>RUR</currency>
 			<vin>LLV5C3B29P0500441</vin>
 			<description>* Пoдрoбные услoвия пpедостaвлeния выгoд и уcлoвий кpeдитования в отдeлe продаж. Bыгоды прeдocтавляютcя при покупке автомобиля в кредит, trade-in. Количество автoмoбилeй огpаниченo. Иcпoльзовaниe выгод нe является уcловиeм приобpeтения автoмoбиля.
@@ -138,7 +68,7 @@
 			<multiposting>
 				<classifieds>autoru,avito</classifieds>
 			</multiposting>
-		<priceWithDiscount>2089000</priceWithDiscount><sale_price>2089000</sale_price><url>https://livanorenburg.ru/cars/livan-x6-pro-15-amt-147-лс-luxury-белый-2023/</url></car>
+		<priceWithDiscount>1989000</priceWithDiscount><sale_price>1989000</sale_price><url>https://livanorenburg.ru/cars/livan-x6-pro-15-amt-147-лс-luxury-белый-2023/</url></car>
 		<car>
 			<unique_id>132e5958-8b75-11ee-820a-001e6784d1cd</unique_id>
 			<mark_id>LIVAN</mark_id>
@@ -157,8 +87,8 @@
 			<credit_discount>0</credit_discount>
 			<insurance_discount>0</insurance_discount>
 			<tradein_discount>145000</tradein_discount>
-			<optional_discount>395900</optional_discount>
-			<max_discount>540900</max_discount>
+			<optional_discount>495900</optional_discount>
+			<max_discount>640900</max_discount>
 			<currency>RUR</currency>
 			<vin>LLV5C3B23P0500029</vin>
 			<description>* Пoдрoбные услoвия пpедостaвлeния выгoд и уcлoвий кpeдитования в отдeлe продаж. Bыгоды прeдocтавляютcя при покупке автомобиля в кредит, trade-in. Количество автoмoбилeй огpаниченo. Иcпoльзовaниe выгод нe является уcловиeм приобpeтения автoмoбиля.
@@ -213,7 +143,7 @@
 			<multiposting>
 				<classifieds>autoru,avito</classifieds>
 			</multiposting>
-		<priceWithDiscount>2099000</priceWithDiscount><sale_price>2099000</sale_price><url>https://livanorenburg.ru/cars/livan-x6-pro-15-amt-147-лс-luxury-серый-2023/</url></car>
+		<priceWithDiscount>1999000</priceWithDiscount><sale_price>1999000</sale_price><url>https://livanorenburg.ru/cars/livan-x6-pro-15-amt-147-лс-luxury-серый-2023/</url></car>
 		<car>
 			<unique_id>e44000ba-8b74-11ee-820a-001e6784d1cd</unique_id>
 			<mark_id>LIVAN</mark_id>
@@ -232,8 +162,8 @@
 			<credit_discount>0</credit_discount>
 			<insurance_discount>0</insurance_discount>
 			<tradein_discount>145000</tradein_discount>
-			<optional_discount>395900</optional_discount>
-			<max_discount>540900</max_discount>
+			<optional_discount>495900</optional_discount>
+			<max_discount>640900</max_discount>
 			<currency>RUR</currency>
 			<vin>LLV5C3B25P0500422</vin>
 			<description>* Пoдрoбные услoвия пpедостaвлeния выгoд и уcлoвий кpeдитования в отдeлe продаж. Bыгоды прeдocтавляютcя при покупке автомобиля в кредит, trade-in. Количество автoмoбилeй огpаниченo. Иcпoльзовaниe выгод нe является уcловиeм приобpeтения автoмoбиля.
@@ -282,7 +212,7 @@
 			<multiposting>
 				<classifieds>autoru,avito</classifieds>
 			</multiposting>
-		<priceWithDiscount>2099000</priceWithDiscount><sale_price>2099000</sale_price><url>https://livanorenburg.ru/cars/livan-x6-pro-15-amt-147-лс-luxury-синий-2023/</url></car>
+		<priceWithDiscount>1999000</priceWithDiscount><sale_price>1999000</sale_price><url>https://livanorenburg.ru/cars/livan-x6-pro-15-amt-147-лс-luxury-синий-2023/</url></car>
 		<car>
 			<unique_id>643f72f1-8d1d-11ee-820a-001e6784d1cd</unique_id>
 			<mark_id>LIVAN</mark_id>
@@ -301,8 +231,8 @@
 			<credit_discount>0</credit_discount>
 			<insurance_discount>0</insurance_discount>
 			<tradein_discount>145000</tradein_discount>
-			<optional_discount>395900</optional_discount>
-			<max_discount>540900</max_discount>
+			<optional_discount>495900</optional_discount>
+			<max_discount>640900</max_discount>
 			<currency>RUR</currency>
 			<vin>LLV5C3B27P0500146</vin>
 			<description>* Пoдрoбные услoвия пpедостaвлeния выгoд и уcлoвий кpeдитования в отдeлe продаж. Bыгоды прeдocтавляютcя при покупке автомобиля в кредит, trade-in. Количество автoмoбилeй огpаниченo. Иcпoльзовaниe выгод нe является уcловиeм приобpeтения автoмoбиля.
@@ -353,7 +283,7 @@
 			<multiposting>
 				<classifieds>autoru,avito</classifieds>
 			</multiposting>
-		<priceWithDiscount>2099000</priceWithDiscount><sale_price>2099000</sale_price><url>https://livanorenburg.ru/cars/livan-x6-pro-15-amt-147-лс-luxury-синий-2023/</url></car>
+		<priceWithDiscount>1999000</priceWithDiscount><sale_price>1999000</sale_price><url>https://livanorenburg.ru/cars/livan-x6-pro-15-amt-147-лс-luxury-синий-2023/</url></car>
 		<car>
 			<unique_id>ac4422d0-8b75-11ee-820a-001e6784d1cd</unique_id>
 			<mark_id>LIVAN</mark_id>
@@ -372,8 +302,8 @@
 			<credit_discount>0</credit_discount>
 			<insurance_discount>0</insurance_discount>
 			<tradein_discount>165000</tradein_discount>
-			<optional_discount>395900</optional_discount>
-			<max_discount>560900</max_discount>
+			<optional_discount>495900</optional_discount>
+			<max_discount>660900</max_discount>
 			<currency>RUR</currency>
 			<vin>LLV5C3B21P0500398</vin>
 			<description>* Пoдрoбные услoвия пpедостaвлeния выгoд и уcлoвий кpeдитования в отдeлe продаж. Bыгоды прeдocтавляютcя при покупке автомобиля в кредит, trade-in. Количество автoмoбилeй огpаниченo. Иcпoльзовaниe выгод нe является уcловиeм приобpeтения автoмoбиля.
@@ -428,7 +358,7 @@
 			<multiposting>
 				<classifieds>autoru,avito</classifieds>
 			</multiposting>
-		<priceWithDiscount>2189000</priceWithDiscount><sale_price>2189000</sale_price><url>https://livanorenburg.ru/cars/livan-x6-pro-15-amt-147-лс-premium-серый-2023/</url></car>
+		<priceWithDiscount>2089000</priceWithDiscount><sale_price>2089000</sale_price><url>https://livanorenburg.ru/cars/livan-x6-pro-15-amt-147-лс-premium-серый-2023/</url></car>
 		<car>
 			<unique_id>6595c7fa-8d22-11ee-820a-001e6784d1cd</unique_id>
 			<mark_id>LIVAN</mark_id>
@@ -447,8 +377,8 @@
 			<credit_discount>0</credit_discount>
 			<insurance_discount>0</insurance_discount>
 			<tradein_discount>165000</tradein_discount>
-			<optional_discount>395900</optional_discount>
-			<max_discount>560900</max_discount>
+			<optional_discount>495900</optional_discount>
+			<max_discount>660900</max_discount>
 			<currency>RUR</currency>
 			<vin>LLV5C3B26P0500333</vin>
 			<description>* Пoдрoбные услoвия пpедостaвлeния выгoд и уcлoвий кpeдитования в отдeлe продаж. Bыгоды прeдocтавляютcя при покупке автомобиля в кредит, trade-in. Количество автoмoбилeй огpаниченo. Иcпoльзовaниe выгод нe является уcловиeм приобpeтения автoмoбиля.
@@ -496,6 +426,6 @@
 			<multiposting>
 				<classifieds>autoru,avito</classifieds>
 			</multiposting>
-		<priceWithDiscount>2189000</priceWithDiscount><sale_price>2189000</sale_price><url>https://livanorenburg.ru/cars/livan-x6-pro-15-amt-147-лс-premium-синий-2023/</url></car>
+		<priceWithDiscount>2089000</priceWithDiscount><sale_price>2089000</sale_price><url>https://livanorenburg.ru/cars/livan-x6-pro-15-amt-147-лс-premium-синий-2023/</url></car>
 	</cars>
 </data>
