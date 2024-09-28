@@ -30,6 +30,76 @@
 			</multiposting>
 		<priceWithDiscount>2059000</priceWithDiscount><sale_price>2059000</sale_price><url>https://livanorenburg.ru/cars/livan-s6-pro-15-amt-147-лс-premium-серый-2023/</url></car>
 		<car>
+			<unique_id>3fd926c8-82da-11ee-820a-001e6784d1cd</unique_id>
+			<mark_id>LIVAN</mark_id>
+			<folder_id>X3 Pro</folder_id>
+			<modification_id>1.5 CVT (103 л.с.)</modification_id>
+			<complectation_name>Luxury</complectation_name>
+			<body_type>Внедорожник 5 дв.</body_type>
+			<wheel>левый</wheel>
+			<color>Желтый</color>
+			<metallic>да</metallic>
+			<availability>в наличии</availability>
+			<custom>растаможен</custom>
+			<run>4</run>
+			<year>2023</year>
+			<price>1899900</price>
+			<credit_discount>100000</credit_discount>
+			<insurance_discount>0</insurance_discount>
+			<tradein_discount>120000</tradein_discount>
+			<optional_discount>0</optional_discount>
+			<max_discount>220000</max_discount>
+			<currency>RUR</currency>
+			<vin>LLV2C3B27P0204482</vin>
+			<description>* Пoдрoбные услoвия пpедостaвлeния выгoд и уcлoвий кpeдитования в отдeлe продаж. Bыгоды прeдocтавляютcя при покупке автомобиля в кредит, trade-in. Количество автoмoбилeй огpаниченo. Иcпoльзовaниe выгод нe является уcловиeм приобpeтения автoмoбиля.
+
+Цена за автомобиль указaна с учeтом выгод пo oбмену aвтомoбиля и кредиту. Все подробности уточняйте в отделе продаж. Также специальные условия за наличный расчет. Рассрочка предоставляется ПАО "Совкомбанк Страхование"
+
+ Для Вашего удобства:
+ Автомобили в наличии. Большой склад
+ Онлайн-демонстрация автомобиля
+ Выгодный обмен любого Вашего автомобиля на представленный в LIVAN Центр Оренбург по программе Trade-In;
+Услуга срочного выкупа. Сертифицированные эксперты бесплатно оценят и выкупят Ваш автомобиль не менее чем за 95% от стоимости автомобиля;
+ Возможность поставить Ваш автомобиль на комиссию и продать покупателю в кредит и за короткий срок. Деньги через кассу в день сделки;
+
+ Выгодные программы по кредитованию и страхованию:
+ Дополнительная выгода при покупке в кредит и по программе Trade-In;
+Рассрочка до 5 лет;
+ Дистанционная подача заявки на кредитование/страхование и оформление в день сделки;
+ 10 банков-партнеров для быстрого получения кредита. ;
+Оформление за час по двум документам (паспорт, в/у);
+ Отсутствует комиссия за оформление сделок;
+ Без справок и поручителей;
+ Персональный менеджер
+
+Если у Вас есть предложение, которое кажется оптимальным, позвоните нам, и мы постараемся его улучшить.
+
+ Будем рады Вас видеть в нашем автосалоне “ LIVAN Центр Оренбург ”
+ место осмотра: г. Оренбург, Загородное шоссе 13а
+ Работаем ежедневно с понедельника по пятницу с 09:00 до 19:00, суббота, воскресенье с 10:00 до 17:00
+☎️ Есть вопрос? Задайте его по телефону !</description>
+			<images>
+				<image>https://photo.toyotasever.ru/LLV2C3B27P0204482/c5429f92275f96495eac07df5815364e.jpg</image>
+				<image>https://photo.toyotasever.ru/LLV2C3B27P0204482/fb788b9de65706a13c9393b9f3b001ae.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV2C3B27P0204482/8ed51a6d0bea1b6a37d82c860216d564.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV2C3B27P0204482/fcda2ebc614c1bf6207a11bc3f4b1a9a.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV2C3B27P0204482/247ae1bf3caeb198aa55ec06e92315ec.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV2C3B27P0204482/69fcb876eb059a373a29837d08fb29a0.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV2C3B27P0204482/52c5878e98f1753168a874d1f39c8393.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV2C3B27P0204482/2526c566461c2d7026f6100c3cb5b250.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV2C3B27P0204482/2cc1fb29b13c661393c999922feedb0d.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV2C3B27P0204482/f8cccafc29d1389aa65501dddaaddd46.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV2C3B27P0204482/9eef775919e4d571d11bc48b3c401625.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV2C3B27P0204482/b0e54f670c5c30466a181e891de3bb71.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV2C3B27P0204482/95451857d0fadc45089173971998cb31.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV2C3B27P0204482/388257074899e8da7ff0a09e43a80631.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV2C3B27P0204482/740649df030a863914f482e19f334353.jpeg</image>
+			</images>
+			<multiposting>
+				<classifieds>autoru,avito</classifieds>
+			</multiposting>
+		<priceWithDiscount>1679900</priceWithDiscount><sale_price>1679900</sale_price><url>https://livanorenburg.ru/cars/livan-x3-pro-15-cvt-103-лс-luxury-желтый-2023/</url></car>
+		<car>
 			<unique_id>e44000ba-8b74-11ee-820a-001e6784d1cd</unique_id>
 			<mark_id>LIVAN</mark_id>
 			<folder_id>X6 Pro</folder_id>
@@ -244,5 +314,46 @@
 				<classifieds>autoru,avito</classifieds>
 			</multiposting>
 		<priceWithDiscount>2089000</priceWithDiscount><sale_price>2089000</sale_price><url>https://livanorenburg.ru/cars/livan-x6-pro-15-amt-147-лс-premium-серый-2023/</url></car>
+		<car>
+			<unique_id>92d4448c-8b74-11ee-820a-001e6784d1cd</unique_id>
+			<mark_id>LIVAN</mark_id>
+			<folder_id>X6 Pro</folder_id>
+			<modification_id>1.5 AMT (147 л.с.)</modification_id>
+			<complectation_name>Premium</complectation_name>
+			<body_type>Внедорожник 5 дв.</body_type>
+			<wheel>левый</wheel>
+			<color>Синий</color>
+			<metallic>да</metallic>
+			<availability>в наличии</availability>
+			<custom>растаможен</custom>
+			<run>12</run>
+			<year>2023</year>
+			<price>2749900</price>
+			<credit_discount>150000</credit_discount>
+			<insurance_discount>0</insurance_discount>
+			<tradein_discount>150000</tradein_discount>
+			<optional_discount>0</optional_discount>
+			<max_discount>300000</max_discount>
+			<currency>RUR</currency>
+			<vin>LLV5C3B20P0500327</vin>
+			<description />
+			<images>
+				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/b224e00654e2b1310b8655f6ec8f3dd7.jpg</image>
+				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/d1de7e924364d4c5b90d5a8e2c3c78ac.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/fbe6ce2743ae10e97d61e1400dd67364.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/cb22841d9de6846a1f61b4108d914282.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/46a43817a61ff9d1f1ed93d89c7cbd95.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/897f1a19fc98ed952f08789b4f43fb3e.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/9746555d9b49934f961e04a613c493f6.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/37ed95183a34ef3925553f999e6f7013.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/30c3545a92c2ba923c30f5282038ab38.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/89da7de54a9430a40c7d48d4fa71e508.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/5bb526be5bb315e65d5479a292772a79.jpeg</image>
+				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/b422debe690b0fda4e8cdff1603eb6bb.jpeg</image>
+			</images>
+			<multiposting>
+				<classifieds>autoru,avito</classifieds>
+			</multiposting>
+		<priceWithDiscount>2449900</priceWithDiscount><sale_price>2449900</sale_price><url>https://livanorenburg.ru/cars/livan-x6-pro-15-amt-147-лс-premium-синий-2023/</url></car>
 	</cars>
 </data>
