@@ -244,46 +244,5 @@
 				<classifieds>autoru,avito</classifieds>
 			</multiposting>
 		<priceWithDiscount>2089000</priceWithDiscount><sale_price>2089000</sale_price><url>https://livanorenburg.ru/cars/livan-x6-pro-15-amt-147-лс-premium-серый-2023/</url></car>
-		<car>
-			<unique_id>92d4448c-8b74-11ee-820a-001e6784d1cd</unique_id>
-			<mark_id>LIVAN</mark_id>
-			<folder_id>X6 Pro</folder_id>
-			<modification_id>1.5 AMT (147 л.с.)</modification_id>
-			<complectation_name>Premium</complectation_name>
-			<body_type>Внедорожник 5 дв.</body_type>
-			<wheel>левый</wheel>
-			<color>Синий</color>
-			<metallic>да</metallic>
-			<availability>в наличии</availability>
-			<custom>растаможен</custom>
-			<run>12</run>
-			<year>2023</year>
-			<price>2749900</price>
-			<credit_discount>150000</credit_discount>
-			<insurance_discount>0</insurance_discount>
-			<tradein_discount>150000</tradein_discount>
-			<optional_discount>0</optional_discount>
-			<max_discount>300000</max_discount>
-			<currency>RUR</currency>
-			<vin>LLV5C3B20P0500327</vin>
-			<description />
-			<images>
-				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/b224e00654e2b1310b8655f6ec8f3dd7.jpg</image>
-				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/d1de7e924364d4c5b90d5a8e2c3c78ac.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/fbe6ce2743ae10e97d61e1400dd67364.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/cb22841d9de6846a1f61b4108d914282.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/46a43817a61ff9d1f1ed93d89c7cbd95.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/897f1a19fc98ed952f08789b4f43fb3e.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/9746555d9b49934f961e04a613c493f6.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/37ed95183a34ef3925553f999e6f7013.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/30c3545a92c2ba923c30f5282038ab38.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/89da7de54a9430a40c7d48d4fa71e508.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/5bb526be5bb315e65d5479a292772a79.jpeg</image>
-				<image>https://photo.toyotasever.ru/LLV5C3B20P0500327/b422debe690b0fda4e8cdff1603eb6bb.jpeg</image>
-			</images>
-			<multiposting>
-				<classifieds>autoru,avito</classifieds>
-			</multiposting>
-		<priceWithDiscount>2449900</priceWithDiscount><sale_price>2449900</sale_price><url>https://livanorenburg.ru/cars/livan-x6-pro-15-amt-147-лс-premium-синий-2023/</url></car>
 	</cars>
 </data>
